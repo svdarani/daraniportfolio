@@ -1,0 +1,229 @@
+"use client";
+
+import React, { useState, useEffect } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { NovaButton } from "../ui/NovaButton";
+import { ThemeToggle } from "../theme/ThemeToggle";
+import { FiMenu, FiX, FiGithub, FiLinkedin, FiInstagram, FiMail } from "react-icons/fi";
+import { socialsData } from "@/data/socials";
+
+const navLinks = [
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
+  { name: "Services", href: "/services" },
+  { name: "Works", href: "/works" },
+  { name: "Experience", href: "/experience" },
+  { name: "Blog", href: "/blog" },
+];
+
+export const NovaNavbar: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isOpen]);
+
+  // Close on Escape key
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setIsOpen(false);
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
+  return (
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-white/90 dark:bg-[#090A0F]/90 backdrop-blur-md border-b border-neutral-200 dark:border-white/[0.08] shadow-sm dark:shadow-[0_4px_30px_rgba(0,0,0,0.5)] py-3.5"
+          : "bg-transparent py-5"
+      }`}
+    >
+      <div className="max-w-[1320px] mx-auto px-5 sm:px-8 flex items-center justify-between">
+        {/* Brand Logo / Monogram */}
+        <Link
+          href="/"
+          className="group flex items-center gap-3 select-none"
+          onClick={() => setIsOpen(false)}
+        >
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#24D9FF] via-[#326BFF] to-[#654CFF] p-[1.5px] transition-transform duration-300 group-hover:scale-105 shadow-[0_0_15px_rgba(50,107,255,0.25)]">
+            <div className="w-full h-full bg-white dark:bg-[#090A0F] rounded-[10px] flex items-center justify-center font-debata font-bold text-sm tracking-wider text-neutral-900 dark:text-white">
+              DV
+            </div>
+          </div>
+          <div className="flex flex-col">
+            <span className="font-debata font-bold text-base tracking-tight text-neutral-900 dark:text-white group-hover:text-[#326BFF] transition-colors">
+              Darani Viswanathan
+            </span>
+            <span className="text-[11px] font-modernist text-neutral-500 dark:text-[#A5ADBD] tracking-wide">
+              Creative Designer &amp; Developer
+            </span>
+          </div>
+        </Link>
+
+        {/* Center Desktop Navigation: Modernist Typographic Structure */}
+        <nav
+          role="navigation"
+          aria-label="Primary Navigation"
+          className="hidden md:flex items-center gap-1 lg:gap-2 px-4 py-1.5 rounded-full bg-neutral-100/90 dark:bg-[#151821]/90 border border-neutral-200 dark:border-white/[0.08] backdrop-blur-md shadow-sm"
+        >
+          {navLinks.map((link) => {
+            const isActive =
+              link.href === "/"
+                ? pathname === "/"
+                : pathname === link.href || pathname.startsWith(link.href + "/");
+
+            return (
+              <Link
+                key={link.name}
+                href={link.href}
+                className={`relative px-4 py-1.5 rounded-full text-sm font-modernist font-medium transition-all duration-200 ${
+                  isActive
+                    ? "text-[#326BFF] dark:text-white bg-white dark:bg-white/[0.1] shadow-sm font-semibold"
+                    : "text-neutral-600 hover:text-black dark:text-[#A5ADBD] dark:hover:text-white hover:bg-neutral-200/50 dark:hover:bg-white/[0.04]"
+                }`}
+              >
+                {link.name}
+                {isActive && (
+                  <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-[#326BFF] shadow-[0_0_6px_#326BFF]" />
+                )}
+              </Link>
+            );
+          })}
+        </nav>
+
+        {/* Right Desktop Actions (Theme Switcher + Contact CTA) */}
+        <div className="hidden md:flex items-center gap-3">
+          <ThemeToggle size="sm" />
+          <NovaButton href="/contact" variant="primary" size="sm">
+            Contact Now
+          </NovaButton>
+        </div>
+
+        {/* Mobile Header Controls (Theme Switcher + Hamburger Toggle) */}
+        <div className="flex md:hidden items-center gap-2">
+          <ThemeToggle size="sm" />
+          <button
+            type="button"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? "Close Menu" : "Open Menu"}
+            className="w-9 h-9 rounded-full bg-neutral-100 dark:bg-[#151821] border border-neutral-200 dark:border-white/10 flex items-center justify-center text-neutral-900 dark:text-white hover:bg-neutral-200 dark:hover:bg-neutral-800 transition-colors"
+          >
+            {isOpen ? <FiX className="w-5 h-5" /> : <FiMenu className="w-5 h-5" />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Drawer Menu */}
+      {isOpen && (
+        <div className="md:hidden fixed inset-0 top-[70px] bg-white/95 dark:bg-[#090A0F]/95 backdrop-blur-xl z-40 flex flex-col justify-between p-6 overflow-y-auto border-t border-neutral-200 dark:border-white/[0.08]">
+          <div className="flex flex-col gap-2 pt-4">
+            <span className="text-[11px] font-modernist uppercase tracking-[0.14em] text-neutral-500 dark:text-[#A5ADBD] mb-2 px-3">
+              Navigation
+            </span>
+            {navLinks.map((link) => {
+              const isActive =
+                link.href === "/"
+                  ? pathname === "/"
+                  : pathname === link.href || pathname.startsWith(link.href + "/");
+
+              return (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className={`px-4 py-3 rounded-xl text-lg font-modernist font-medium transition-colors flex items-center justify-between ${
+                    isActive
+                      ? "text-[#326BFF] dark:text-white bg-neutral-100 dark:bg-[#151821] border border-neutral-300 dark:border-white/10 font-semibold"
+                      : "text-neutral-600 hover:text-black dark:text-[#A5ADBD] dark:hover:text-white hover:bg-neutral-100/50 dark:hover:bg-white/[0.04]"
+                  }`}
+                >
+                  <span>{link.name}</span>
+                  {isActive && (
+                    <span className="w-2 h-2 rounded-full bg-[#326BFF] shadow-[0_0_8px_#326BFF]" />
+                  )}
+                </Link>
+              );
+            })}
+          </div>
+
+          <div className="pt-6 border-t border-neutral-200 dark:border-white/[0.08] flex flex-col gap-5 mt-6">
+            <NovaButton
+              href="/contact"
+              variant="primary"
+              size="lg"
+              className="w-full"
+              onClick={() => setIsOpen(false)}
+            >
+              Contact Now
+            </NovaButton>
+
+            <div className="flex items-center justify-between pt-2 px-2">
+              <span className="text-xs font-modernist text-neutral-500 dark:text-[#A5ADBD]">
+                Theme
+              </span>
+              <ThemeToggle size="sm" showLabel />
+            </div>
+
+            <div className="flex items-center justify-center gap-5 pt-2 text-neutral-600 dark:text-[#A5ADBD]">
+              <a
+                href={socialsData.links.find((l) => l.platform === "GitHub")?.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[#326BFF] dark:hover:text-white transition-colors p-2"
+                aria-label="GitHub"
+              >
+                <FiGithub className="w-5 h-5" />
+              </a>
+              <a
+                href={socialsData.links.find((l) => l.platform === "LinkedIn")?.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[#326BFF] dark:hover:text-white transition-colors p-2"
+                aria-label="LinkedIn"
+              >
+                <FiLinkedin className="w-5 h-5" />
+              </a>
+              <a
+                href={socialsData.links.find((l) => l.platform === "Instagram")?.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[#326BFF] dark:hover:text-white transition-colors p-2"
+                aria-label="Instagram"
+              >
+                <FiInstagram className="w-5 h-5" />
+              </a>
+              <a
+                href={`mailto:${socialsData.email}`}
+                className="hover:text-[#326BFF] dark:hover:text-white transition-colors p-2"
+                aria-label="Email"
+              >
+                <FiMail className="w-5 h-5" />
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
+    </header>
+  );
+};

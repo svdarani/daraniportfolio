@@ -1,0 +1,163 @@
+"use client";
+
+import React from "react";
+import Link from "next/link";
+import { NovaButton } from "../ui/NovaButton";
+import { socialsData } from "@/data/socials";
+import { FiGithub, FiLinkedin, FiInstagram, FiMail, FiArrowUp } from "react-icons/fi";
+
+const footerLinks = [
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
+  { name: "Services", href: "/services" },
+  { name: "Works", href: "/works" },
+  { name: "Experience", href: "/experience" },
+  { name: "Blog", href: "/blog" },
+  { name: "Contact", href: "/contact" },
+];
+
+export const NovaFooter: React.FC = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  return (
+    <footer className="bg-neutral-50 dark:bg-[#07080C] border-t border-neutral-200 dark:border-white/[0.08] relative pt-20 pb-12 overflow-hidden transition-colors">
+      {/* Top Banner CTA */}
+      <div className="max-w-[1320px] mx-auto px-5 sm:px-8 mb-16 pb-16 border-b border-neutral-200 dark:border-white/[0.08]">
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 p-10 sm:p-14 rounded-3xl bg-white dark:bg-[#151821] border border-neutral-200 dark:border-white/[0.08] shadow-sm relative overflow-hidden">
+          <div className="max-w-2xl relative z-10">
+            <span className="text-[11px] font-modernist uppercase tracking-[0.14em] text-[#326BFF] dark:text-[#24D9FF] font-semibold mb-2 block">
+              COLLABORATE WITH DARANI
+            </span>
+            <h3 className="font-debata text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-950 dark:text-[#F7F8FC] leading-tight mb-3 tracking-tight">
+              Let&apos;s Create <span className="nova-gradient-text">Something Meaningful.</span>
+            </h3>
+            <p className="font-modernist text-sm sm:text-base text-neutral-600 dark:text-[#A5ADBD] leading-relaxed">
+              Ready to elevate your startup&apos;s brand, explore a digital product concept, or design high-converting visual collaterals?
+            </p>
+          </div>
+
+          <div className="relative z-10 flex-shrink-0">
+            <NovaButton href="/contact" variant="primary" size="lg">
+              Start a Conversation
+            </NovaButton>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Footer Links & Wordmark */}
+      <div className="max-w-[1320px] mx-auto px-5 sm:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-neutral-200 dark:border-white/[0.06] items-start">
+          {/* Brand Info (col-span-5) */}
+          <div className="md:col-span-5">
+            <Link href="/" className="group inline-flex items-center gap-3 mb-4 select-none">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#24D9FF] via-[#326BFF] to-[#654CFF] p-[1.5px] transition-transform duration-300 group-hover:scale-105 shadow-[0_0_15px_rgba(50,107,255,0.25)]">
+                <div className="w-full h-full bg-white dark:bg-[#090A0F] rounded-[10px] flex items-center justify-center font-debata font-bold text-sm tracking-wider text-neutral-900 dark:text-white">
+                  DV
+                </div>
+              </div>
+              <div>
+                <span className="font-debata font-bold text-lg text-neutral-900 dark:text-white group-hover:text-[#326BFF] transition-colors block">
+                  Darani Viswanathan
+                </span>
+                <span className="text-[11px] font-modernist text-neutral-500 dark:text-[#A5ADBD]">
+                  Creative Designer &amp; Developer
+                </span>
+              </div>
+            </Link>
+
+            <p className="font-modernist text-sm text-neutral-600 dark:text-[#A5ADBD] leading-relaxed max-w-sm mb-6">
+              I combine creative design, frontend development, and artificial intelligence to turn ideas into meaningful digital experiences.
+            </p>
+
+            <div className="text-xs font-modernist text-neutral-500 dark:text-[#A5ADBD]">
+              Designed with curiosity. Built with creativity.
+            </div>
+          </div>
+
+          {/* Navigation Links (col-span-4) */}
+          <div className="md:col-span-4">
+            <div className="text-[11px] font-modernist uppercase tracking-[0.14em] text-[#326BFF] dark:text-[#24D9FF] font-semibold mb-4">
+              Explore Portfolio
+            </div>
+            <ul className="grid grid-cols-2 gap-2.5 text-sm font-modernist text-neutral-600 dark:text-[#A5ADBD]">
+              {footerLinks.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    href={link.href}
+                    className="hover:text-[#326BFF] dark:hover:text-white transition-colors"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Socials & Connect (col-span-3) */}
+          <div className="md:col-span-3">
+            <div className="text-[11px] font-modernist uppercase tracking-[0.14em] text-[#326BFF] dark:text-[#24D9FF] font-semibold mb-4">
+              Connect Directly
+            </div>
+            <div className="flex items-center gap-3 mb-6">
+              <a
+                href={socialsData.links.find((l) => l.platform === "GitHub")?.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-xl bg-white dark:bg-[#151821] border border-neutral-200 dark:border-white/10 flex items-center justify-center text-neutral-600 hover:text-[#326BFF] hover:border-[#326BFF]/40 dark:text-[#A5ADBD] dark:hover:text-white dark:hover:border-white/40 transition-all hover:scale-105"
+                aria-label="GitHub profile"
+              >
+                <FiGithub className="w-5 h-5" />
+              </a>
+              <a
+                href={socialsData.links.find((l) => l.platform === "LinkedIn")?.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-xl bg-white dark:bg-[#151821] border border-neutral-200 dark:border-white/10 flex items-center justify-center text-neutral-600 hover:text-[#326BFF] hover:border-[#326BFF]/40 dark:text-[#A5ADBD] dark:hover:text-white dark:hover:border-white/40 transition-all hover:scale-105"
+                aria-label="LinkedIn profile"
+              >
+                <FiLinkedin className="w-5 h-5" />
+              </a>
+              <a
+                href={socialsData.links.find((l) => l.platform === "Instagram")?.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-xl bg-white dark:bg-[#151821] border border-neutral-200 dark:border-white/10 flex items-center justify-center text-neutral-600 hover:text-[#326BFF] hover:border-[#326BFF]/40 dark:text-[#A5ADBD] dark:hover:text-white dark:hover:border-white/40 transition-all hover:scale-105"
+                aria-label="Instagram profile"
+              >
+                <FiInstagram className="w-5 h-5" />
+              </a>
+              <a
+                href={`mailto:${socialsData.email}`}
+                className="w-10 h-10 rounded-xl bg-white dark:bg-[#151821] border border-neutral-200 dark:border-white/10 flex items-center justify-center text-neutral-600 hover:text-[#326BFF] hover:border-[#326BFF]/40 dark:text-[#A5ADBD] dark:hover:text-white dark:hover:border-white/40 transition-all hover:scale-105"
+                aria-label="Email Darani"
+              >
+                <FiMail className="w-5 h-5" />
+              </a>
+            </div>
+
+            <button
+              type="button"
+              onClick={scrollToTop}
+              className="inline-flex items-center gap-2 text-xs font-modernist text-neutral-600 hover:text-[#326BFF] dark:text-[#A5ADBD] dark:hover:text-white transition-colors"
+            >
+              <span>Back to Top</span>
+              <FiArrowUp className="w-4 h-4 text-[#326BFF] dark:text-[#24D9FF]" />
+            </button>
+          </div>
+        </div>
+
+        {/* Bottom Copyright Bar */}
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs font-modernist text-neutral-500 dark:text-[#A5ADBD] gap-4">
+          <div>
+            &copy; {new Date().getFullYear()} Darani Viswanathan. All rights reserved.
+          </div>
+          <div>
+            Debata &times; Modernist Typographic Architecture.
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};

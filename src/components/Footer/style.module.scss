@@ -1,0 +1,99 @@
+.contact {
+    color: #0f172a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8fafc;
+    position: relative;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    :global(.dark) & {
+        color: rgb(255, 255, 255);
+        background-color: #000000;
+    }
+
+    @media (max-width: 768px) {
+        padding-top: 200px;
+        padding-bottom: 300px;
+    }
+    .body {
+        padding-top: 160px;
+        width: 100%;
+        max-width: 1800px;
+        background-color: inherit;
+        padding-left: 10px;
+        padding-right: 10px;
+
+        .title {
+            position: relative;
+            max-width: 1000px;
+            width: 100%;
+            margin-bottom: 50px;
+        }
+
+        .name {
+            font-size: 80px;
+            line-height: 80px;
+            
+            @media (min-width: 640px) {
+                font-size: 150px;
+                line-height: 150px;
+            }
+            
+            @media (min-width: 768px) {
+                font-size: 200px;
+                line-height: 200px;
+            }
+            
+            @media (min-width: 1024px) {
+                font-size: 250px;
+                line-height: 250px;
+            }
+            
+            @media (min-width: 1280px) {
+                font-size: 315px;
+                line-height: 300px;
+            }
+        }
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        padding: 0px 20px;
+        
+        @media (min-width: 768px) {
+            padding: 0px 45px;
+        }
+
+        .arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background-color: #0f172a;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+
+            img {
+                filter: invert(1);
+            }
+
+            :global(.dark) & {
+                background-color: #ffffff;
+                img {
+                    filter: invert(0);
+                }
+            }
+            
+            @media (min-width: 768px) {
+                width: 100px;
+                height: 100px;
+            }
+        }
+    }
+}

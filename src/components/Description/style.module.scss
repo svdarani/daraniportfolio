@@ -1,0 +1,106 @@
+.description{
+    padding-left: 150px;
+    padding-right: 150px;
+    margin-top: 200px;
+    display: flex;
+    justify-content: space-between;
+    @media (max-width: 768px) {
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+    .body{
+        display: flex;
+        gap: 50px;
+        justify-content: space-between;
+        width: 100%;
+        @media (max-width: 768px) {
+            flex-direction: column;
+            gap: 20px;
+        }
+        .mainPara{
+            width: 100%;
+            max-width: 700px;
+            margin: 0px;
+            color: inherit;
+                &:nth-of-type(1) {
+                    font-size: 36px;
+                    gap: 8px;
+                    line-height: 1.3;
+                    @media (max-width: 768px) {
+                        font-size: 24px;
+                    }
+                    span {
+                        margin-right: 3px;
+                    }
+            
+                    .mask {
+                        position: relative;
+                        overflow: hidden;
+                        display: inline-flex;
+                    }
+                }
+            
+                &:nth-of-type(2) {
+                    font-size: 18px;
+                    width: 80%;
+                    font-weight: 300;
+                }
+        }
+        .subPara{
+            width: 100%;
+            max-width: 350px;
+            text-align: right;
+            font-weight: 300;
+            color: #475569;
+            transition: color 0.3s ease;
+            :global(.dark) & {
+                color: #9ca3af;
+            }
+            @media (max-width: 768px) {
+                font-size: 16px;
+                text-align: left;
+            }
+
+        }
+        .about{
+            display: flex;
+            margin-top: 20px;
+            gap: 20px;
+            align-items: center;
+            justify-content: flex-end;
+            @media (max-width: 768px) {
+                justify-content: flex-start;
+            }
+            p{
+                font-size: 26px;
+                font-weight: 500;
+                color: inherit;
+            }
+            .button {
+                top: 80%;
+                left: calc(100% - 200px);
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+                background-color: #0f172a;
+                color: #ffffff;
+                border: 2px solid #0f172a;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                z-index: 1;
+                transition: all 0.3s ease;
+
+                :global(.dark) & {
+                    background-color: #ffffff;
+                    color: rgb(0, 0, 0);
+                    border: 2px solid grey;
+                }
+            }
+        }        
+    }
+}

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0a0a"/>
+      <stop offset="100%" stop-color="#141414"/>
+    </linearGradient>
+    <linearGradient id="mono-accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="50%" stop-color="#d4d4d4"/>
+      <stop offset="100%" stop-color="#737373"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <rect width="1200" height="675" fill="url(#grid)"/>
+  
+  <circle cx="950" cy="220" r="320" fill="#ffffff" opacity="0.05" filter="blur(70px)"/>
+  
+  <!-- Content Container -->
+  <g transform="translate(100, 140)">
+    <rect x="0" y="0" width="220" height="32" rx="16" fill="rgba(255,255,255,0.1)" stroke="#ffffff" stroke-width="1"/>
+    <text x="110" y="21" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="700" text-anchor="middle" letter-spacing="1">INCUBATION &amp; DESIGN</text>
+    
+    <text x="0" y="110" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="64" font-weight="800" letter-spacing="-1.5">Aakam Shine</text>
+    <text x="0" y="155" fill="#a3a3a3" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="400">Startup Ecosystem &amp; Creative Communication</text>
+    
+    <!-- Feature blocks -->
+    <g transform="translate(0, 220)">
+      <rect x="0" y="0" width="180" height="90" rx="14" fill="#181818" stroke="rgba(255,255,255,0.09)"/>
+      <text x="24" y="38" fill="#ffffff" font-family="system-ui" font-size="11" font-weight="700">COMMUNICATION</text>
+      <text x="24" y="66" fill="#f5f5f5" font-family="system-ui" font-size="17" font-weight="600">Visual Media</text>
+      
+      <rect x="200" y="0" width="180" height="90" rx="14" fill="#181818" stroke="rgba(255,255,255,0.09)"/>
+      <text x="224" y="38" fill="#ffffff" font-family="system-ui" font-size="11" font-weight="700">IDENTITY</text>
+      <text x="224" y="66" fill="#f5f5f5" font-family="system-ui" font-size="17" font-weight="600">Startup UI</text>
+      
+      <rect x="400" y="0" width="180" height="90" rx="14" fill="#181818" stroke="rgba(255,255,255,0.09)"/>
+      <text x="424" y="38" fill="#ffffff" font-family="system-ui" font-size="11" font-weight="700">COMMUNITY</text>
+      <text x="424" y="66" fill="#f5f5f5" font-family="system-ui" font-size="17" font-weight="600">Events &amp; Summits</text>
+    </g>
+  </g>
+  
+  <!-- Right Graphic Illustration -->
+  <g transform="translate(740, 150)">
+    <rect x="0" y="0" width="360" height="360" rx="28" fill="#181818" stroke="rgba(255,255,255,0.12)"/>
+    <rect x="30" y="30" width="300" height="190" rx="18" fill="url(#mono-accent)" opacity="0.9"/>
+    <circle cx="180" cy="125" r="42" fill="#000000" opacity="0.3"/>
+    <path d="M 160 125 L 180 105 L 200 125 L 180 145 Z" fill="#ffffff"/>
+    <rect x="30" y="250" width="180" height="16" rx="8" fill="rgba(255,255,255,0.2)"/>
+    <rect x="30" y="280" width="230" height="12" rx="6" fill="rgba(255,255,255,0.1)"/>
+  </g>
+</svg>

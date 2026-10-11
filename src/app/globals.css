@@ -1,0 +1,296 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================================================
+   01. TYPOGRAPHY SYSTEM: DEBATA × MODERNIST
+   Font A: Debata (Expressive Display Typography)
+   Font B: Modernist / Sk-Modernist (Structured Interface Typography)
+   ========================================================================== */
+
+@font-face {
+  font-family: "Debata";
+  src: url("/fonts/debata/Debata-Regular.woff2") format("woff2"),
+       url("/fonts/debata/Debata-Regular.woff") format("woff"),
+       url("/fonts/debata/Debata-Regular.otf") format("opentype"),
+       url("/fonts/debata/Debata-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Debata";
+  src: url("/fonts/debata/Debata-Bold.woff2") format("woff2"),
+       url("/fonts/debata/Debata-Bold.woff") format("woff"),
+       url("/fonts/debata/Debata-Bold.otf") format("opentype"),
+       url("/fonts/debata/Debata-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Modernist";
+  src: url("/fonts/modernist/Sk-Modernist-Regular.woff2") format("woff2"),
+       url("/fonts/modernist/Sk-Modernist-Regular.woff") format("woff"),
+       url("/fonts/modernist/Sk-Modernist-Regular.otf") format("opentype"),
+       url("/fonts/modernist/Sk-Modernist-Regular.ttf") format("truetype"),
+       local("Sk-Modernist-Regular"),
+       local("Sk-Modernist"),
+       local("Modernist");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Modernist";
+  src: url("/fonts/modernist/Sk-Modernist-Bold.woff2") format("woff2"),
+       url("/fonts/modernist/Sk-Modernist-Bold.woff") format("woff"),
+       url("/fonts/modernist/Sk-Modernist-Bold.otf") format("opentype"),
+       url("/fonts/modernist/Sk-Modernist-Bold.ttf") format("truetype"),
+       local("Sk-Modernist-Bold");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Modernist Mono";
+  src: url("/fonts/modernist/Sk-Modernist-Mono.woff2") format("woff2"),
+       url("/fonts/modernist/Sk-Modernist-Mono.woff") format("woff"),
+       url("/fonts/modernist/Sk-Modernist-Mono.otf") format("opentype"),
+       url("/fonts/modernist/Sk-Modernist-Mono.ttf") format("truetype"),
+       local("Sk-Modernist-Mono");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    /* Typographic Family Variables */
+    --font-debata: "Debata", var(--font-heading), "Space Grotesk", -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-modernist: "Modernist", "Sk-Modernist", var(--font-body), "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-modernist-mono: "Modernist Mono", var(--font-mono), "JetBrains Mono", monospace;
+
+    /* Light Theme Palette */
+    --background: 0 0% 100%;
+    --foreground: 233 26% 8%; /* #090A0F */
+    --surface: 220 14% 97%;
+    --surface-foreground: 233 26% 8%;
+    --card: 0 0% 100%;
+    --card-foreground: 233 26% 8%;
+    --card-border: 220 13% 90%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 233 26% 8%;
+    --primary: 222 100% 60%; /* #326BFF */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 14% 94%;
+    --secondary-foreground: 220 15% 35%;
+    --muted: 220 14% 92%;
+    --muted-foreground: 220 10% 45%;
+    --accent: 190 100% 50%; /* #24D9FF */
+    --accent-foreground: 0 0% 100%;
+    --border: 0 0% 0% / 0.08;
+    --input: 0 0% 0% / 0.12;
+    --ring: 222 100% 60%;
+    --radius: 1rem;
+  }
+
+  .dark {
+    /* Signature Dark Portfolio Palette */
+    /* Primary background: #090A0F */
+    --background: 233 26% 5%;
+    /* Primary text: #F7F8FC */
+    --foreground: 228 35% 98%;
+    /* Secondary background: #11131A */
+    --surface: 228 20% 9%;
+    --surface-foreground: 228 35% 98%;
+    /* Card background: #151821 */
+    --card: 227 20% 11%;
+    --card-foreground: 228 35% 98%;
+    --card-border: 220 20% 18%;
+    --popover: 227 20% 11%;
+    --popover-foreground: 228 35% 98%;
+    /* Electric blue: #326BFF */
+    --primary: 222 100% 60%;
+    --primary-foreground: 0 0% 100%;
+    /* Secondary text / surface: #A5ADBD */
+    --secondary: 228 20% 14%;
+    --secondary-foreground: 220 15% 70%;
+    --muted: 228 20% 16%;
+    --muted-foreground: 220 12% 55%;
+    /* Cyan: #24D9FF */
+    --accent: 190 100% 57%;
+    --accent-foreground: 233 26% 5%;
+    --border: 0 0% 100% / 0.08;
+    --input: 0 0% 100% / 0.12;
+    --ring: 222 100% 60%;
+  }
+
+  * {
+    border-color: rgba(0, 0, 0, 0.08);
+  }
+
+  .dark * {
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: #ffffff;
+    color: #090a0f;
+    color-scheme: light;
+  }
+
+  html.dark {
+    background-color: #090a0f;
+    color: #f7f8fc;
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: inherit;
+    color: inherit;
+    overflow-x: hidden;
+    font-family: var(--font-modernist);
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  /* Display Headings (Debata) */
+  h1, h2, h3 {
+    font-family: var(--font-debata);
+    letter-spacing: -0.025em;
+  }
+
+  /* Supporting Interface Headings & Labels (Modernist) */
+  h4, h5, h6 {
+    font-family: var(--font-modernist);
+    letter-spacing: -0.015em;
+  }
+}
+
+/* ==========================================================================
+   02. TYPOGRAPHIC UTILITIES & HIERARCHY
+   ========================================================================== */
+
+.font-debata {
+  font-family: var(--font-debata);
+}
+
+.font-modernist {
+  font-family: var(--font-modernist);
+}
+
+.font-modernist-mono {
+  font-family: var(--font-modernist-mono);
+}
+
+/* Swiss Modernist Eyebrow Label */
+.eyebrow-label {
+  font-family: var(--font-modernist);
+  font-size: 0.75rem; /* 12px */
+  line-height: 1rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* Hero Fluid Display Headline */
+.hero-display-headline {
+  font-family: var(--font-debata);
+  font-size: clamp(2.5rem, 5vw + 1rem, 4.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  font-weight: 700;
+}
+
+/* Section Display Headline */
+.section-display-headline {
+  font-family: var(--font-debata);
+  font-size: clamp(2rem, 3.5vw + 0.5rem, 3.25rem);
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+}
+
+/* Modernist Body Type Standard: 16-19px desktop, 15-17px mobile */
+.modernist-body {
+  font-family: var(--font-modernist);
+  font-size: clamp(0.9375rem, 0.5vw + 0.85rem, 1.125rem);
+  line-height: 1.65;
+  letter-spacing: -0.01em;
+}
+
+/* ==========================================================================
+   03. SIGNATURE PALETTE & ACCENT GRADIENTS
+   Cyan (#24D9FF), Electric Blue (#326BFF), Violet (#654CFF)
+   Used sparingly for display typography, CTAs, and active states.
+   ========================================================================== */
+
+.nova-gradient-text {
+  background: linear-gradient(135deg, #24d9ff 0%, #326bff 50%, #654cff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nova-gradient-bg {
+  background: linear-gradient(135deg, #24d9ff 0%, #326bff 50%, #654cff 100%);
+}
+
+.nova-gradient-border {
+  border-image: linear-gradient(135deg, #24d9ff, #654cff) 1;
+}
+
+/* Subtle glow effects */
+.glow-cyan {
+  box-shadow: 0 0 35px rgba(36, 217, 255, 0.25);
+}
+
+.glow-blue {
+  box-shadow: 0 0 35px rgba(50, 107, 255, 0.25);
+}
+
+.glow-violet {
+  box-shadow: 0 0 35px rgba(101, 76, 255, 0.25);
+}
+
+/* Glassmorphism surface */
+.nova-glass {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.dark .nova-glass {
+  background: rgba(17, 19, 26, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Screen reader only class for SEO content */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Hide scrollbar utility */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

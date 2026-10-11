@@ -1,0 +1,169 @@
+"use client";
+
+import React from "react";
+import { NovaSectionHeader } from "../ui/NovaSectionHeader";
+import { NovaButton } from "../ui/NovaButton";
+import { FiLayout, FiImage, FiCode, FiCompass, FiCheck } from "react-icons/fi";
+
+const services = [
+  {
+    number: "01",
+    category: "Product & Interaction",
+    title: "UI/UX Design",
+    icon: <FiLayout className="w-6 h-6 text-[#326BFF] dark:text-[#24D9FF]" />,
+    description:
+      "Designing intuitive interfaces and user journeys that make digital products easier to understand, navigate, and scale.",
+    deliverables: [
+      "Wireframes & Low-Fidelity Flows",
+      "Interactive Interface Design",
+      "Responsive Layouts (Mobile to Desktop)",
+      "Clickable Prototypes in Figma",
+      "Structured User Flows & Journey Maps",
+      "Design Systems & Component Kits",
+    ],
+    tools: ["Figma", "FigJam", "Design Systems"],
+    ctaText: "Explore UI/UX",
+    link: "/works?filter=UI/UX",
+  },
+  {
+    number: "02",
+    category: "Visual Communication",
+    title: "Graphic Design",
+    icon: <FiImage className="w-6 h-6 text-[#326BFF] dark:text-[#24D9FF]" />,
+    description:
+      "Creating visually compelling communication for brands, events, social media campaigns, and digital storytelling.",
+    deliverables: [
+      "High-Impact Social Media Creatives",
+      "Event Posters & Summit Banners",
+      "Marketing Collaterals & Signage",
+      "Pitch Deck & Presentation Design",
+      "Promotional Assets & Rollups",
+      "Digital Campaign Visuals",
+    ],
+    tools: ["Canva", "Adobe Photoshop", "CorelDRAW"],
+    ctaText: "Explore Graphic Design",
+    link: "/works?filter=Graphic Design",
+  },
+  {
+    number: "03",
+    category: "Frontend Engineering",
+    title: "Web Design & Development",
+    icon: <FiCode className="w-6 h-6 text-[#326BFF] dark:text-[#24D9FF]" />,
+    description:
+      "Turning ideas into responsive websites with clear layouts, thoughtful interactions, and consistent visual systems.",
+    deliverables: [
+      "Modern Website UI & Layouts",
+      "High-Converting Landing Pages",
+      "Portfolio & Showcase Websites",
+      "Fluid Responsive Implementation",
+      "Interactive Components & Animations",
+      "Clean TypeScript & React/Next.js Code",
+    ],
+    tools: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
+    ctaText: "Explore Web Design",
+    link: "/works?filter=Web Design",
+  },
+  {
+    number: "04",
+    category: "Brand Strategy",
+    title: "Branding & Direction",
+    icon: <FiCompass className="w-6 h-6 text-[#326BFF] dark:text-[#24D9FF]" />,
+    description:
+      "Helping businesses and startups communicate their identity through consistent visual language and meaningful design.",
+    deliverables: [
+      "Logo Concepts & Wordmarks",
+      "Complete Visual Identity Guidelines",
+      "Color Palettes & Harmonies",
+      "Typographic Hierarchy Systems",
+      "Brand Collaterals & Stationery",
+      "Social Media Visual Templates",
+    ],
+    tools: ["ArtZa System", "Brand Identity", "Visual Guidelines"],
+    ctaText: "Explore Branding",
+    link: "/works?filter=Branding",
+  },
+];
+
+export const NovaServices: React.FC = () => {
+  return (
+    <section id="services" className="py-24 sm:py-32 bg-neutral-50 dark:bg-[#090A0F] relative transition-colors">
+      <div className="max-w-[1320px] mx-auto px-5 sm:px-8">
+        <NovaSectionHeader
+          eyebrow="02 / SERVICES"
+          titleStart="What I"
+          titleHighlight="Create"
+          description="From visual identity to digital experiences, I help communicate ideas clearly through design, thoughtful interfaces, and modern web technologies."
+        />
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+          {services.map((service) => (
+            <div
+              key={service.title}
+              className="p-8 sm:p-10 rounded-3xl bg-white dark:bg-[#151821] border border-neutral-200 dark:border-white/[0.08] hover:border-[#326BFF]/40 dark:hover:border-[#326BFF]/40 transition-all duration-300 shadow-sm flex flex-col justify-between group relative overflow-hidden"
+            >
+              <div>
+                {/* Header row: category + number */}
+                <div className="flex items-center justify-between pb-6 mb-6 border-b border-neutral-200 dark:border-white/[0.08]">
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-2xl bg-neutral-100 dark:bg-white/5 border border-neutral-200 dark:border-white/10 flex items-center justify-center group-hover:scale-105 transition-transform">
+                      {service.icon}
+                    </div>
+                    <span className="text-[11px] font-modernist font-semibold tracking-[0.14em] uppercase text-neutral-500 dark:text-[#A5ADBD]">
+                      {service.category}
+                    </span>
+                  </div>
+                  <span className="text-sm font-modernist font-semibold text-[#326BFF] dark:text-[#24D9FF]">
+                    {service.number}
+                  </span>
+                </div>
+
+                {/* Service Card Title: Debata Display */}
+                <h3 className="font-debata text-2xl sm:text-3xl font-bold text-neutral-950 dark:text-[#F7F8FC] mb-4 tracking-[-0.02em] transition-colors">
+                  {service.title}
+                </h3>
+
+                {/* Modernist Description */}
+                <p className="font-modernist text-sm sm:text-base text-neutral-600 dark:text-[#A5ADBD] leading-relaxed mb-8 font-normal">
+                  {service.description}
+                </p>
+
+                {/* Deliverables List: Modernist */}
+                <div className="mb-8">
+                  <div className="text-[11px] font-modernist font-semibold text-neutral-500 dark:text-[#A5ADBD] uppercase tracking-[0.12em] mb-3">
+                    Deliverables &amp; Focus:
+                  </div>
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm font-modernist text-neutral-600 dark:text-[#A5ADBD]">
+                    {service.deliverables.map((item) => (
+                      <li key={item} className="flex items-center gap-2">
+                        <FiCheck className="text-[#326BFF] dark:text-[#24D9FF] w-3.5 h-3.5 flex-shrink-0" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              {/* Footer: Tools + CTA Button */}
+              <div className="pt-6 border-t border-neutral-200 dark:border-white/[0.08] flex flex-wrap items-center justify-between gap-4">
+                <div className="flex flex-wrap gap-1.5">
+                  {service.tools.map((t) => (
+                    <span
+                      key={t}
+                      className="px-2.5 py-1 rounded-md bg-neutral-100 dark:bg-[#11131A] text-[11px] font-modernist text-neutral-600 dark:text-[#A5ADBD] border border-neutral-200 dark:border-white/[0.06]"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+
+                <NovaButton href={service.link} variant="secondary" size="sm">
+                  {service.ctaText}
+                </NovaButton>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
