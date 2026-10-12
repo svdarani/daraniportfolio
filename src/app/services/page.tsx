@@ -12,7 +12,7 @@ const servicesList = [
     number: "01",
     category: "Product & Interaction",
     title: "UI/UX Design",
-    icon: <FiLayout className="w-6 h-6 text-[#326BFF] dark:text-[#24D9FF]" />,
+    icon: <FiLayout className="w-6 h-6 text-black dark:text-white" />,
     description:
       "Designing intuitive interfaces and user journeys that make digital products easier to understand, navigate, and scale.",
     deliverables: [
@@ -29,7 +29,7 @@ const servicesList = [
     number: "02",
     category: "Visual Communication",
     title: "Graphic Design",
-    icon: <FiImage className="w-6 h-6 text-[#326BFF] dark:text-[#24D9FF]" />,
+    icon: <FiImage className="w-6 h-6 text-black dark:text-white" />,
     description:
       "Creating visually compelling communication for brands, events, social media, and digital campaigns.",
     deliverables: [
@@ -46,7 +46,7 @@ const servicesList = [
     number: "03",
     category: "Frontend Engineering",
     title: "Web Design & Development",
-    icon: <FiCode className="w-6 h-6 text-[#326BFF] dark:text-[#24D9FF]" />,
+    icon: <FiCode className="w-6 h-6 text-black dark:text-white" />,
     description:
       "Turning ideas into responsive websites with clear layouts, thoughtful interactions, and consistent visual systems.",
     deliverables: [
@@ -63,7 +63,7 @@ const servicesList = [
     number: "04",
     category: "Brand Strategy",
     title: "Branding & Direction",
-    icon: <FiCompass className="w-6 h-6 text-[#326BFF] dark:text-[#24D9FF]" />,
+    icon: <FiCompass className="w-6 h-6 text-black dark:text-white" />,
     description:
       "Helping businesses and startups communicate their identity through consistent visual language and meaningful design.",
     deliverables: [
@@ -101,23 +101,23 @@ export default function ServicesPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   return (
-    <div className="min-h-screen bg-white text-neutral-900 dark:bg-[#090A0F] dark:text-[#F7F8FC] font-modernist selection:bg-[#326BFF] selection:text-white dark:selection:bg-[#326BFF] dark:selection:text-white transition-colors">
+    <div className="min-h-screen bg-white text-black dark:bg-black dark:text-white font-modernist selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black transition-colors">
       <NovaNavbar />
 
       <main className="pt-32 pb-24 max-w-[1320px] mx-auto px-5 sm:px-8">
         {/* Page Hero: Debata Display Headline */}
         <div className="mb-20">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-neutral-100 dark:bg-[#151821] border border-neutral-200 dark:border-white/[0.08] text-[11px] uppercase tracking-[0.14em] font-modernist font-semibold text-[#326BFF] dark:text-[#24D9FF] mb-5 shadow-sm">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#24D9FF] shadow-[0_0_8px_#24D9FF] animate-pulse" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-neutral-100 dark:bg-[#121212] border border-neutral-200 dark:border-white/10 text-[11px] uppercase tracking-[0.14em] font-modernist font-semibold text-neutral-900 dark:text-neutral-300 mb-5 shadow-sm">
+            <span className="w-1.5 h-1.5 rounded-full bg-black dark:bg-white" />
             <span>SERVICES &amp; CAPABILITIES</span>
           </div>
 
-          <h1 className="font-debata text-4xl sm:text-6xl lg:text-7xl font-bold tracking-[-0.035em] text-neutral-950 dark:text-[#F7F8FC] leading-[1.08] mb-6 max-w-4xl">
+          <h1 className="font-debata text-4xl sm:text-6xl lg:text-7xl font-bold tracking-[-0.035em] text-neutral-950 dark:text-white leading-[1.08] mb-6 max-w-4xl">
             Building brands that{" "}
             <span className="nova-gradient-text">inspire &amp; lead.</span>
           </h1>
 
-          <p className="font-modernist text-lg sm:text-xl text-neutral-600 dark:text-[#A5ADBD] leading-relaxed max-w-3xl font-normal">
+          <p className="font-modernist text-lg sm:text-xl text-neutral-600 dark:text-neutral-400 leading-relaxed max-w-3xl font-normal">
             From visual identity to digital experiences, I help communicate ideas clearly through design, thoughtful interfaces, and modern web technologies.
           </p>
         </div>
@@ -127,39 +127,39 @@ export default function ServicesPage() {
           {servicesList.map((service) => (
             <div
               key={service.title}
-              className="p-8 sm:p-10 rounded-3xl bg-neutral-50 dark:bg-[#151821] border border-neutral-200 dark:border-white/[0.08] hover:border-[#326BFF]/40 dark:hover:border-[#326BFF]/40 transition-all duration-300 shadow-sm flex flex-col justify-between"
+              className="p-8 sm:p-10 rounded-3xl bg-neutral-50 dark:bg-[#121212] border border-neutral-200 dark:border-white/10 hover:border-black/40 dark:hover:border-white/40 transition-all duration-300 shadow-sm flex flex-col justify-between"
             >
               <div>
-                <div className="flex items-center justify-between pb-6 mb-6 border-b border-neutral-200 dark:border-white/[0.08]">
+                <div className="flex items-center justify-between pb-6 mb-6 border-b border-neutral-200 dark:border-white/10">
                   <div className="flex items-center gap-3">
                     <div className="w-12 h-12 rounded-2xl bg-white dark:bg-white/5 border border-neutral-200 dark:border-white/10 flex items-center justify-center">
                       {service.icon}
                     </div>
-                    <span className="text-[11px] font-modernist font-semibold uppercase tracking-[0.14em] text-[#326BFF] dark:text-[#24D9FF]">
+                    <span className="text-[11px] font-modernist font-semibold uppercase tracking-[0.14em] text-neutral-900 dark:text-neutral-300">
                       {service.category}
                     </span>
                   </div>
-                  <span className="text-sm font-modernist font-semibold text-[#326BFF] dark:text-[#24D9FF]">
+                  <span className="text-sm font-modernist font-semibold text-neutral-900 dark:text-neutral-300">
                     {service.number}
                   </span>
                 </div>
 
-                <h2 className="font-debata text-2xl sm:text-3xl font-bold text-neutral-950 dark:text-[#F7F8FC] mb-4 tracking-tight">
+                <h2 className="font-debata text-2xl sm:text-3xl font-bold text-neutral-950 dark:text-white mb-4 tracking-tight">
                   {service.title}
                 </h2>
 
-                <p className="font-modernist text-base text-neutral-600 dark:text-[#A5ADBD] leading-relaxed mb-8">
+                <p className="font-modernist text-base text-neutral-600 dark:text-neutral-400 leading-relaxed mb-8">
                   {service.description}
                 </p>
 
                 <div className="mb-8">
-                  <div className="text-[11px] font-modernist font-semibold uppercase tracking-[0.12em] text-neutral-500 dark:text-[#A5ADBD] mb-3">
+                  <div className="text-[11px] font-modernist font-semibold uppercase tracking-[0.12em] text-neutral-500 dark:text-neutral-400 mb-3">
                     Deliverables &amp; Solutions:
                   </div>
-                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-sm font-modernist text-neutral-600 dark:text-[#A5ADBD]">
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-sm font-modernist text-neutral-600 dark:text-neutral-400">
                     {service.deliverables.map((d) => (
                       <li key={d} className="flex items-start gap-2">
-                        <FiCheck className="text-[#326BFF] dark:text-[#24D9FF] w-4 h-4 mt-0.5 flex-shrink-0" />
+                        <FiCheck className="text-black dark:text-white w-4 h-4 mt-0.5 flex-shrink-0" />
                         <span>{d}</span>
                       </li>
                     ))}
@@ -167,12 +167,12 @@ export default function ServicesPage() {
                 </div>
               </div>
 
-              <div className="pt-6 border-t border-neutral-200 dark:border-white/[0.08] flex items-center justify-between">
+              <div className="pt-6 border-t border-neutral-200 dark:border-white/10 flex items-center justify-between">
                 <div className="flex flex-wrap gap-1.5">
                   {service.tools.map((t) => (
                     <span
                       key={t}
-                      className="px-2.5 py-1 rounded-md bg-white dark:bg-[#11131A] text-xs font-modernist text-neutral-600 dark:text-[#A5ADBD] border border-neutral-200 dark:border-white/[0.06]"
+                      className="px-2.5 py-1 rounded-md bg-white dark:bg-[#0a0a0a] text-xs font-modernist text-neutral-600 dark:text-neutral-400 border border-neutral-200 dark:border-white/10"
                     >
                       {t}
                     </span>
@@ -202,25 +202,25 @@ export default function ServicesPage() {
               return (
                 <div
                   key={faq.q}
-                  className="rounded-2xl bg-neutral-50 dark:bg-[#151821] border border-neutral-200 dark:border-white/[0.08] overflow-hidden transition-colors shadow-sm"
+                  className="rounded-2xl bg-neutral-50 dark:bg-[#121212] border border-neutral-200 dark:border-white/10 overflow-hidden transition-colors shadow-sm"
                 >
                   <button
                     type="button"
                     onClick={() => setOpenFaq(isOpen ? null : idx)}
                     className="w-full p-6 text-left flex items-center justify-between gap-4 cursor-pointer"
                   >
-                    <span className="font-debata text-base sm:text-lg font-bold text-neutral-950 dark:text-[#F7F8FC]">
+                    <span className="font-debata text-base sm:text-lg font-bold text-neutral-950 dark:text-white">
                       {faq.q}
                     </span>
                     <FiChevronDown
-                      className={`w-5 h-5 text-[#326BFF] dark:text-[#24D9FF] transition-transform duration-300 flex-shrink-0 ${
+                      className={`w-5 h-5 text-black dark:text-white transition-transform duration-300 flex-shrink-0 ${
                         isOpen ? "rotate-180" : ""
                       }`}
                     />
                   </button>
 
                   {isOpen && (
-                    <div className="px-6 pb-6 pt-0 font-modernist text-sm sm:text-base text-neutral-600 dark:text-[#A5ADBD] leading-relaxed border-t border-neutral-200 dark:border-white/[0.04]">
+                    <div className="px-6 pb-6 pt-0 font-modernist text-sm sm:text-base text-neutral-600 dark:text-neutral-400 leading-relaxed border-t border-neutral-200 dark:border-white/10">
                       {faq.a}
                     </div>
                   )}
@@ -231,12 +231,12 @@ export default function ServicesPage() {
         </section>
 
         {/* Bottom CTA Banner */}
-        <section className="p-10 sm:p-14 rounded-3xl bg-neutral-100 dark:bg-[#151821] border border-neutral-200 dark:border-white/[0.08] flex flex-col md:flex-row items-center justify-between gap-8 shadow-sm">
+        <section className="p-10 sm:p-14 rounded-3xl bg-neutral-100 dark:bg-[#121212] border border-neutral-200 dark:border-white/10 flex flex-col md:flex-row items-center justify-between gap-8 shadow-sm">
           <div>
             <h2 className="font-debata text-2xl sm:text-4xl font-bold text-neutral-950 dark:text-white mb-2 tracking-tight">
               Ready to start your design project?
             </h2>
-            <p className="font-modernist text-sm sm:text-base text-neutral-600 dark:text-[#A5ADBD]">
+            <p className="font-modernist text-sm sm:text-base text-neutral-600 dark:text-neutral-400">
               Let&apos;s discuss your creative goals and build something thoughtful together.
             </p>
           </div>

@@ -62,7 +62,7 @@ const collaborations = [
 
 export const NovaCollaborations: React.FC = () => {
   return (
-    <section className="py-24 sm:py-32 bg-white dark:bg-[#090A0F] relative transition-colors">
+    <section className="section-contain py-24 sm:py-32 bg-white dark:bg-black relative transition-colors">
       <div className="max-w-[1320px] mx-auto px-5 sm:px-8">
         <NovaSectionHeader
           eyebrow="COLLABORATIONS"
@@ -75,36 +75,36 @@ export const NovaCollaborations: React.FC = () => {
           {collaborations.map((collab) => (
             <div
               key={collab.organization}
-              className="p-8 rounded-3xl bg-neutral-50 dark:bg-[#151821] border border-neutral-200 dark:border-white/[0.08] hover:border-[#326BFF]/40 dark:hover:border-[#326BFF]/40 transition-all duration-300 shadow-sm flex flex-col justify-between group"
+              className="p-8 rounded-3xl bg-neutral-50 dark:bg-[#121212] border border-neutral-200 dark:border-white/10 hover:border-black/40 dark:hover:border-white/40 transition-all duration-300 shadow-sm flex flex-col justify-between group"
             >
               <div>
-                <div className="flex items-center justify-between pb-4 mb-4 border-b border-neutral-200 dark:border-white/[0.08]">
-                  <span className="text-[11px] font-modernist uppercase tracking-wider text-[#326BFF] dark:text-[#24D9FF] font-semibold">
+                <div className="flex items-center justify-between pb-4 mb-4 border-b border-neutral-200 dark:border-white/10">
+                  <span className="text-[11px] font-modernist uppercase tracking-wider text-neutral-900 dark:text-neutral-300 font-semibold">
                     {collab.type}
                   </span>
-                  <span className="text-xs font-modernist text-neutral-400 dark:text-[#A5ADBD]">
+                  <span className="text-xs font-modernist text-neutral-400 dark:text-neutral-500">
                     {collab.period}
                   </span>
                 </div>
 
-                <h3 className="font-modernist text-lg font-bold text-neutral-950 dark:text-[#F7F8FC] mb-1 transition-colors">
+                <h3 className="font-modernist text-lg font-bold text-neutral-950 dark:text-white mb-1 transition-colors">
                   {collab.organization}
                 </h3>
 
-                <div className="text-xs font-modernist text-neutral-800 dark:text-white font-semibold mb-4">
+                <div className="text-xs font-modernist text-neutral-800 dark:text-neutral-200 font-semibold mb-4">
                   {collab.role}
                 </div>
 
-                <p className="font-modernist text-xs sm:text-sm text-neutral-600 dark:text-[#A5ADBD] leading-relaxed mb-6 font-normal">
+                <p className="font-modernist text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed mb-6 font-normal">
                   {collab.description}
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-neutral-200 dark:border-white/[0.06] flex flex-wrap gap-1.5">
+              <div className="pt-4 border-t border-neutral-200 dark:border-white/10 flex flex-wrap gap-1.5">
                 {collab.focus.map((f) => (
                   <span
                     key={f}
-                    className="px-2.5 py-0.5 rounded-md bg-neutral-100 dark:bg-[#11131A] text-[10px] font-modernist text-neutral-600 dark:text-[#A5ADBD] border border-neutral-200 dark:border-white/[0.06]"
+                    className="px-2.5 py-0.5 rounded-md bg-neutral-100 dark:bg-[#0a0a0a] text-[10px] font-modernist text-neutral-600 dark:text-neutral-400 border border-neutral-200 dark:border-white/10"
                   >
                     {f}
                   </span>

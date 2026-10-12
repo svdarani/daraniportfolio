@@ -28,8 +28,8 @@ export const NovaSectionHeader: React.FC<NovaSectionHeaderProps> = ({
       } ${className}`}
     >
       {/* Eyebrow Label: Swiss Modernist Structure */}
-      <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-neutral-100 dark:bg-[#151821] border border-neutral-300 dark:border-white/[0.08] text-[11px] sm:text-xs uppercase tracking-[0.14em] font-modernist font-semibold text-neutral-700 dark:text-[#A5ADBD] mb-4 shadow-sm backdrop-blur-md">
-        <span className="w-1.5 h-1.5 rounded-full bg-[#24D9FF] shadow-[0_0_8px_#24D9FF] animate-pulse" />
+      <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-neutral-100 dark:bg-[#121212] border border-neutral-300 dark:border-white/10 text-[11px] sm:text-xs uppercase tracking-[0.14em] font-modernist font-semibold text-neutral-800 dark:text-neutral-300 mb-4 shadow-sm">
+        <span className="w-1.5 h-1.5 rounded-full bg-black dark:bg-white shadow-[0_0_8px_rgba(255,255,255,0.7)] animate-pulse" />
         <span>{eyebrow}</span>
       </div>
 

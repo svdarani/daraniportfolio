@@ -66,7 +66,7 @@ export const NovaContact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-24 sm:py-32 bg-neutral-50 dark:bg-[#090A0F] relative transition-colors">
+    <section id="contact" className="section-contain py-24 sm:py-32 bg-neutral-50 dark:bg-black relative transition-colors">
       <div className="max-w-[1320px] mx-auto px-5 sm:px-8">
         <NovaSectionHeader
           eyebrow="05 / CONTACT"
@@ -78,25 +78,25 @@ export const NovaContact: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
           {/* Left Column: Direct Contact Info & Socials (lg:col-span-5) */}
           <div className="lg:col-span-5 flex flex-col gap-6">
-            <div className="p-8 sm:p-10 rounded-3xl bg-white dark:bg-[#151821] border border-neutral-200 dark:border-white/[0.08] shadow-sm">
-              <h3 className="font-debata text-xl sm:text-2xl font-bold text-neutral-950 dark:text-[#F7F8FC] mb-2">
+            <div className="p-8 sm:p-10 rounded-3xl bg-white dark:bg-[#121212] border border-neutral-200 dark:border-white/10 shadow-sm">
+              <h3 className="font-debata text-xl sm:text-2xl font-bold text-neutral-950 dark:text-white mb-2">
                 Let&apos;s Work Together
               </h3>
-              <p className="font-modernist text-sm text-neutral-600 dark:text-[#A5ADBD] leading-relaxed mb-8 font-normal">
+              <p className="font-modernist text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed mb-8 font-normal">
                 Open to design inquiries, creative consultations, frontend collaborations, and internship opportunities.
               </p>
 
               <div className="space-y-6">
                 {/* Email */}
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-neutral-100 dark:bg-white/5 border border-neutral-200 dark:border-white/10 flex items-center justify-center text-[#326BFF] dark:text-[#24D9FF] flex-shrink-0">
+                  <div className="w-12 h-12 rounded-2xl bg-neutral-100 dark:bg-white/5 border border-neutral-200 dark:border-white/10 flex items-center justify-center text-black dark:text-white flex-shrink-0">
                     <FiMail className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="text-[11px] font-modernist uppercase tracking-wider text-neutral-500 dark:text-[#A5ADBD]">Email Address</div>
+                    <div className="text-[11px] font-modernist uppercase tracking-wider text-neutral-500 dark:text-neutral-400">Email Address</div>
                     <a
                       href={`mailto:${socialsData.email}`}
-                      className="text-sm sm:text-base font-modernist font-semibold text-neutral-950 dark:text-[#F7F8FC] hover:text-[#326BFF] dark:hover:text-[#24D9FF] transition-colors"
+                      className="text-sm sm:text-base font-modernist font-semibold text-neutral-950 dark:text-white hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors"
                     >
                       {socialsData.email}
                     </a>
@@ -105,14 +105,14 @@ export const NovaContact: React.FC = () => {
 
                 {/* Phone */}
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-neutral-100 dark:bg-white/5 border border-neutral-200 dark:border-white/10 flex items-center justify-center text-[#326BFF] dark:text-[#24D9FF] flex-shrink-0">
+                  <div className="w-12 h-12 rounded-2xl bg-neutral-100 dark:bg-white/5 border border-neutral-200 dark:border-white/10 flex items-center justify-center text-black dark:text-white flex-shrink-0">
                     <FiPhone className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="text-[11px] font-modernist uppercase tracking-wider text-neutral-500 dark:text-[#A5ADBD]">Phone / WhatsApp</div>
+                    <div className="text-[11px] font-modernist uppercase tracking-wider text-neutral-500 dark:text-neutral-400">Phone / WhatsApp</div>
                     <a
                       href={`tel:${socialsData.phone}`}
-                      className="text-sm sm:text-base font-modernist font-semibold text-neutral-950 dark:text-[#F7F8FC] hover:text-[#326BFF] dark:hover:text-[#24D9FF] transition-colors"
+                      className="text-sm sm:text-base font-modernist font-semibold text-neutral-950 dark:text-white hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors"
                     >
                       {socialsData.phone}
                     </a>
@@ -121,12 +121,12 @@ export const NovaContact: React.FC = () => {
 
                 {/* Location */}
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-neutral-100 dark:bg-white/5 border border-neutral-200 dark:border-white/10 flex items-center justify-center text-[#326BFF] dark:text-[#24D9FF] flex-shrink-0">
+                  <div className="w-12 h-12 rounded-2xl bg-neutral-100 dark:bg-white/5 border border-neutral-200 dark:border-white/10 flex items-center justify-center text-black dark:text-white flex-shrink-0">
                     <FiMapPin className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="text-[11px] font-modernist uppercase tracking-wider text-neutral-500 dark:text-[#A5ADBD]">Location</div>
-                    <div className="text-sm sm:text-base font-modernist font-semibold text-neutral-950 dark:text-[#F7F8FC]">
+                    <div className="text-[11px] font-modernist uppercase tracking-wider text-neutral-500 dark:text-neutral-400">Location</div>
+                    <div className="text-sm sm:text-base font-modernist font-semibold text-neutral-950 dark:text-white">
                       {socialsData.location}
                     </div>
                   </div>
@@ -134,8 +134,8 @@ export const NovaContact: React.FC = () => {
               </div>
 
               {/* Social Channels Strip */}
-              <div className="mt-8 pt-8 border-t border-neutral-200 dark:border-white/[0.08]">
-                <div className="text-[11px] font-modernist uppercase tracking-[0.12em] text-neutral-500 dark:text-[#A5ADBD] mb-4">
+              <div className="mt-8 pt-8 border-t border-neutral-200 dark:border-white/10">
+                <div className="text-[11px] font-modernist uppercase tracking-[0.12em] text-neutral-500 dark:text-neutral-400 mb-4">
                   Connect on Socials:
                 </div>
                 <div className="flex items-center gap-3">
@@ -143,7 +143,7 @@ export const NovaContact: React.FC = () => {
                     href={socialsData.links.find((l) => l.platform === "GitHub")?.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-xl bg-neutral-100 dark:bg-[#11131A] border border-neutral-200 dark:border-white/10 flex items-center justify-center text-neutral-600 hover:text-[#326BFF] dark:text-[#A5ADBD] dark:hover:text-white transition-all hover:scale-105"
+                    className="w-10 h-10 rounded-xl bg-neutral-100 dark:bg-[#0a0a0a] border border-neutral-200 dark:border-white/10 flex items-center justify-center text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white transition-all hover:scale-105"
                     aria-label="GitHub profile"
                   >
                     <FiGithub className="w-5 h-5" />
@@ -152,7 +152,7 @@ export const NovaContact: React.FC = () => {
                     href={socialsData.links.find((l) => l.platform === "LinkedIn")?.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-xl bg-neutral-100 dark:bg-[#11131A] border border-neutral-200 dark:border-white/10 flex items-center justify-center text-neutral-600 hover:text-[#326BFF] dark:text-[#A5ADBD] dark:hover:text-white transition-all hover:scale-105"
+                    className="w-10 h-10 rounded-xl bg-neutral-100 dark:bg-[#0a0a0a] border border-neutral-200 dark:border-white/10 flex items-center justify-center text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white transition-all hover:scale-105"
                     aria-label="LinkedIn profile"
                   >
                     <FiLinkedin className="w-5 h-5" />
@@ -161,7 +161,7 @@ export const NovaContact: React.FC = () => {
                     href={socialsData.links.find((l) => l.platform === "Instagram")?.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-xl bg-neutral-100 dark:bg-[#11131A] border border-neutral-200 dark:border-white/10 flex items-center justify-center text-neutral-600 hover:text-[#326BFF] dark:text-[#A5ADBD] dark:hover:text-white transition-all hover:scale-105"
+                    className="w-10 h-10 rounded-xl bg-neutral-100 dark:bg-[#0a0a0a] border border-neutral-200 dark:border-white/10 flex items-center justify-center text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white transition-all hover:scale-105"
                     aria-label="Instagram profile"
                   >
                     <FiInstagram className="w-5 h-5" />
@@ -173,22 +173,22 @@ export const NovaContact: React.FC = () => {
 
           {/* Right Column: Working Contact Form (lg:col-span-7) */}
           <div className="lg:col-span-7">
-            <div className="p-8 sm:p-10 rounded-3xl bg-white dark:bg-[#151821] border border-neutral-200 dark:border-white/[0.08] shadow-sm relative">
+            <div className="p-8 sm:p-10 rounded-3xl bg-white dark:bg-[#121212] border border-neutral-200 dark:border-white/10 shadow-sm relative">
               {submitted ? (
                 <div className="py-12 flex flex-col items-center text-center">
-                  <div className="w-16 h-16 rounded-2xl bg-neutral-100 dark:bg-[#11131A] border border-neutral-300 dark:border-white/10 flex items-center justify-center text-[#326BFF] dark:text-[#24D9FF] mb-6 shadow-sm">
+                  <div className="w-16 h-16 rounded-2xl bg-neutral-100 dark:bg-[#0a0a0a] border border-neutral-300 dark:border-white/10 flex items-center justify-center text-black dark:text-white mb-6 shadow-sm">
                     <FiCheckCircle className="w-8 h-8" />
                   </div>
                   <h4 className="font-debata text-2xl font-bold text-neutral-950 dark:text-white mb-2">
                     Message Received!
                   </h4>
-                  <p className="font-modernist text-sm sm:text-base text-neutral-600 dark:text-[#A5ADBD] max-w-md mb-8">
+                  <p className="font-modernist text-sm sm:text-base text-neutral-600 dark:text-neutral-400 max-w-md mb-8">
                     Thank you for reaching out! I will review your note and get back to you promptly at your email address.
                   </p>
                   <button
                     type="button"
                     onClick={() => setSubmitted(false)}
-                    className="px-6 py-2.5 rounded-full bg-neutral-100 dark:bg-[#11131A] border border-neutral-200 dark:border-white/10 text-xs font-modernist text-neutral-900 dark:text-white hover:bg-neutral-200 dark:hover:bg-white/10 transition-colors cursor-pointer"
+                    className="px-6 py-2.5 rounded-full bg-neutral-100 dark:bg-[#0a0a0a] border border-neutral-200 dark:border-white/10 text-xs font-modernist text-neutral-900 dark:text-white hover:bg-neutral-200 dark:hover:bg-neutral-800 transition-colors cursor-pointer"
                   >
                     Send Another Message
                   </button>
@@ -200,9 +200,9 @@ export const NovaContact: React.FC = () => {
                     <div>
                       <label
                         htmlFor="name"
-                        className="block text-xs font-modernist text-neutral-600 dark:text-[#A5ADBD] uppercase tracking-wider mb-2 font-medium"
+                        className="block text-xs font-modernist text-neutral-600 dark:text-neutral-400 uppercase tracking-wider mb-2 font-medium"
                       >
-                        Your Name <span className="text-[#326BFF] dark:text-[#24D9FF]">*</span>
+                        Your Name <span className="text-black dark:text-white">*</span>
                       </label>
                       <input
                         type="text"
@@ -213,10 +213,10 @@ export const NovaContact: React.FC = () => {
                           if (errors.name) setErrors({ ...errors, name: "" });
                         }}
                         placeholder="Darani Viswanathan"
-                        className={`w-full px-4 py-3 rounded-xl bg-neutral-50 dark:bg-[#11131A] border text-sm font-modernist text-neutral-900 dark:text-[#F7F8FC] placeholder-neutral-400 dark:placeholder-neutral-500 focus:outline-none focus:ring-1 transition-colors ${
+                        className={`w-full px-4 py-3 rounded-xl bg-neutral-50 dark:bg-[#0a0a0a] border text-sm font-modernist text-neutral-900 dark:text-white placeholder-neutral-400 dark:placeholder-neutral-500 focus:outline-none focus:ring-1 transition-colors ${
                           errors.name
                             ? "border-red-500/50 focus:ring-red-500/50"
-                            : "border-neutral-200 dark:border-white/[0.08] focus:border-[#326BFF] dark:focus:border-[#326BFF] focus:ring-[#326BFF]/20"
+                            : "border-neutral-200 dark:border-white/10 focus:border-black dark:focus:border-white focus:ring-black/20 dark:focus:ring-white/20"
                         }`}
                       />
                       {errors.name && (
@@ -230,9 +230,9 @@ export const NovaContact: React.FC = () => {
                     <div>
                       <label
                         htmlFor="email"
-                        className="block text-xs font-modernist text-neutral-600 dark:text-[#A5ADBD] uppercase tracking-wider mb-2 font-medium"
+                        className="block text-xs font-modernist text-neutral-600 dark:text-neutral-400 uppercase tracking-wider mb-2 font-medium"
                       >
-                        Email Address <span className="text-[#326BFF] dark:text-[#24D9FF]">*</span>
+                        Email Address <span className="text-black dark:text-white">*</span>
                       </label>
                       <input
                         type="email"
@@ -243,10 +243,10 @@ export const NovaContact: React.FC = () => {
                           if (errors.email) setErrors({ ...errors, email: "" });
                         }}
                         placeholder="yourname@example.com"
-                        className={`w-full px-4 py-3 rounded-xl bg-neutral-50 dark:bg-[#11131A] border text-sm font-modernist text-neutral-900 dark:text-[#F7F8FC] placeholder-neutral-400 dark:placeholder-neutral-500 focus:outline-none focus:ring-1 transition-colors ${
+                        className={`w-full px-4 py-3 rounded-xl bg-neutral-50 dark:bg-[#0a0a0a] border text-sm font-modernist text-neutral-900 dark:text-white placeholder-neutral-400 dark:placeholder-neutral-500 focus:outline-none focus:ring-1 transition-colors ${
                           errors.email
                             ? "border-red-500/50 focus:ring-red-500/50"
-                            : "border-neutral-200 dark:border-white/[0.08] focus:border-[#326BFF] dark:focus:border-[#326BFF] focus:ring-[#326BFF]/20"
+                            : "border-neutral-200 dark:border-white/10 focus:border-black dark:focus:border-white focus:ring-black/20 dark:focus:ring-white/20"
                         }`}
                       />
                       {errors.email && (
@@ -263,7 +263,7 @@ export const NovaContact: React.FC = () => {
                     <div>
                       <label
                         htmlFor="organization"
-                        className="block text-xs font-modernist text-neutral-600 dark:text-[#A5ADBD] uppercase tracking-wider mb-2 font-medium"
+                        className="block text-xs font-modernist text-neutral-600 dark:text-neutral-400 uppercase tracking-wider mb-2 font-medium"
                       >
                         Organization / Venture (Optional)
                       </label>
@@ -275,14 +275,14 @@ export const NovaContact: React.FC = () => {
                           setFormData({ ...formData, organization: e.target.value })
                         }
                         placeholder="Startup / Company / Event"
-                        className="w-full px-4 py-3 rounded-xl bg-neutral-50 dark:bg-[#11131A] border border-neutral-200 dark:border-white/[0.08] text-sm font-modernist text-neutral-900 dark:text-[#F7F8FC] placeholder-neutral-400 dark:placeholder-neutral-500 focus:outline-none focus:border-[#326BFF] dark:focus:border-[#326BFF] focus:ring-1 focus:ring-[#326BFF]/20 transition-colors"
+                        className="w-full px-4 py-3 rounded-xl bg-neutral-50 dark:bg-[#0a0a0a] border border-neutral-200 dark:border-white/10 text-sm font-modernist text-neutral-900 dark:text-white placeholder-neutral-400 dark:placeholder-neutral-500 focus:outline-none focus:border-black dark:focus:border-white focus:ring-1 focus:ring-black/20 dark:focus:ring-white/20 transition-colors"
                       />
                     </div>
 
                     <div>
                       <label
                         htmlFor="projectType"
-                        className="block text-xs font-modernist text-neutral-600 dark:text-[#A5ADBD] uppercase tracking-wider mb-2 font-medium"
+                        className="block text-xs font-modernist text-neutral-600 dark:text-neutral-400 uppercase tracking-wider mb-2 font-medium"
                       >
                         Project Type
                       </label>
@@ -292,10 +292,10 @@ export const NovaContact: React.FC = () => {
                         onChange={(e) =>
                           setFormData({ ...formData, projectType: e.target.value })
                         }
-                        className="w-full px-4 py-3 rounded-xl bg-neutral-50 dark:bg-[#11131A] border border-neutral-200 dark:border-white/[0.08] text-sm font-modernist text-neutral-900 dark:text-[#F7F8FC] focus:outline-none focus:border-[#326BFF] dark:focus:border-[#326BFF] focus:ring-1 focus:ring-[#326BFF]/20 transition-colors"
+                        className="w-full px-4 py-3 rounded-xl bg-neutral-50 dark:bg-[#0a0a0a] border border-neutral-200 dark:border-white/10 text-sm font-modernist text-neutral-900 dark:text-white focus:outline-none focus:border-black dark:focus:border-white focus:ring-1 focus:ring-black/20 dark:focus:ring-white/20 transition-colors"
                       >
                         {projectTypes.map((type) => (
-                          <option key={type} value={type} className="bg-white dark:bg-[#11131A] text-neutral-900 dark:text-white">
+                          <option key={type} value={type} className="bg-white dark:bg-[#121212] text-neutral-900 dark:text-white">
                             {type}
                           </option>
                         ))}
@@ -307,9 +307,9 @@ export const NovaContact: React.FC = () => {
                   <div>
                     <label
                       htmlFor="message"
-                      className="block text-xs font-modernist text-neutral-600 dark:text-[#A5ADBD] uppercase tracking-wider mb-2 font-medium"
+                      className="block text-xs font-modernist text-neutral-600 dark:text-neutral-400 uppercase tracking-wider mb-2 font-medium"
                     >
-                      Project Details &amp; Message <span className="text-[#326BFF] dark:text-[#24D9FF]">*</span>
+                      Project Details &amp; Message <span className="text-black dark:text-white">*</span>
                     </label>
                     <textarea
                       id="message"
@@ -320,10 +320,10 @@ export const NovaContact: React.FC = () => {
                         if (errors.message) setErrors({ ...errors, message: "" });
                       }}
                       placeholder="Tell me about what you are planning, timelines, or requirements..."
-                      className={`w-full px-4 py-3 rounded-xl bg-neutral-50 dark:bg-[#11131A] border text-sm font-modernist text-neutral-900 dark:text-[#F7F8FC] placeholder-neutral-400 dark:placeholder-neutral-500 focus:outline-none focus:ring-1 transition-colors resize-none ${
+                      className={`w-full px-4 py-3 rounded-xl bg-neutral-50 dark:bg-[#0a0a0a] border text-sm font-modernist text-neutral-900 dark:text-white placeholder-neutral-400 dark:placeholder-neutral-500 focus:outline-none focus:ring-1 transition-colors resize-none ${
                         errors.message
                           ? "border-red-500/50 focus:ring-red-500/50"
-                          : "border-neutral-200 dark:border-white/[0.08] focus:border-[#326BFF] dark:focus:border-[#326BFF] focus:ring-[#326BFF]/20"
+                          : "border-neutral-200 dark:border-white/10 focus:border-black dark:focus:border-white focus:ring-black/20 dark:focus:ring-white/20"
                       }`}
                     />
                     {errors.message && (
@@ -345,7 +345,7 @@ export const NovaContact: React.FC = () => {
                       {isSubmitting ? "Sending..." : "Submit Message"}
                     </NovaButton>
 
-                    <span className="text-[11px] font-modernist text-neutral-500 dark:text-[#A5ADBD]">
+                    <span className="text-[11px] font-modernist text-neutral-500 dark:text-neutral-400">
                       Responses typically within 24 hours.
                     </span>
                   </div>

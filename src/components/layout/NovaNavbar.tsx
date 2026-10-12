@@ -23,10 +23,25 @@ export const NovaNavbar: React.FC = () => {
   const pathname = usePathname();
 
   useEffect(() => {
+    let ticking = false;
+    let lastState = window.scrollY > 20;
+    if (lastState) setScrolled(true);
+
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const isScrolled = window.scrollY > 20;
+          if (isScrolled !== lastState) {
+            lastState = isScrolled;
+            setScrolled(isScrolled);
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
-    window.addEventListener("scroll", handleScroll);
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -53,7 +68,7 @@ export const NovaNavbar: React.FC = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transform-gpu transition-all duration-300 ${
         scrolled
           ? "bg-white/90 dark:bg-[#090A0F]/90 backdrop-blur-md border-b border-neutral-200 dark:border-white/[0.08] shadow-sm dark:shadow-[0_4px_30px_rgba(0,0,0,0.5)] py-3.5"
           : "bg-transparent py-5"
@@ -66,16 +81,16 @@ export const NovaNavbar: React.FC = () => {
           className="group flex items-center gap-3 select-none"
           onClick={() => setIsOpen(false)}
         >
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#24D9FF] via-[#326BFF] to-[#654CFF] p-[1.5px] transition-transform duration-300 group-hover:scale-105 shadow-[0_0_15px_rgba(50,107,255,0.25)]">
-            <div className="w-full h-full bg-white dark:bg-[#090A0F] rounded-[10px] flex items-center justify-center font-debata font-bold text-sm tracking-wider text-neutral-900 dark:text-white">
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-white via-neutral-400 to-neutral-700 p-[1.5px] transition-transform duration-300 group-hover:scale-105 shadow-[0_0_15px_rgba(255,255,255,0.12)]">
+            <div className="w-full h-full bg-white dark:bg-black rounded-[10px] flex items-center justify-center font-debata font-bold text-sm tracking-wider text-black dark:text-white">
               DV
             </div>
           </div>
           <div className="flex flex-col">
-            <span className="font-debata font-bold text-base tracking-tight text-neutral-900 dark:text-white group-hover:text-[#326BFF] transition-colors">
+            <span className="font-debata font-bold text-base tracking-tight text-neutral-900 dark:text-white group-hover:text-neutral-500 dark:group-hover:text-neutral-300 transition-colors">
               Darani Viswanathan
             </span>
-            <span className="text-[11px] font-modernist text-neutral-500 dark:text-[#A5ADBD] tracking-wide">
+            <span className="text-[11px] font-modernist text-neutral-500 dark:text-neutral-400 tracking-wide">
               Creative Designer &amp; Developer
             </span>
           </div>
@@ -99,13 +114,13 @@ export const NovaNavbar: React.FC = () => {
                 href={link.href}
                 className={`relative px-4 py-1.5 rounded-full text-sm font-modernist font-medium transition-all duration-200 ${
                   isActive
-                    ? "text-[#326BFF] dark:text-white bg-white dark:bg-white/[0.1] shadow-sm font-semibold"
-                    : "text-neutral-600 hover:text-black dark:text-[#A5ADBD] dark:hover:text-white hover:bg-neutral-200/50 dark:hover:bg-white/[0.04]"
+                    ? "text-white bg-black dark:text-black dark:bg-white shadow-sm font-semibold"
+                    : "text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white hover:bg-neutral-200/50 dark:hover:bg-white/[0.04]"
                 }`}
               >
                 {link.name}
                 {isActive && (
-                  <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-[#326BFF] shadow-[0_0_6px_#326BFF]" />
+                  <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-white dark:bg-black shadow-[0_0_6px_rgba(255,255,255,0.8)]" />
                 )}
               </Link>
             );
@@ -154,13 +169,13 @@ export const NovaNavbar: React.FC = () => {
                   onClick={() => setIsOpen(false)}
                   className={`px-4 py-3 rounded-xl text-lg font-modernist font-medium transition-colors flex items-center justify-between ${
                     isActive
-                      ? "text-[#326BFF] dark:text-white bg-neutral-100 dark:bg-[#151821] border border-neutral-300 dark:border-white/10 font-semibold"
-                      : "text-neutral-600 hover:text-black dark:text-[#A5ADBD] dark:hover:text-white hover:bg-neutral-100/50 dark:hover:bg-white/[0.04]"
+                      ? "text-black dark:text-white bg-neutral-200 dark:bg-neutral-900 border border-neutral-300 dark:border-white/20 font-semibold"
+                      : "text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white hover:bg-neutral-100/50 dark:hover:bg-white/[0.04]"
                   }`}
                 >
                   <span>{link.name}</span>
                   {isActive && (
-                    <span className="w-2 h-2 rounded-full bg-[#326BFF] shadow-[0_0_8px_#326BFF]" />
+                    <span className="w-2 h-2 rounded-full bg-black dark:bg-white shadow-[0_0_8px_rgba(255,255,255,0.8)]" />
                   )}
                 </Link>
               );
@@ -190,7 +205,7 @@ export const NovaNavbar: React.FC = () => {
                 href={socialsData.links.find((l) => l.platform === "GitHub")?.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-[#326BFF] dark:hover:text-white transition-colors p-2"
+                className="hover:text-black dark:hover:text-white transition-colors p-2"
                 aria-label="GitHub"
               >
                 <FiGithub className="w-5 h-5" />
@@ -199,7 +214,7 @@ export const NovaNavbar: React.FC = () => {
                 href={socialsData.links.find((l) => l.platform === "LinkedIn")?.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-[#326BFF] dark:hover:text-white transition-colors p-2"
+                className="hover:text-black dark:hover:text-white transition-colors p-2"
                 aria-label="LinkedIn"
               >
                 <FiLinkedin className="w-5 h-5" />
@@ -208,14 +223,14 @@ export const NovaNavbar: React.FC = () => {
                 href={socialsData.links.find((l) => l.platform === "Instagram")?.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-[#326BFF] dark:hover:text-white transition-colors p-2"
+                className="hover:text-black dark:hover:text-white transition-colors p-2"
                 aria-label="Instagram"
               >
                 <FiInstagram className="w-5 h-5" />
               </a>
               <a
                 href={`mailto:${socialsData.email}`}
-                className="hover:text-[#326BFF] dark:hover:text-white transition-colors p-2"
+                className="hover:text-black dark:hover:text-white transition-colors p-2"
                 aria-label="Email"
               >
                 <FiMail className="w-5 h-5" />

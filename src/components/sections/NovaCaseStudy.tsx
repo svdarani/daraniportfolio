@@ -82,7 +82,7 @@ export const NovaCaseStudy: React.FC = () => {
   const current = caseStudies[selectedIndex];
 
   return (
-    <section className="py-24 sm:py-32 bg-white dark:bg-[#090A0F] relative transition-colors">
+    <section className="section-contain py-24 sm:py-32 bg-white dark:bg-black relative transition-colors">
       <div className="max-w-[1320px] mx-auto px-5 sm:px-8">
         <NovaSectionHeader
           eyebrow="04 / CASE STUDIES"
@@ -92,7 +92,7 @@ export const NovaCaseStudy: React.FC = () => {
         />
 
         {/* Case Study Switcher Pills: Modernist */}
-        <div className="flex flex-wrap gap-2.5 mb-10 pb-4 border-b border-neutral-200 dark:border-white/[0.08]">
+        <div className="flex flex-wrap gap-2.5 mb-10 pb-4 border-b border-neutral-200 dark:border-white/10">
           {caseStudies.map((cs, idx) => (
             <button
               key={cs.id}
@@ -100,13 +100,13 @@ export const NovaCaseStudy: React.FC = () => {
               onClick={() => setSelectedIndex(idx)}
               className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-modernist font-medium transition-all duration-200 cursor-pointer flex items-center gap-2 ${
                 selectedIndex === idx
-                  ? "bg-[#326BFF] text-white border border-[#326BFF] shadow-[0_4px_16px_rgba(50,107,255,0.35)] font-semibold"
-                  : "bg-neutral-100 text-neutral-600 dark:bg-[#151821] dark:text-[#A5ADBD] border border-neutral-200 dark:border-white/[0.06] hover:text-black dark:hover:text-white"
+                  ? "bg-black text-white dark:bg-white dark:text-black shadow-sm font-semibold"
+                  : "bg-neutral-100 text-neutral-600 dark:bg-[#121212] dark:text-[#A3A3A3] border border-neutral-200 dark:border-white/10 hover:text-black dark:hover:text-white"
               }`}
             >
               <span
                 className={`w-1.5 h-1.5 rounded-full ${
-                  selectedIndex === idx ? "bg-white" : "bg-neutral-400 dark:bg-[#A5ADBD]"
+                  selectedIndex === idx ? "bg-white dark:bg-black" : "bg-neutral-400 dark:bg-neutral-600"
                 }`}
               />
               <span>{cs.badge}</span>
@@ -115,16 +115,16 @@ export const NovaCaseStudy: React.FC = () => {
         </div>
 
         {/* Main Case Study Card */}
-        <div className="p-8 sm:p-12 rounded-3xl bg-neutral-50 dark:bg-[#151821] border border-neutral-200 dark:border-white/[0.08] shadow-sm relative overflow-hidden">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-10 pb-10 border-b border-neutral-200 dark:border-white/[0.08]">
+        <div className="p-8 sm:p-12 rounded-3xl bg-neutral-50 dark:bg-[#121212] border border-neutral-200 dark:border-white/10 shadow-sm relative overflow-hidden">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-10 pb-10 border-b border-neutral-200 dark:border-white/10">
             <div className="lg:col-span-7">
-              <span className="text-[11px] font-modernist font-semibold uppercase tracking-[0.14em] text-[#326BFF] dark:text-[#24D9FF] mb-2 inline-block">
+              <span className="text-[11px] font-modernist font-semibold uppercase tracking-[0.14em] text-neutral-900 dark:text-neutral-300 mb-2 inline-block">
                 {current.badge}
               </span>
-              <h3 className="font-debata text-2xl sm:text-3xl lg:text-4xl font-bold text-neutral-950 dark:text-[#F7F8FC] mb-4 leading-tight tracking-[-0.02em]">
+              <h3 className="font-debata text-2xl sm:text-3xl lg:text-4xl font-bold text-neutral-950 dark:text-white mb-4 leading-tight tracking-[-0.02em]">
                 {current.title}
               </h3>
-              <p className="font-modernist text-sm sm:text-base text-neutral-600 dark:text-[#A5ADBD] leading-relaxed">
+              <p className="font-modernist text-sm sm:text-base text-neutral-600 dark:text-neutral-400 leading-relaxed">
                 {current.summary}
               </p>
             </div>
@@ -135,7 +135,8 @@ export const NovaCaseStudy: React.FC = () => {
                   src={current.image}
                   alt={current.title}
                   fill
-                  className="object-cover object-center"
+                  loading="lazy"
+                  className="object-cover object-center transform-gpu"
                   sizes="420px"
                 />
               </div>
@@ -153,53 +154,53 @@ export const NovaCaseStudy: React.FC = () => {
           {/* 4-Stage Grid: Problem, Process, Solution, Result */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* 01. Problem */}
-            <div className="p-6 rounded-2xl bg-white dark:bg-[#11131A] border border-neutral-200 dark:border-white/[0.06] hover:border-[#326BFF]/30 dark:hover:border-[#326BFF]/30 transition-colors shadow-sm">
-              <div className="flex items-center gap-2 mb-3 text-[#326BFF] dark:text-[#24D9FF]">
+            <div className="p-6 rounded-2xl bg-white dark:bg-[#0a0a0a] border border-neutral-200 dark:border-white/10 hover:border-black/30 dark:hover:border-white/30 transition-colors shadow-sm">
+              <div className="flex items-center gap-2 mb-3 text-black dark:text-white">
                 <FiAlertCircle className="w-4 h-4" />
-                <h4 className="font-modernist text-xs uppercase tracking-wider font-semibold text-neutral-900 dark:text-[#F7F8FC]">
+                <h4 className="font-modernist text-xs uppercase tracking-wider font-semibold text-neutral-900 dark:text-white">
                   01. Problem
                 </h4>
               </div>
-              <p className="font-modernist text-xs sm:text-sm text-neutral-600 dark:text-[#A5ADBD] leading-relaxed">
+              <p className="font-modernist text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
                 {current.problem}
               </p>
             </div>
 
             {/* 02. Process */}
-            <div className="p-6 rounded-2xl bg-white dark:bg-[#11131A] border border-neutral-200 dark:border-white/[0.06] hover:border-[#326BFF]/30 dark:hover:border-[#326BFF]/30 transition-colors shadow-sm">
-              <div className="flex items-center gap-2 mb-3 text-[#326BFF] dark:text-[#24D9FF]">
+            <div className="p-6 rounded-2xl bg-white dark:bg-[#0a0a0a] border border-neutral-200 dark:border-white/10 hover:border-black/30 dark:hover:border-white/30 transition-colors shadow-sm">
+              <div className="flex items-center gap-2 mb-3 text-black dark:text-white">
                 <FiActivity className="w-4 h-4" />
-                <h4 className="font-modernist text-xs uppercase tracking-wider font-semibold text-neutral-900 dark:text-[#F7F8FC]">
+                <h4 className="font-modernist text-xs uppercase tracking-wider font-semibold text-neutral-900 dark:text-white">
                   02. Process
                 </h4>
               </div>
-              <p className="font-modernist text-xs sm:text-sm text-neutral-600 dark:text-[#A5ADBD] leading-relaxed">
+              <p className="font-modernist text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
                 {current.process}
               </p>
             </div>
 
             {/* 03. Solution */}
-            <div className="p-6 rounded-2xl bg-white dark:bg-[#11131A] border border-neutral-200 dark:border-white/[0.06] hover:border-[#326BFF]/30 dark:hover:border-[#326BFF]/30 transition-colors shadow-sm">
-              <div className="flex items-center gap-2 mb-3 text-[#326BFF] dark:text-[#24D9FF]">
+            <div className="p-6 rounded-2xl bg-white dark:bg-[#0a0a0a] border border-neutral-200 dark:border-white/10 hover:border-black/30 dark:hover:border-white/30 transition-colors shadow-sm">
+              <div className="flex items-center gap-2 mb-3 text-black dark:text-white">
                 <FiCheckCircle className="w-4 h-4" />
-                <h4 className="font-modernist text-xs uppercase tracking-wider font-semibold text-neutral-900 dark:text-[#F7F8FC]">
+                <h4 className="font-modernist text-xs uppercase tracking-wider font-semibold text-neutral-900 dark:text-white">
                   03. Solution
                 </h4>
               </div>
-              <p className="font-modernist text-xs sm:text-sm text-neutral-600 dark:text-[#A5ADBD] leading-relaxed">
+              <p className="font-modernist text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
                 {current.solution}
               </p>
             </div>
 
             {/* 04. Result */}
-            <div className="p-6 rounded-2xl bg-white dark:bg-[#11131A] border border-neutral-200 dark:border-white/[0.06] hover:border-[#326BFF]/30 dark:hover:border-[#326BFF]/30 transition-colors shadow-sm">
-              <div className="flex items-center gap-2 mb-3 text-[#326BFF] dark:text-[#24D9FF]">
+            <div className="p-6 rounded-2xl bg-white dark:bg-[#0a0a0a] border border-neutral-200 dark:border-white/10 hover:border-black/30 dark:hover:border-white/30 transition-colors shadow-sm">
+              <div className="flex items-center gap-2 mb-3 text-black dark:text-white">
                 <FiAward className="w-4 h-4" />
-                <h4 className="font-modernist text-xs uppercase tracking-wider font-semibold text-neutral-900 dark:text-[#F7F8FC]">
+                <h4 className="font-modernist text-xs uppercase tracking-wider font-semibold text-neutral-900 dark:text-white">
                   04. Result / Output
                 </h4>
               </div>
-              <p className="font-modernist text-xs sm:text-sm text-neutral-600 dark:text-[#A5ADBD] leading-relaxed">
+              <p className="font-modernist text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
                 {current.result}
               </p>
             </div>

@@ -29,7 +29,7 @@ export const MetricsSection: React.FC = () => {
               transition={{ duration: 0.6, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
               className="flex flex-col p-5 rounded-2xl bg-neutral-50 dark:bg-neutral-900/50 border border-neutral-200/80 dark:border-white/5 hover:border-neutral-300 dark:hover:border-white/15 shadow-sm transition-all"
             >
-              <div className="text-3xl md:text-4xl font-semibold tracking-tight text-neutral-950 dark:text-white flex items-baseline">
+              <div className="text-3xl md:text-4xl font-medium tracking-tight text-neutral-950 dark:text-white flex items-baseline">
                 <span>{item.value}</span>
                 <span className="text-indigo-600 dark:text-indigo-400 font-normal text-2xl">{item.suffix}</span>
               </div>

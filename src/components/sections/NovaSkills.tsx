@@ -7,7 +7,7 @@ import { FiLayout, FiImage, FiCode, FiCpu } from "react-icons/fi";
 const skillGroups = [
   {
     title: "UI/UX & Product Design",
-    icon: <FiLayout className="w-5 h-5 text-[#326BFF] dark:text-[#24D9FF]" />,
+    icon: <FiLayout className="w-5 h-5 text-black dark:text-white" />,
     badge: "Product Design",
     skills: [
       { name: "Interface Design", status: "Practical Experience" },
@@ -22,7 +22,7 @@ const skillGroups = [
   },
   {
     title: "Graphic Design & Branding",
-    icon: <FiImage className="w-5 h-5 text-[#326BFF] dark:text-[#24D9FF]" />,
+    icon: <FiImage className="w-5 h-5 text-black dark:text-white" />,
     badge: "Brand & Creatives",
     skills: [
       { name: "Brand Identity", status: "Practical Experience" },
@@ -37,7 +37,7 @@ const skillGroups = [
   },
   {
     title: "Web Development",
-    icon: <FiCode className="w-5 h-5 text-[#326BFF] dark:text-[#24D9FF]" />,
+    icon: <FiCode className="w-5 h-5 text-black dark:text-white" />,
     badge: "Frontend Tech",
     skills: [
       { name: "HTML & CSS", status: "Practical Experience" },
@@ -52,7 +52,7 @@ const skillGroups = [
   },
   {
     title: "AI & Data Science",
-    icon: <FiCpu className="w-5 h-5 text-[#326BFF] dark:text-[#24D9FF]" />,
+    icon: <FiCpu className="w-5 h-5 text-black dark:text-white" />,
     badge: "Data & Systems",
     skills: [
       { name: "Python", status: "Practical Experience" },
@@ -81,7 +81,7 @@ const primaryTools = [
 
 export const NovaSkills: React.FC = () => {
   return (
-    <section className="py-24 sm:py-32 bg-neutral-50 dark:bg-[#090A0F] relative transition-colors">
+    <section className="section-contain py-24 sm:py-32 bg-neutral-50 dark:bg-black relative transition-colors">
       <div className="max-w-[1320px] mx-auto px-5 sm:px-8">
         <NovaSectionHeader
           eyebrow="CREATIVE EXPERTISE"
@@ -95,18 +95,18 @@ export const NovaSkills: React.FC = () => {
           {skillGroups.map((group) => (
             <div
               key={group.title}
-              className="p-8 rounded-3xl bg-white dark:bg-[#151821] border border-neutral-200 dark:border-white/[0.08] hover:border-[#326BFF]/40 dark:hover:border-[#326BFF]/40 transition-all duration-300 shadow-sm"
+              className="p-8 rounded-3xl bg-white dark:bg-[#121212] border border-neutral-200 dark:border-white/10 hover:border-black/40 dark:hover:border-white/40 transition-all duration-300 shadow-sm"
             >
-              <div className="flex items-center justify-between pb-6 mb-6 border-b border-neutral-200 dark:border-white/[0.08]">
+              <div className="flex items-center justify-between pb-6 mb-6 border-b border-neutral-200 dark:border-white/10">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-neutral-100 dark:bg-white/5 border border-neutral-200 dark:border-white/10 flex items-center justify-center">
                     {group.icon}
                   </div>
-                  <h3 className="font-debata text-xl font-bold text-neutral-950 dark:text-[#F7F8FC] tracking-tight">
+                  <h3 className="font-debata text-xl font-bold text-neutral-950 dark:text-white tracking-tight">
                     {group.title}
                   </h3>
                 </div>
-                <span className="text-[11px] font-modernist font-semibold uppercase tracking-wider text-[#326BFF] dark:text-[#24D9FF]">
+                <span className="text-[11px] font-modernist font-semibold uppercase tracking-wider text-neutral-900 dark:text-neutral-300">
                   {group.badge}
                 </span>
               </div>
@@ -115,12 +115,12 @@ export const NovaSkills: React.FC = () => {
                 {group.skills.map((skill) => (
                   <div
                     key={skill.name}
-                    className="p-3 rounded-xl bg-neutral-50 dark:bg-[#11131A] border border-neutral-200 dark:border-white/[0.05] flex flex-col justify-between"
+                    className="p-3 rounded-xl bg-neutral-50 dark:bg-[#0a0a0a] border border-neutral-200 dark:border-white/5 flex flex-col justify-between"
                   >
-                    <span className="text-sm font-modernist font-medium text-neutral-900 dark:text-[#F7F8FC] mb-1">
+                    <span className="text-sm font-modernist font-medium text-neutral-900 dark:text-white mb-1">
                       {skill.name}
                     </span>
-                    <span className="text-[11px] font-modernist text-neutral-500 dark:text-[#A5ADBD]">
+                    <span className="text-[11px] font-modernist text-neutral-500 dark:text-neutral-400">
                       {skill.status}
                     </span>
                   </div>
@@ -131,12 +131,12 @@ export const NovaSkills: React.FC = () => {
         </div>
 
         {/* Active Tools Bar */}
-        <div className="p-8 rounded-3xl bg-white dark:bg-[#151821] border border-neutral-200 dark:border-white/[0.08] flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-sm">
+        <div className="p-8 rounded-3xl bg-white dark:bg-[#121212] border border-neutral-200 dark:border-white/10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-sm">
           <div>
-            <div className="text-[11px] font-modernist uppercase tracking-[0.14em] text-[#326BFF] dark:text-[#24D9FF] font-semibold mb-1">
+            <div className="text-[11px] font-modernist uppercase tracking-[0.14em] text-neutral-900 dark:text-neutral-300 font-semibold mb-1">
               Active Software &amp; Environments
             </div>
-            <div className="font-debata text-lg sm:text-xl font-bold text-neutral-950 dark:text-[#F7F8FC]">
+            <div className="font-debata text-lg sm:text-xl font-bold text-neutral-950 dark:text-white">
               Tools I actively use in creative &amp; coding workflows
             </div>
           </div>
@@ -145,7 +145,7 @@ export const NovaSkills: React.FC = () => {
             {primaryTools.map((tool) => (
               <span
                 key={tool}
-                className="px-4 py-2 rounded-xl bg-neutral-100 dark:bg-[#11131A] border border-neutral-200 dark:border-white/[0.08] text-xs sm:text-sm font-modernist text-neutral-700 dark:text-[#A5ADBD] hover:text-[#326BFF] dark:hover:text-white transition-colors"
+                className="px-4 py-2 rounded-xl bg-neutral-100 dark:bg-[#0a0a0a] border border-neutral-200 dark:border-white/10 text-xs sm:text-sm font-modernist text-neutral-700 dark:text-neutral-300 hover:text-black dark:hover:text-white transition-colors"
               >
                 {tool}
               </span>

@@ -1,32 +1,11 @@
 import "./globals.css";
-import { Space_Grotesk, Inter, Manrope, JetBrains_Mono } from "next/font/google";
+import { JetBrains_Mono } from "next/font/google";
 import { ReactNode } from "react";
 import SmoothScroll from "../components/hooks/smoothscroll";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ThemeProvider } from "../components/theme/ThemeProvider";
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  variable: "--font-heading",
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-body",
-  weight: ["300", "400", "500", "600"],
-  display: "swap",
-});
-
-const manrope = Manrope({
-  subsets: ["latin"],
-  variable: "--font-ui",
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-});
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -146,10 +125,15 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html
       lang="en"
-      className={`dark ${spaceGrotesk.variable} ${inter.variable} ${manrope.variable} ${jetbrainsMono.variable}`}
+      className={`dark ${jetbrainsMono.variable}`}
       suppressHydrationWarning
     >
       <head>
+        <link rel="preconnect" href="https://cdn.fontshare.com" crossOrigin="anonymous" />
+        <link
+          rel="stylesheet"
+          href="https://api.fontshare.com/v2/css?f[]=general-sans@200,300,400,500,600,700&display=swap"
+        />
         <script
           id="theme-init"
           dangerouslySetInnerHTML={{
@@ -164,7 +148,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           }}
         />
       </head>
-      <body className="font-modernist bg-white text-neutral-900 dark:bg-[#090A0F] dark:text-[#F7F8FC] antialiased selection:bg-[#326BFF] selection:text-white dark:selection:bg-[#326BFF] dark:selection:text-white transition-colors duration-200">
+      <body className="font-sans bg-white text-black dark:bg-black dark:text-white antialiased selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black transition-colors duration-200">
         <ThemeProvider defaultTheme="dark">
           <SmoothScroll>{children}</SmoothScroll>
         </ThemeProvider>

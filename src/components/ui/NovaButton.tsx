@@ -47,21 +47,21 @@ export const NovaButton: React.FC<NovaButtonProps> = ({
 
   const variantClasses = {
     primary:
-      "bg-[#326BFF] hover:bg-[#258CFF] text-white shadow-[0_4px_20px_rgba(50,107,255,0.35)] active:scale-[0.98]",
+      "bg-neutral-900 hover:bg-neutral-800 text-white dark:bg-white dark:hover:bg-neutral-200 dark:text-black shadow-[0_4px_20px_rgba(0,0,0,0.15)] dark:shadow-[0_4px_20px_rgba(255,255,255,0.18)] active:scale-[0.98]",
     secondary:
-      "bg-neutral-100 hover:bg-neutral-200 text-neutral-900 border border-neutral-300 dark:bg-[#151821] dark:hover:bg-[#1E222E] dark:text-[#F7F8FC] dark:border-white/10 dark:hover:border-white/20 shadow-sm active:scale-[0.98]",
+      "bg-neutral-100 hover:bg-neutral-200 text-neutral-900 border border-neutral-300 dark:bg-white/[0.05] dark:hover:bg-white/[0.1] dark:text-white dark:border-white/15 dark:hover:border-white/30 shadow-sm active:scale-[0.98]",
     ghost:
-      "bg-transparent hover:bg-neutral-100 dark:hover:bg-white/5 text-neutral-600 hover:text-black dark:text-[#A5ADBD] dark:hover:text-[#F7F8FC] border border-transparent",
+      "bg-transparent hover:bg-neutral-100 dark:hover:bg-white/10 text-neutral-700 hover:text-black dark:text-neutral-300 dark:hover:text-white border border-transparent",
     cyan:
-      "bg-[#24D9FF] hover:bg-[#22D3EE] text-[#090A0F] font-semibold shadow-[0_4px_20px_rgba(36,217,255,0.35)] active:scale-[0.98]",
+      "bg-white hover:bg-neutral-100 text-black border border-neutral-300 dark:border-transparent dark:bg-white dark:hover:bg-neutral-200 dark:text-black font-semibold shadow-sm active:scale-[0.98]",
   };
 
   const arrowBgClasses = {
-    primary: "bg-white/20 text-white",
+    primary: "bg-white/20 text-white dark:bg-black/15 dark:text-black",
     secondary:
-      "bg-black/5 text-neutral-900 dark:bg-white/10 dark:text-white group-hover:bg-[#326BFF] group-hover:text-white transition-colors",
+      "bg-black/5 text-neutral-900 dark:bg-white/10 dark:text-white group-hover:bg-black group-hover:text-white dark:group-hover:bg-white dark:group-hover:text-black transition-colors",
     ghost: "bg-black/5 text-neutral-900 dark:bg-white/10 dark:text-white",
-    cyan: "bg-black/15 text-[#090A0F]",
+    cyan: "bg-black/10 text-black",
   };
 
   const content = (

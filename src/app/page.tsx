@@ -18,7 +18,7 @@ import { NovaFooter } from "@/components/layout/NovaFooter";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white text-neutral-900 dark:bg-[#090A0F] dark:text-[#F7F8FC] font-modernist relative overflow-x-hidden selection:bg-[#326BFF] selection:text-white dark:selection:bg-[#326BFF] dark:selection:text-white transition-colors duration-200">
+    <main className="min-h-screen bg-white text-black dark:bg-black dark:text-white font-modernist relative overflow-x-hidden selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black transition-colors duration-200">
       {/* Accessible SEO Content */}
       <div className="sr-only">
         <h1>

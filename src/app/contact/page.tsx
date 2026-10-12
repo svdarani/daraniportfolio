@@ -75,23 +75,23 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen bg-white text-neutral-900 dark:bg-[#090A0F] dark:text-[#F7F8FC] font-modernist selection:bg-[#326BFF] selection:text-white dark:selection:bg-[#326BFF] dark:selection:text-white transition-colors">
+    <div className="min-h-screen bg-white text-black dark:bg-black dark:text-white font-modernist selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black transition-colors">
       <NovaNavbar />
 
       <main className="pt-32 pb-24 max-w-[1320px] mx-auto px-5 sm:px-8">
         {/* Page Hero: Debata Display Headline */}
         <div className="mb-20">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-neutral-100 dark:bg-[#151821] border border-neutral-200 dark:border-white/[0.08] text-[11px] uppercase tracking-[0.14em] font-modernist font-semibold text-[#326BFF] dark:text-[#24D9FF] mb-5 shadow-sm">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#24D9FF] shadow-[0_0_8px_#24D9FF] animate-pulse" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-neutral-100 dark:bg-[#121212] border border-neutral-200 dark:border-white/10 text-[11px] uppercase tracking-[0.14em] font-modernist font-semibold text-neutral-900 dark:text-neutral-300 mb-5 shadow-sm">
+            <span className="w-1.5 h-1.5 rounded-full bg-black dark:bg-white" />
             <span>CONNECT WITH DARANI</span>
           </div>
 
-          <h1 className="font-debata text-4xl sm:text-6xl lg:text-7xl font-bold tracking-[-0.035em] text-neutral-950 dark:text-[#F7F8FC] leading-[1.08] mb-6 max-w-4xl">
+          <h1 className="font-debata text-4xl sm:text-6xl lg:text-7xl font-bold tracking-[-0.035em] text-neutral-950 dark:text-white leading-[1.08] mb-6 max-w-4xl">
             Reach me anytime,{" "}
             <span className="nova-gradient-text">anywhere.</span>
           </h1>
 
-          <p className="font-modernist text-lg sm:text-xl text-neutral-600 dark:text-[#A5ADBD] leading-relaxed max-w-3xl font-normal">
+          <p className="font-modernist text-lg sm:text-xl text-neutral-600 dark:text-neutral-400 leading-relaxed max-w-3xl font-normal">
             Whether you&apos;re building a startup brand, seeking UI/UX design, or exploring creative web development, I&apos;d love to hear from you.
           </p>
         </div>
@@ -100,24 +100,24 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start mb-24">
           {/* Left Column: Direct Inquiries */}
           <div className="lg:col-span-5 flex flex-col gap-6">
-            <div className="p-8 sm:p-10 rounded-3xl bg-neutral-50 dark:bg-[#151821] border border-neutral-200 dark:border-white/[0.08] shadow-sm">
-              <h2 className="font-debata text-xl sm:text-2xl font-bold text-neutral-950 dark:text-[#F7F8FC] mb-2 tracking-tight">
+            <div className="p-8 sm:p-10 rounded-3xl bg-neutral-50 dark:bg-[#121212] border border-neutral-200 dark:border-white/10 shadow-sm">
+              <h2 className="font-debata text-xl sm:text-2xl font-bold text-neutral-950 dark:text-white mb-2 tracking-tight">
                 I&apos;d love to hear from you
               </h2>
-              <p className="font-modernist text-sm text-neutral-600 dark:text-[#A5ADBD] leading-relaxed mb-8">
+              <p className="font-modernist text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed mb-8">
                 Send a message through the form or reach out directly via email, phone, or LinkedIn.
               </p>
 
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-white dark:bg-[#11131A] border border-neutral-200 dark:border-white/10 flex items-center justify-center text-[#326BFF] dark:text-[#24D9FF] flex-shrink-0">
+                  <div className="w-12 h-12 rounded-2xl bg-white dark:bg-[#0a0a0a] border border-neutral-200 dark:border-white/10 flex items-center justify-center text-black dark:text-white flex-shrink-0">
                     <FiMail className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="text-[11px] font-modernist uppercase tracking-wider text-neutral-500 dark:text-[#A5ADBD] font-medium">Email</div>
+                    <div className="text-[11px] font-modernist uppercase tracking-wider text-neutral-500 dark:text-neutral-400 font-medium">Email</div>
                     <a
                       href={`mailto:${socialsData.email}`}
-                      className="text-base font-modernist font-semibold text-neutral-950 dark:text-white hover:text-[#326BFF] dark:hover:text-[#24D9FF] transition-colors"
+                      className="text-base font-modernist font-semibold text-neutral-950 dark:text-white hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors"
                     >
                       {socialsData.email}
                     </a>
@@ -125,14 +125,14 @@ export default function ContactPage() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-white dark:bg-[#11131A] border border-neutral-200 dark:border-white/10 flex items-center justify-center text-[#326BFF] dark:text-[#24D9FF] flex-shrink-0">
+                  <div className="w-12 h-12 rounded-2xl bg-white dark:bg-[#0a0a0a] border border-neutral-200 dark:border-white/10 flex items-center justify-center text-black dark:text-white flex-shrink-0">
                     <FiPhone className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="text-[11px] font-modernist uppercase tracking-wider text-neutral-500 dark:text-[#A5ADBD] font-medium">Phone</div>
+                    <div className="text-[11px] font-modernist uppercase tracking-wider text-neutral-500 dark:text-neutral-400 font-medium">Phone</div>
                     <a
                       href={`tel:${socialsData.phone}`}
-                      className="text-base font-modernist font-semibold text-neutral-950 dark:text-white hover:text-[#326BFF] dark:hover:text-[#24D9FF] transition-colors"
+                      className="text-base font-modernist font-semibold text-neutral-950 dark:text-white hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors"
                     >
                       {socialsData.phone}
                     </a>
@@ -140,11 +140,11 @@ export default function ContactPage() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-white dark:bg-[#11131A] border border-neutral-200 dark:border-white/10 flex items-center justify-center text-[#326BFF] dark:text-[#24D9FF] flex-shrink-0">
+                  <div className="w-12 h-12 rounded-2xl bg-white dark:bg-[#0a0a0a] border border-neutral-200 dark:border-white/10 flex items-center justify-center text-black dark:text-white flex-shrink-0">
                     <FiMapPin className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="text-[11px] font-modernist uppercase tracking-wider text-neutral-500 dark:text-[#A5ADBD] font-medium">Location</div>
+                    <div className="text-[11px] font-modernist uppercase tracking-wider text-neutral-500 dark:text-neutral-400 font-medium">Location</div>
                     <div className="text-base font-modernist font-semibold text-neutral-950 dark:text-white">
                       {socialsData.location}
                     </div>
@@ -152,8 +152,8 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <div className="mt-8 pt-8 border-t border-neutral-200 dark:border-white/[0.08]">
-                <div className="text-[11px] font-modernist uppercase tracking-[0.12em] text-neutral-500 dark:text-[#A5ADBD] mb-4">
+              <div className="mt-8 pt-8 border-t border-neutral-200 dark:border-white/10">
+                <div className="text-[11px] font-modernist uppercase tracking-[0.12em] text-neutral-500 dark:text-neutral-400 mb-4">
                   Social Channels:
                 </div>
                 <div className="flex items-center gap-3">
@@ -161,7 +161,7 @@ export default function ContactPage() {
                     href={socialsData.links.find((l) => l.platform === "GitHub")?.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-xl bg-white dark:bg-[#11131A] border border-neutral-200 dark:border-white/10 flex items-center justify-center text-neutral-600 hover:text-[#326BFF] hover:border-[#326BFF]/40 dark:text-[#A5ADBD] dark:hover:text-white dark:hover:border-white/40 transition-all hover:scale-105"
+                    className="w-10 h-10 rounded-xl bg-white dark:bg-[#0a0a0a] border border-neutral-200 dark:border-white/10 flex items-center justify-center text-neutral-600 hover:text-black hover:border-black/40 dark:text-neutral-400 dark:hover:text-white dark:hover:border-white/40 transition-all hover:scale-105"
                     aria-label="GitHub profile"
                   >
                     <FiGithub className="w-5 h-5" />
@@ -170,7 +170,7 @@ export default function ContactPage() {
                     href={socialsData.links.find((l) => l.platform === "LinkedIn")?.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-xl bg-white dark:bg-[#11131A] border border-neutral-200 dark:border-white/10 flex items-center justify-center text-neutral-600 hover:text-[#326BFF] hover:border-[#326BFF]/40 dark:text-[#A5ADBD] dark:hover:text-white dark:hover:border-white/40 transition-all hover:scale-105"
+                    className="w-10 h-10 rounded-xl bg-white dark:bg-[#0a0a0a] border border-neutral-200 dark:border-white/10 flex items-center justify-center text-neutral-600 hover:text-black hover:border-black/40 dark:text-neutral-400 dark:hover:text-white dark:hover:border-white/40 transition-all hover:scale-105"
                     aria-label="LinkedIn profile"
                   >
                     <FiLinkedin className="w-5 h-5" />
@@ -179,7 +179,7 @@ export default function ContactPage() {
                     href={socialsData.links.find((l) => l.platform === "Instagram")?.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-xl bg-white dark:bg-[#11131A] border border-neutral-200 dark:border-white/10 flex items-center justify-center text-neutral-600 hover:text-[#326BFF] hover:border-[#326BFF]/40 dark:text-[#A5ADBD] dark:hover:text-white dark:hover:border-white/40 transition-all hover:scale-105"
+                    className="w-10 h-10 rounded-xl bg-white dark:bg-[#0a0a0a] border border-neutral-200 dark:border-white/10 flex items-center justify-center text-neutral-600 hover:text-black hover:border-black/40 dark:text-neutral-400 dark:hover:text-white dark:hover:border-white/40 transition-all hover:scale-105"
                     aria-label="Instagram profile"
                   >
                     <FiInstagram className="w-5 h-5" />
@@ -191,22 +191,22 @@ export default function ContactPage() {
 
           {/* Right Column: Contact Form */}
           <div className="lg:col-span-7">
-            <div className="p-8 sm:p-10 rounded-3xl bg-neutral-50 dark:bg-[#151821] border border-neutral-200 dark:border-white/[0.08] shadow-sm">
+            <div className="p-8 sm:p-10 rounded-3xl bg-neutral-50 dark:bg-[#121212] border border-neutral-200 dark:border-white/10 shadow-sm">
               {submitted ? (
                 <div className="py-12 flex flex-col items-center text-center">
-                  <div className="w-16 h-16 rounded-2xl bg-neutral-100 dark:bg-[#11131A] border border-neutral-300 dark:border-white/10 flex items-center justify-center text-[#326BFF] dark:text-[#24D9FF] mb-6 shadow-sm">
+                  <div className="w-16 h-16 rounded-2xl bg-neutral-100 dark:bg-[#0a0a0a] border border-neutral-300 dark:border-white/10 flex items-center justify-center text-black dark:text-white mb-6 shadow-sm">
                     <FiCheckCircle className="w-8 h-8" />
                   </div>
                   <h3 className="font-debata text-2xl font-bold text-neutral-950 dark:text-white mb-2">
                     Message Sent Successfully!
                   </h3>
-                  <p className="font-modernist text-base text-neutral-600 dark:text-[#A5ADBD] max-w-md mb-8">
+                  <p className="font-modernist text-base text-neutral-600 dark:text-neutral-400 max-w-md mb-8">
                     Thank you for reaching out. I will get back to you shortly.
                   </p>
                   <button
                     type="button"
                     onClick={() => setSubmitted(false)}
-                    className="px-6 py-2.5 rounded-full bg-neutral-100 dark:bg-[#11131A] border border-neutral-200 dark:border-white/10 text-xs font-modernist text-neutral-900 dark:text-white hover:bg-neutral-200 dark:hover:bg-white/10 transition-colors cursor-pointer"
+                    className="px-6 py-2.5 rounded-full bg-neutral-100 dark:bg-[#0a0a0a] border border-neutral-200 dark:border-white/10 text-xs font-modernist text-neutral-900 dark:text-white hover:bg-neutral-200 dark:hover:bg-neutral-800 transition-colors cursor-pointer"
                   >
                     Send Another Message
                   </button>
@@ -217,9 +217,9 @@ export default function ContactPage() {
                     <div>
                       <label
                         htmlFor="name"
-                        className="block text-xs font-modernist text-neutral-600 dark:text-[#A5ADBD] uppercase tracking-wider mb-2 font-medium"
+                        className="block text-xs font-modernist text-neutral-600 dark:text-neutral-400 uppercase tracking-wider mb-2 font-medium"
                       >
-                        Your Name <span className="text-[#326BFF] dark:text-[#24D9FF]">*</span>
+                        Your Name <span className="text-black dark:text-white">*</span>
                       </label>
                       <input
                         type="text"
@@ -230,10 +230,10 @@ export default function ContactPage() {
                           if (errors.name) setErrors({ ...errors, name: "" });
                         }}
                         placeholder="Darani Viswanathan"
-                        className={`w-full px-4 py-3 rounded-xl bg-white dark:bg-[#11131A] border text-sm font-modernist text-neutral-900 dark:text-[#F7F8FC] placeholder-neutral-400 dark:placeholder-neutral-500 focus:outline-none focus:ring-1 transition-colors ${
+                        className={`w-full px-4 py-3 rounded-xl bg-white dark:bg-[#0a0a0a] border text-sm font-modernist text-neutral-900 dark:text-white placeholder-neutral-400 dark:placeholder-neutral-500 focus:outline-none focus:ring-1 transition-colors ${
                           errors.name
                             ? "border-red-500/50 focus:ring-red-500/50"
-                            : "border-neutral-200 dark:border-white/[0.08] focus:border-[#326BFF] dark:focus:border-[#326BFF] focus:ring-[#326BFF]/20"
+                            : "border-neutral-200 dark:border-white/10 focus:border-black dark:focus:border-white focus:ring-black/20 dark:focus:ring-white/20"
                         }`}
                       />
                       {errors.name && (
@@ -247,9 +247,9 @@ export default function ContactPage() {
                     <div>
                       <label
                         htmlFor="email"
-                        className="block text-xs font-modernist text-neutral-600 dark:text-[#A5ADBD] uppercase tracking-wider mb-2 font-medium"
+                        className="block text-xs font-modernist text-neutral-600 dark:text-neutral-400 uppercase tracking-wider mb-2 font-medium"
                       >
-                        Email Address <span className="text-[#326BFF] dark:text-[#24D9FF]">*</span>
+                        Email Address <span className="text-black dark:text-white">*</span>
                       </label>
                       <input
                         type="email"
@@ -260,10 +260,10 @@ export default function ContactPage() {
                           if (errors.email) setErrors({ ...errors, email: "" });
                         }}
                         placeholder="yourname@example.com"
-                        className={`w-full px-4 py-3 rounded-xl bg-white dark:bg-[#11131A] border text-sm font-modernist text-neutral-900 dark:text-[#F7F8FC] placeholder-neutral-400 dark:placeholder-neutral-500 focus:outline-none focus:ring-1 transition-colors ${
+                        className={`w-full px-4 py-3 rounded-xl bg-white dark:bg-[#0a0a0a] border text-sm font-modernist text-neutral-900 dark:text-white placeholder-neutral-400 dark:placeholder-neutral-500 focus:outline-none focus:ring-1 transition-colors ${
                           errors.email
                             ? "border-red-500/50 focus:ring-red-500/50"
-                            : "border-neutral-200 dark:border-white/[0.08] focus:border-[#326BFF] dark:focus:border-[#326BFF] focus:ring-[#326BFF]/20"
+                            : "border-neutral-200 dark:border-white/10 focus:border-black dark:focus:border-white focus:ring-black/20 dark:focus:ring-white/20"
                         }`}
                       />
                       {errors.email && (
@@ -279,7 +279,7 @@ export default function ContactPage() {
                     <div>
                       <label
                         htmlFor="organization"
-                        className="block text-xs font-modernist text-neutral-600 dark:text-[#A5ADBD] uppercase tracking-wider mb-2 font-medium"
+                        className="block text-xs font-modernist text-neutral-600 dark:text-neutral-400 uppercase tracking-wider mb-2 font-medium"
                       >
                         Organization (Optional)
                       </label>
@@ -291,14 +291,14 @@ export default function ContactPage() {
                           setFormData({ ...formData, organization: e.target.value })
                         }
                         placeholder="Startup / Venture"
-                        className="w-full px-4 py-3 rounded-xl bg-white dark:bg-[#11131A] border border-neutral-200 dark:border-white/[0.08] text-sm font-modernist text-neutral-900 dark:text-[#F7F8FC] placeholder-neutral-400 dark:placeholder-neutral-500 focus:outline-none focus:border-[#326BFF] dark:focus:border-[#326BFF] focus:ring-1 focus:ring-[#326BFF]/20 transition-colors"
+                        className="w-full px-4 py-3 rounded-xl bg-white dark:bg-[#0a0a0a] border border-neutral-200 dark:border-white/10 text-sm font-modernist text-neutral-900 dark:text-white placeholder-neutral-400 dark:placeholder-neutral-500 focus:outline-none focus:border-black dark:focus:border-white focus:ring-1 focus:ring-black/20 dark:focus:ring-white/20 transition-colors"
                       />
                     </div>
 
                     <div>
                       <label
                         htmlFor="projectType"
-                        className="block text-xs font-modernist text-neutral-600 dark:text-[#A5ADBD] uppercase tracking-wider mb-2 font-medium"
+                        className="block text-xs font-modernist text-neutral-600 dark:text-neutral-400 uppercase tracking-wider mb-2 font-medium"
                       >
                         Project Type
                       </label>
@@ -308,10 +308,10 @@ export default function ContactPage() {
                         onChange={(e) =>
                           setFormData({ ...formData, projectType: e.target.value })
                         }
-                        className="w-full px-4 py-3 rounded-xl bg-white dark:bg-[#11131A] border border-neutral-200 dark:border-white/[0.08] text-sm font-modernist text-neutral-900 dark:text-[#F7F8FC] focus:outline-none focus:border-[#326BFF] dark:focus:border-[#326BFF] focus:ring-1 focus:ring-[#326BFF]/20 transition-colors"
+                        className="w-full px-4 py-3 rounded-xl bg-white dark:bg-[#0a0a0a] border border-neutral-200 dark:border-white/10 text-sm font-modernist text-neutral-900 dark:text-white focus:outline-none focus:border-black dark:focus:border-white focus:ring-1 focus:ring-black/20 dark:focus:ring-white/20 transition-colors"
                       >
                         {projectTypes.map((type) => (
-                          <option key={type} value={type} className="bg-white dark:bg-[#11131A] text-neutral-900 dark:text-white">
+                          <option key={type} value={type} className="bg-white dark:bg-[#121212] text-neutral-900 dark:text-white">
                             {type}
                           </option>
                         ))}
@@ -322,9 +322,9 @@ export default function ContactPage() {
                   <div>
                     <label
                       htmlFor="message"
-                      className="block text-xs font-modernist text-neutral-600 dark:text-[#A5ADBD] uppercase tracking-wider mb-2 font-medium"
+                      className="block text-xs font-modernist text-neutral-600 dark:text-neutral-400 uppercase tracking-wider mb-2 font-medium"
                     >
-                      Project Details &amp; Message <span className="text-[#326BFF] dark:text-[#24D9FF]">*</span>
+                      Project Details &amp; Message <span className="text-black dark:text-white">*</span>
                     </label>
                     <textarea
                       id="message"
@@ -335,10 +335,10 @@ export default function ContactPage() {
                         if (errors.message) setErrors({ ...errors, message: "" });
                       }}
                       placeholder="Tell me about what you are planning, timelines, or requirements..."
-                      className={`w-full px-4 py-3 rounded-xl bg-white dark:bg-[#11131A] border text-sm font-modernist text-neutral-900 dark:text-[#F7F8FC] placeholder-neutral-400 dark:placeholder-neutral-500 focus:outline-none focus:ring-1 transition-colors resize-none ${
+                      className={`w-full px-4 py-3 rounded-xl bg-white dark:bg-[#0a0a0a] border text-sm font-modernist text-neutral-900 dark:text-white placeholder-neutral-400 dark:placeholder-neutral-500 focus:outline-none focus:ring-1 transition-colors resize-none ${
                         errors.message
                           ? "border-red-500/50 focus:ring-red-500/50"
-                          : "border-neutral-200 dark:border-white/[0.08] focus:border-[#326BFF] dark:focus:border-[#326BFF] focus:ring-[#326BFF]/20"
+                          : "border-neutral-200 dark:border-white/10 focus:border-black dark:focus:border-white focus:ring-black/20 dark:focus:ring-white/20"
                       }`}
                     />
                     {errors.message && (
@@ -360,7 +360,7 @@ export default function ContactPage() {
                       {isSubmitting ? "Sending..." : "Submit Message"}
                     </NovaButton>
 
-                    <span className="text-[11px] font-modernist text-neutral-500 dark:text-[#A5ADBD]">
+                    <span className="text-[11px] font-modernist text-neutral-500 dark:text-neutral-400">
                       Responses typically within 24 hours.
                     </span>
                   </div>

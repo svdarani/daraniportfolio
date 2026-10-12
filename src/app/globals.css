@@ -3,42 +3,60 @@
 @tailwind utilities;
 
 /* ==========================================================================
-   01. TYPOGRAPHY SYSTEM: DEBATA × MODERNIST
-   Font A: Debata (Expressive Display Typography)
-   Font B: Modernist / Sk-Modernist (Structured Interface Typography)
+   01. GENERAL SANS TYPOGRAPHY SYSTEM (Fontshare)
+   Primary Font: General Sans (Weights: 300, 400, 500, 600, 700)
+   Source: https://www.fontshare.com/fonts/general-sans
    ========================================================================== */
 
 @font-face {
-  font-family: "Debata";
-  src: url("/fonts/debata/Debata-Regular.woff2") format("woff2"),
-       url("/fonts/debata/Debata-Regular.woff") format("woff"),
-       url("/fonts/debata/Debata-Regular.otf") format("opentype"),
-       url("/fonts/debata/Debata-Regular.ttf") format("truetype");
+  font-family: "General Sans";
+  src: url("/fonts/general-sans/GeneralSans-Light.woff2") format("woff2"),
+       url("//cdn.fontshare.com/wf/HFTXPYOBEE22ON2ZH2TDSTBQLGERA7LU/4AOH2PGTMHZO2YX5HMTOAV52ONC3WIXE/TW4KNQIPR4LNP4I6I6C6HKQ23B2EQAU5.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "General Sans";
+  src: url("/fonts/general-sans/GeneralSans-Regular.woff2") format("woff2"),
+       url("//cdn.fontshare.com/wf/MFQT7HFGCR2L5ULQTW6YXYZXXHMPKLJ3/YWQ244D6TACUX5JBKATPOW5I5MGJ3G73/7YY3ZAAE3TRV2LANYOLXNHTPHLXVWTKH.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Debata";
-  src: url("/fonts/debata/Debata-Bold.woff2") format("woff2"),
-       url("/fonts/debata/Debata-Bold.woff") format("woff"),
-       url("/fonts/debata/Debata-Bold.otf") format("opentype"),
-       url("/fonts/debata/Debata-Bold.ttf") format("truetype");
-  font-weight: 700;
+  font-family: "General Sans";
+  src: url("/fonts/general-sans/GeneralSans-Medium.woff2") format("woff2"),
+       url("//cdn.fontshare.com/wf/3RZHWSNONLLWJK3RLPEKUZOMM56GO4LJ/BPDRY7AHVI3MCDXXVXTQQ76H3UXA63S3/SB2OEB6IKZPRR6JT4GFJ2TFT6HBB6AZN.woff2") format("woff2");
+  font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Modernist";
-  src: url("/fonts/modernist/Sk-Modernist-Regular.woff2") format("woff2"),
-       url("/fonts/modernist/Sk-Modernist-Regular.woff") format("woff"),
-       url("/fonts/modernist/Sk-Modernist-Regular.otf") format("opentype"),
-       url("/fonts/modernist/Sk-Modernist-Regular.ttf") format("truetype"),
-       local("Sk-Modernist-Regular"),
-       local("Sk-Modernist"),
-       local("Modernist");
+  font-family: "General Sans";
+  src: url("/fonts/general-sans/GeneralSans-Semibold.woff2") format("woff2"),
+       url("//cdn.fontshare.com/wf/K46YRH762FH3QJ25IQM3VAXAKCHEXXW4/ISLWQPUZHZF33LRIOTBMFOJL57GBGQ4B/3ZLMEXZEQPLTEPMHTQDAUXP5ZZXCZAEN.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "General Sans";
+  src: url("/fonts/general-sans/GeneralSans-Bold.woff2") format("woff2"),
+       url("//cdn.fontshare.com/wf/KWXO5X3YW4X7OLUMPO4X24HQJGJU7E2Q/VOWUQZS3YLP66ZHPTXAFSH6YACY4WJHT/NIQ54PVBBIWVK3PFSOIOUJSXIJ5WTNDP.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Fallback local aliases for legacy classes */
+@font-face {
+  font-family: "Debata";
+  src: url("/fonts/general-sans/GeneralSans-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -46,12 +64,8 @@
 
 @font-face {
   font-family: "Modernist";
-  src: url("/fonts/modernist/Sk-Modernist-Bold.woff2") format("woff2"),
-       url("/fonts/modernist/Sk-Modernist-Bold.woff") format("woff"),
-       url("/fonts/modernist/Sk-Modernist-Bold.otf") format("opentype"),
-       url("/fonts/modernist/Sk-Modernist-Bold.ttf") format("truetype"),
-       local("Sk-Modernist-Bold");
-  font-weight: 700;
+  src: url("/fonts/general-sans/GeneralSans-Regular.woff2") format("woff2");
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
@@ -59,10 +73,7 @@
 @font-face {
   font-family: "Modernist Mono";
   src: url("/fonts/modernist/Sk-Modernist-Mono.woff2") format("woff2"),
-       url("/fonts/modernist/Sk-Modernist-Mono.woff") format("woff"),
-       url("/fonts/modernist/Sk-Modernist-Mono.otf") format("opentype"),
-       url("/fonts/modernist/Sk-Modernist-Mono.ttf") format("truetype"),
-       local("Sk-Modernist-Mono");
+       local("JetBrains Mono");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -70,64 +81,62 @@
 
 @layer base {
   :root {
-    /* Typographic Family Variables */
-    --font-debata: "Debata", var(--font-heading), "Space Grotesk", -apple-system, BlinkMacSystemFont, sans-serif;
-    --font-modernist: "Modernist", "Sk-Modernist", var(--font-body), "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    --font-modernist-mono: "Modernist Mono", var(--font-mono), "JetBrains Mono", monospace;
+    /* Global Primary Font Tokens (General Sans) */
+    --font-primary: "General Sans", Arial, Helvetica, sans-serif;
+    --font-heading: var(--font-primary);
+    --font-body: var(--font-primary);
+    --font-ui: var(--font-primary);
+    --font-debata: var(--font-primary);
+    --font-modernist: var(--font-primary);
+    --font-mono: "JetBrains Mono", monospace;
+    --font-modernist-mono: var(--font-mono);
 
-    /* Light Theme Palette */
+    /* Monochrome Light Theme Palette */
     --background: 0 0% 100%;
-    --foreground: 233 26% 8%; /* #090A0F */
-    --surface: 220 14% 97%;
-    --surface-foreground: 233 26% 8%;
+    --foreground: 0 0% 0%;
+    --surface: 0 0% 97%;
+    --surface-foreground: 0 0% 0%;
     --card: 0 0% 100%;
-    --card-foreground: 233 26% 8%;
-    --card-border: 220 13% 90%;
+    --card-foreground: 0 0% 0%;
+    --card-border: 0 0% 88%;
     --popover: 0 0% 100%;
-    --popover-foreground: 233 26% 8%;
-    --primary: 222 100% 60%; /* #326BFF */
+    --popover-foreground: 0 0% 0%;
+    --primary: 0 0% 0%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 220 14% 94%;
-    --secondary-foreground: 220 15% 35%;
-    --muted: 220 14% 92%;
-    --muted-foreground: 220 10% 45%;
-    --accent: 190 100% 50%; /* #24D9FF */
+    --secondary: 0 0% 94%;
+    --secondary-foreground: 0 0% 25%;
+    --muted: 0 0% 92%;
+    --muted-foreground: 0 0% 40%;
+    --accent: 0 0% 10%;
     --accent-foreground: 0 0% 100%;
-    --border: 0 0% 0% / 0.08;
+    --border: 0 0% 0% / 0.1;
     --input: 0 0% 0% / 0.12;
-    --ring: 222 100% 60%;
+    --ring: 0 0% 0%;
     --radius: 1rem;
   }
 
   .dark {
-    /* Signature Dark Portfolio Palette */
-    /* Primary background: #090A0F */
-    --background: 233 26% 5%;
-    /* Primary text: #F7F8FC */
-    --foreground: 228 35% 98%;
-    /* Secondary background: #11131A */
-    --surface: 228 20% 9%;
-    --surface-foreground: 228 35% 98%;
-    /* Card background: #151821 */
-    --card: 227 20% 11%;
-    --card-foreground: 228 35% 98%;
-    --card-border: 220 20% 18%;
-    --popover: 227 20% 11%;
-    --popover-foreground: 228 35% 98%;
-    /* Electric blue: #326BFF */
-    --primary: 222 100% 60%;
-    --primary-foreground: 0 0% 100%;
-    /* Secondary text / surface: #A5ADBD */
-    --secondary: 228 20% 14%;
-    --secondary-foreground: 220 15% 70%;
-    --muted: 228 20% 16%;
-    --muted-foreground: 220 12% 55%;
-    /* Cyan: #24D9FF */
-    --accent: 190 100% 57%;
-    --accent-foreground: 233 26% 5%;
-    --border: 0 0% 100% / 0.08;
-    --input: 0 0% 100% / 0.12;
-    --ring: 222 100% 60%;
+    /* Pure Monochrome Dark Portfolio Palette */
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    --surface: 0 0% 5%;
+    --surface-foreground: 0 0% 100%;
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 100%;
+    --card-border: 0 0% 100% / 0.12;
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 70%;
+    --muted: 0 0% 14%;
+    --muted-foreground: 0 0% 55%;
+    --accent: 0 0% 100%;
+    --accent-foreground: 0 0% 0%;
+    --border: 0 0% 100% / 0.12;
+    --input: 0 0% 100% / 0.14;
+    --ring: 0 0% 100%;
   }
 
   * {
@@ -139,10 +148,16 @@
   }
 
   html {
-    scroll-behavior: smooth;
     background-color: #ffffff;
     color: #090a0f;
     color-scheme: light;
+    font-family: var(--font-primary);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
   }
 
   html.dark {
@@ -155,20 +170,66 @@
     background-color: inherit;
     color: inherit;
     overflow-x: hidden;
-    font-family: var(--font-modernist);
-    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    font-family: var(--font-primary);
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
-  /* Display Headings (Debata) */
-  h1, h2, h3 {
-    font-family: var(--font-debata);
+  button, input, textarea, select {
+    font-family: inherit;
+  }
+
+  /* ==========================================================================
+     GLOBAL TYPOGRAPHY HIERARCHY (Matching Reference)
+     Hero headings: 64–76px desktop, regular weight (400), line-height 1.05–1.15
+     Section headings: 48–64px desktop, regular weight (400)
+     Card headings: 28–36px, regular weight (400)
+     Body paragraphs: 18–22px, regular weight (400), line-height 1.5–1.7
+     Navigation and buttons: 14–17px, medium weight (500)
+     Metadata and labels: 12–14px, regular weight (400)
+     ========================================================================== */
+
+  h1 {
+    font-family: var(--font-primary);
+    font-size: clamp(2.5rem, 4.5vw + 1rem, 4.75rem); /* 64–76px desktop */
+    font-weight: 400;
+    line-height: 1.1;
     letter-spacing: -0.025em;
   }
 
-  /* Supporting Interface Headings & Labels (Modernist) */
-  h4, h5, h6 {
-    font-family: var(--font-modernist);
+  h2 {
+    font-family: var(--font-primary);
+    font-size: clamp(2rem, 3.2vw + 0.5rem, 4rem); /* 48–64px desktop */
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+
+  h3 {
+    font-family: var(--font-primary);
+    font-size: clamp(1.5rem, 1.2vw + 0.75rem, 2.25rem); /* 28–36px */
+    font-weight: 400;
+    line-height: 1.25;
     letter-spacing: -0.015em;
+  }
+
+  h4, h5, h6 {
+    font-family: var(--font-primary);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+
+  p {
+    font-family: var(--font-primary);
+    font-size: clamp(1rem, 0.25vw + 0.95rem, 1.375rem); /* 18–22px desktop */
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: -0.005em;
+  }
+
+  a, button {
+    font-family: var(--font-primary);
   }
 }
 
@@ -176,85 +237,109 @@
    02. TYPOGRAPHIC UTILITIES & HIERARCHY
    ========================================================================== */
 
-.font-debata {
-  font-family: var(--font-debata);
+.font-primary,
+.font-general-sans,
+.font-debata,
+.font-modernist,
+.font-sans,
+.font-body,
+.font-heading,
+.font-display {
+  font-family: var(--font-primary);
 }
 
-.font-modernist {
-  font-family: var(--font-modernist);
-}
-
-.font-modernist-mono {
+.font-modernist-mono,
+.font-mono {
   font-family: var(--font-modernist-mono);
 }
 
-/* Swiss Modernist Eyebrow Label */
-.eyebrow-label {
-  font-family: var(--font-modernist);
-  font-size: 0.75rem; /* 12px */
-  line-height: 1rem;
-  letter-spacing: 0.12em;
+/* Swiss Eyebrow Label: 12–14px, regular weight, letter-spacing */
+.eyebrow-label,
+.meta-label {
+  font-family: var(--font-primary);
+  font-size: clamp(0.75rem, 0.15vw + 0.72rem, 0.875rem); /* 12–14px */
+  line-height: 1.4;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 400;
 }
 
-/* Hero Fluid Display Headline */
+/* Hero Fluid Display Headline: 64–76px desktop, regular weight, line-height 1.05–1.15 */
 .hero-display-headline {
-  font-family: var(--font-debata);
-  font-size: clamp(2.5rem, 5vw + 1rem, 4.5rem);
-  line-height: 1.05;
-  letter-spacing: -0.035em;
-  font-weight: 700;
+  font-family: var(--font-primary);
+  font-size: clamp(2.5rem, 4.5vw + 1rem, 4.75rem);
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  font-weight: 400;
 }
 
-/* Section Display Headline */
+/* Section Display Headline: 48–64px desktop, regular weight */
 .section-display-headline {
-  font-family: var(--font-debata);
-  font-size: clamp(2rem, 3.5vw + 0.5rem, 3.25rem);
-  line-height: 1.12;
-  letter-spacing: -0.03em;
-  font-weight: 700;
+  font-family: var(--font-primary);
+  font-size: clamp(2rem, 3.2vw + 0.5rem, 4rem);
+  line-height: 1.14;
+  letter-spacing: -0.02em;
+  font-weight: 400;
 }
 
-/* Modernist Body Type Standard: 16-19px desktop, 15-17px mobile */
+/* Card Heading: 28–36px, regular weight */
+.card-headline {
+  font-family: var(--font-primary);
+  font-size: clamp(1.5rem, 1.2vw + 0.75rem, 2.25rem);
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  font-weight: 400;
+}
+
+/* Body paragraphs: 18–22px desktop, regular weight, line-height 1.5–1.7 */
+.body-paragraph,
 .modernist-body {
-  font-family: var(--font-modernist);
-  font-size: clamp(0.9375rem, 0.5vw + 0.85rem, 1.125rem);
-  line-height: 1.65;
-  letter-spacing: -0.01em;
+  font-family: var(--font-primary);
+  font-size: clamp(1rem, 0.25vw + 0.95rem, 1.375rem);
+  line-height: 1.62;
+  letter-spacing: -0.005em;
+  font-weight: 400;
+}
+
+/* Navigation and buttons: 14–17px, medium weight (500) */
+.nav-btn-text {
+  font-family: var(--font-primary);
+  font-size: clamp(0.875rem, 0.2vw + 0.825rem, 1.0625rem);
+  font-weight: 500;
+  letter-spacing: -0.005em;
 }
 
 /* ==========================================================================
-   03. SIGNATURE PALETTE & ACCENT GRADIENTS
-   Cyan (#24D9FF), Electric Blue (#326BFF), Violet (#654CFF)
-   Used sparingly for display typography, CTAs, and active states.
+   03. MONOCHROME PALETTE & GRADIENTS
+   High-contrast, elegant black and white typography and surfaces.
    ========================================================================== */
 
 .nova-gradient-text {
-  background: linear-gradient(135deg, #24d9ff 0%, #326bff 50%, #654cff 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 45%, #999999 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+:root:not(.dark) .nova-gradient-text {
+  background: linear-gradient(135deg, #000000 0%, #333333 45%, #666666 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .nova-gradient-bg {
-  background: linear-gradient(135deg, #24d9ff 0%, #326bff 50%, #654cff 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #d4d4d4 50%, #737373 100%);
 }
 
 .nova-gradient-border {
-  border-image: linear-gradient(135deg, #24d9ff, #654cff) 1;
+  border-image: linear-gradient(135deg, #ffffff, #525252) 1;
 }
 
-/* Subtle glow effects */
-.glow-cyan {
-  box-shadow: 0 0 35px rgba(36, 217, 255, 0.25);
-}
-
-.glow-blue {
-  box-shadow: 0 0 35px rgba(50, 107, 255, 0.25);
-}
-
-.glow-violet {
-  box-shadow: 0 0 35px rgba(101, 76, 255, 0.25);
+/* Subtle, performant monochrome GPU glow effects */
+.glow-cyan,
+.glow-blue,
+.glow-violet,
+.glow-monochrome {
+  box-shadow: 0 4px 24px rgba(255, 255, 255, 0.12);
 }
 
 /* Glassmorphism surface */
@@ -293,4 +378,30 @@
 
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
+}
+
+/* ==========================================================================
+   04. PERFORMANCE OPTIMIZATIONS & CONTAINMENT
+   ========================================================================== */
+
+.section-contain {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 750px;
+}
+
+.gpu-layer {
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

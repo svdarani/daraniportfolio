@@ -27,7 +27,7 @@ export const NovaProjects: React.FC = () => {
   });
 
   return (
-    <section id="projects" className="py-24 sm:py-32 bg-neutral-50 dark:bg-[#090A0F] relative transition-colors">
+    <section id="projects" className="section-contain py-24 sm:py-32 bg-neutral-50 dark:bg-[#090A0F] relative transition-colors">
       <div className="max-w-[1320px] mx-auto px-5 sm:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <NovaSectionHeader
@@ -44,7 +44,7 @@ export const NovaProjects: React.FC = () => {
         </div>
 
         {/* Filter Pills: Modernist */}
-        <div className="flex flex-wrap items-center gap-2 mb-12 pb-4 border-b border-neutral-200 dark:border-white/[0.08]">
+        <div className="flex flex-wrap items-center gap-2 mb-12 pb-4 border-b border-neutral-200 dark:border-white/10">
           {filterCategories.map((cat) => {
             const isActive = activeFilter === cat;
             return (
@@ -54,8 +54,8 @@ export const NovaProjects: React.FC = () => {
                 onClick={() => setActiveFilter(cat)}
                 className={`px-4 py-2 rounded-full text-xs sm:text-sm font-modernist font-medium transition-all duration-200 cursor-pointer ${
                   isActive
-                    ? "bg-[#326BFF] text-white shadow-[0_4px_16px_rgba(50,107,255,0.35)] font-semibold"
-                    : "bg-white dark:bg-[#151821] text-neutral-600 dark:text-[#A5ADBD] hover:text-black dark:hover:text-white border border-neutral-200 dark:border-white/[0.08] hover:border-[#326BFF]/30 dark:hover:border-white/20"
+                    ? "bg-black text-white dark:bg-white dark:text-black shadow-md font-semibold"
+                    : "bg-white dark:bg-[#121212] text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white border border-neutral-200 dark:border-white/10 hover:border-black/30 dark:hover:border-white/30"
                 }`}
               >
                 {cat}
@@ -69,23 +69,24 @@ export const NovaProjects: React.FC = () => {
           {filteredProjects.map((project) => (
             <div
               key={project.id}
-              className="group rounded-3xl bg-white dark:bg-[#151821] border border-neutral-200 dark:border-white/[0.08] hover:border-[#326BFF]/40 dark:hover:border-[#326BFF]/40 overflow-hidden flex flex-col justify-between transition-all duration-300 shadow-sm hover:shadow-lg"
+              className="group rounded-3xl bg-white dark:bg-[#121212] border border-neutral-200 dark:border-white/10 hover:border-black/40 dark:hover:border-white/40 overflow-hidden flex flex-col justify-between transition-all duration-300 shadow-sm hover:shadow-lg"
             >
               <div>
                 {/* Visual Thumbnail */}
-                <div className="relative aspect-[16/10] w-full overflow-hidden bg-neutral-100 dark:bg-[#11131A]">
+                <div className="relative aspect-[16/10] w-full overflow-hidden bg-neutral-100 dark:bg-[#0c0c0c]">
                   <Image
                     src={project.image}
                     alt={project.title}
                     fill
-                    className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+                    loading="lazy"
+                    className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105 transform-gpu"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#090A0F]/60 via-transparent to-transparent opacity-70" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-70" />
 
                   {/* Filter category pill: Modernist */}
                   <div className="absolute top-4 left-4 z-10">
-                    <span className="px-3 py-1 rounded-full text-[11px] font-modernist tracking-wider uppercase bg-white/90 dark:bg-[#090A0F]/85 backdrop-blur-md text-[#326BFF] dark:text-[#24D9FF] font-semibold border border-neutral-200 dark:border-white/10 shadow-sm">
+                    <span className="px-3 py-1 rounded-full text-[11px] font-modernist tracking-wider uppercase bg-white/95 dark:bg-black/95 text-black dark:text-white font-semibold border border-neutral-200 dark:border-white/15 shadow-sm">
                       {project.filterCategory}
                     </span>
                   </div>
@@ -93,17 +94,17 @@ export const NovaProjects: React.FC = () => {
 
                 {/* Body Content */}
                 <div className="p-6 sm:p-7">
-                  <div className="text-xs font-modernist text-neutral-500 dark:text-[#A5ADBD] mb-1">
+                  <div className="text-xs font-modernist text-neutral-500 dark:text-neutral-400 mb-1">
                     {project.year} · {project.role}
                   </div>
 
                   {/* Project Title: Debata Display */}
-                  <h3 className="font-debata text-xl sm:text-2xl font-bold text-neutral-950 dark:text-[#F7F8FC] mb-3 tracking-tight transition-colors">
+                  <h3 className="font-debata text-xl sm:text-2xl font-bold text-neutral-950 dark:text-white mb-3 tracking-tight transition-colors">
                     {project.title}
                   </h3>
 
                   {/* Description: Modernist */}
-                  <p className="font-modernist text-xs sm:text-sm text-neutral-600 dark:text-[#A5ADBD] leading-relaxed mb-6 line-clamp-3">
+                  <p className="font-modernist text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed mb-6 line-clamp-3">
                     {project.description}
                   </p>
 
@@ -112,7 +113,7 @@ export const NovaProjects: React.FC = () => {
                     {project.technologies.slice(0, 3).map((tech) => (
                       <span
                         key={tech}
-                        className="px-2.5 py-0.5 rounded-md bg-neutral-100 dark:bg-[#11131A] text-[10px] font-modernist text-neutral-600 dark:text-[#A5ADBD] border border-neutral-200 dark:border-white/[0.06]"
+                        className="px-2.5 py-0.5 rounded-md bg-neutral-100 dark:bg-[#0c0c0c] text-[10px] font-modernist text-neutral-600 dark:text-neutral-300 border border-neutral-200 dark:border-white/10"
                       >
                         {tech}
                       </span>
@@ -122,14 +123,14 @@ export const NovaProjects: React.FC = () => {
               </div>
 
               {/* Card Footer CTA */}
-              <div className="p-6 sm:p-7 pt-0 border-t border-neutral-200 dark:border-white/[0.06] mt-4 flex items-center justify-between">
-                <span className="text-xs font-modernist text-neutral-400 dark:text-[#A5ADBD]">
+              <div className="p-6 sm:p-7 pt-0 border-t border-neutral-200 dark:border-white/10 mt-4 flex items-center justify-between">
+                <span className="text-xs font-modernist text-neutral-400 dark:text-neutral-500">
                   {project.status || "Completed"}
                 </span>
 
                 <Link
                   href={`/projects/${project.slug}`}
-                  className="inline-flex items-center gap-1.5 text-xs font-modernist font-semibold text-[#326BFF] hover:text-[#258CFF] dark:text-[#24D9FF] dark:hover:text-white transition-colors group/link"
+                  className="inline-flex items-center gap-1.5 text-xs font-modernist font-semibold text-neutral-900 hover:text-black dark:text-white dark:hover:text-neutral-300 transition-colors group/link"
                 >
                   <span>Explore Case Study</span>
                   <FiArrowUpRight className="w-4 h-4 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />

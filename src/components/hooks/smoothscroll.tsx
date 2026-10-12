@@ -1,13 +1,17 @@
 "use client";
-import { ReactLenis } from "lenis/react";
+
 import { ReactNode } from "react";
 
 interface SmoothScrollProps {
   children: ReactNode;
 }
 
-function SmoothScroll({ children }: SmoothScrollProps) {
-  return <ReactLenis root>{children}</ReactLenis>;
+/**
+ * High-performance smooth scroll wrapper.
+ * By avoiding JavaScript scroll hijacking (Lenis), native hardware-accelerated
+ * browser scrolling runs on the compositor thread with zero frame drops or input lag.
+ */
+export default function SmoothScroll({ children }: SmoothScrollProps) {
+  return <>{children}</>;
 }
 
-export default SmoothScroll;

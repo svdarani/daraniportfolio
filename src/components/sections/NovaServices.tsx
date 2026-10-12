@@ -10,7 +10,7 @@ const services = [
     number: "01",
     category: "Product & Interaction",
     title: "UI/UX Design",
-    icon: <FiLayout className="w-6 h-6 text-[#326BFF] dark:text-[#24D9FF]" />,
+    icon: <FiLayout className="w-6 h-6 text-black dark:text-white" />,
     description:
       "Designing intuitive interfaces and user journeys that make digital products easier to understand, navigate, and scale.",
     deliverables: [
@@ -29,7 +29,7 @@ const services = [
     number: "02",
     category: "Visual Communication",
     title: "Graphic Design",
-    icon: <FiImage className="w-6 h-6 text-[#326BFF] dark:text-[#24D9FF]" />,
+    icon: <FiImage className="w-6 h-6 text-black dark:text-white" />,
     description:
       "Creating visually compelling communication for brands, events, social media campaigns, and digital storytelling.",
     deliverables: [
@@ -48,7 +48,7 @@ const services = [
     number: "03",
     category: "Frontend Engineering",
     title: "Web Design & Development",
-    icon: <FiCode className="w-6 h-6 text-[#326BFF] dark:text-[#24D9FF]" />,
+    icon: <FiCode className="w-6 h-6 text-black dark:text-white" />,
     description:
       "Turning ideas into responsive websites with clear layouts, thoughtful interactions, and consistent visual systems.",
     deliverables: [
@@ -67,7 +67,7 @@ const services = [
     number: "04",
     category: "Brand Strategy",
     title: "Branding & Direction",
-    icon: <FiCompass className="w-6 h-6 text-[#326BFF] dark:text-[#24D9FF]" />,
+    icon: <FiCompass className="w-6 h-6 text-black dark:text-white" />,
     description:
       "Helping businesses and startups communicate their identity through consistent visual language and meaningful design.",
     deliverables: [
@@ -86,7 +86,7 @@ const services = [
 
 export const NovaServices: React.FC = () => {
   return (
-    <section id="services" className="py-24 sm:py-32 bg-neutral-50 dark:bg-[#090A0F] relative transition-colors">
+    <section id="services" className="section-contain py-24 sm:py-32 bg-neutral-50 dark:bg-black relative transition-colors">
       <div className="max-w-[1320px] mx-auto px-5 sm:px-8">
         <NovaSectionHeader
           eyebrow="02 / SERVICES"
@@ -99,20 +99,20 @@ export const NovaServices: React.FC = () => {
           {services.map((service) => (
             <div
               key={service.title}
-              className="p-8 sm:p-10 rounded-3xl bg-white dark:bg-[#151821] border border-neutral-200 dark:border-white/[0.08] hover:border-[#326BFF]/40 dark:hover:border-[#326BFF]/40 transition-all duration-300 shadow-sm flex flex-col justify-between group relative overflow-hidden"
+              className="p-8 sm:p-10 rounded-3xl bg-white dark:bg-[#121212] border border-neutral-200 dark:border-white/10 hover:border-black/40 dark:hover:border-white/40 transition-all duration-300 shadow-sm flex flex-col justify-between group relative overflow-hidden"
             >
               <div>
                 {/* Header row: category + number */}
-                <div className="flex items-center justify-between pb-6 mb-6 border-b border-neutral-200 dark:border-white/[0.08]">
+                <div className="flex items-center justify-between pb-6 mb-6 border-b border-neutral-200 dark:border-white/10">
                   <div className="flex items-center gap-3">
                     <div className="w-12 h-12 rounded-2xl bg-neutral-100 dark:bg-white/5 border border-neutral-200 dark:border-white/10 flex items-center justify-center group-hover:scale-105 transition-transform">
                       {service.icon}
                     </div>
-                    <span className="text-[11px] font-modernist font-semibold tracking-[0.14em] uppercase text-neutral-500 dark:text-[#A5ADBD]">
+                    <span className="text-[11px] font-modernist font-semibold tracking-[0.14em] uppercase text-neutral-500 dark:text-neutral-400">
                       {service.category}
                     </span>
                   </div>
-                  <span className="text-sm font-modernist font-semibold text-[#326BFF] dark:text-[#24D9FF]">
+                  <span className="text-sm font-mono font-semibold text-black dark:text-white">
                     {service.number}
                   </span>
                 </div>
@@ -135,7 +135,7 @@ export const NovaServices: React.FC = () => {
                   <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm font-modernist text-neutral-600 dark:text-[#A5ADBD]">
                     {service.deliverables.map((item) => (
                       <li key={item} className="flex items-center gap-2">
-                        <FiCheck className="text-[#326BFF] dark:text-[#24D9FF] w-3.5 h-3.5 flex-shrink-0" />
+                        <FiCheck className="text-black dark:text-white w-3.5 h-3.5 flex-shrink-0" />
                         <span>{item}</span>
                       </li>
                     ))}

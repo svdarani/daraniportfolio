@@ -8,22 +8,22 @@ import { socialsData } from "@/data/socials";
 
 const highlights = [
   {
-    icon: <FiFeather className="w-5 h-5 text-[#326BFF] dark:text-[#24D9FF]" />,
+    icon: <FiFeather className="w-5 h-5 text-black dark:text-white" />,
     title: "Creative Design",
     desc: "Visual storytelling, posters, event creatives, and brand assets crafted with precision.",
   },
   {
-    icon: <FiLayout className="w-5 h-5 text-[#326BFF] dark:text-[#24D9FF]" />,
+    icon: <FiLayout className="w-5 h-5 text-black dark:text-white" />,
     title: "UI/UX & Branding",
     desc: "Intuitive user journeys, design systems, and cohesive visual identities for digital products.",
   },
   {
-    icon: <FiCode className="w-5 h-5 text-[#326BFF] dark:text-[#24D9FF]" />,
+    icon: <FiCode className="w-5 h-5 text-black dark:text-white" />,
     title: "Frontend Development",
     desc: "Responsive Next.js, React, and Tailwind CSS implementation turning designs into code.",
   },
   {
-    icon: <FiCpu className="w-5 h-5 text-[#326BFF] dark:text-[#24D9FF]" />,
+    icon: <FiCpu className="w-5 h-5 text-black dark:text-white" />,
     title: "AI & Data Science",
     desc: "Python programming, machine learning foundations, NLP, and computer vision exploration.",
   },
@@ -31,7 +31,7 @@ const highlights = [
 
 export const NovaAbout: React.FC = () => {
   return (
-    <section id="about" className="py-24 sm:py-32 bg-white dark:bg-[#090A0F] relative transition-colors">
+    <section id="about" className="section-contain py-24 sm:py-32 bg-white dark:bg-black relative transition-colors">
       <div className="max-w-[1320px] mx-auto px-5 sm:px-8">
         <NovaSectionHeader
           eyebrow="01 / ABOUT"
@@ -43,9 +43,9 @@ export const NovaAbout: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
           {/* Left Column: Editorial Narrative & Contact Mini-Card (lg:col-span-7) */}
           <div className="lg:col-span-7 flex flex-col gap-6">
-            <div className="p-8 sm:p-10 rounded-3xl bg-neutral-50 dark:bg-[#151821] border border-neutral-200 dark:border-white/[0.08] shadow-sm relative overflow-hidden">
+            <div className="p-8 sm:p-10 rounded-3xl bg-neutral-50 dark:bg-[#121212] border border-neutral-200 dark:border-white/10 shadow-sm relative overflow-hidden">
               {/* About Section Display Statement in Debata */}
-              <h3 className="font-debata text-xl sm:text-2xl lg:text-3xl text-neutral-900 dark:text-[#F7F8FC] leading-snug font-bold mb-6 tracking-[-0.02em]">
+              <h3 className="font-debata text-xl sm:text-2xl lg:text-3xl text-neutral-900 dark:text-white leading-snug font-bold mb-6 tracking-[-0.02em]">
                 I&apos;m <span className="nova-gradient-text">Darani Viswanathan</span>, an Artificial Intelligence &amp; Data Science student bridging creative design, user experience, and frontend architecture.
               </h3>
 
@@ -62,39 +62,39 @@ export const NovaAbout: React.FC = () => {
                 </p>
               </div>
 
-              <div className="mt-8 pt-8 border-t border-neutral-200 dark:border-white/[0.08] flex flex-wrap items-center justify-between gap-4">
+              <div className="mt-8 pt-8 border-t border-neutral-200 dark:border-white/10 flex flex-wrap items-center justify-between gap-4">
                 <NovaButton href="/about" variant="primary" size="md">
                   More About Me
                 </NovaButton>
 
-                <div className="flex items-center gap-2 text-xs font-modernist text-neutral-500 dark:text-[#A5ADBD]">
-                  <FiCompass className="w-4 h-4 text-[#326BFF] dark:text-[#24D9FF]" />
+                <div className="flex items-center gap-2 text-xs font-modernist text-neutral-500 dark:text-neutral-400">
+                  <FiCompass className="w-4 h-4 text-black dark:text-white" />
                   <span>Based in Tamil Nadu, India</span>
                 </div>
               </div>
             </div>
 
             {/* Quick Contact Box matching NovaPersona about section */}
-            <div className="p-6 rounded-2xl bg-white dark:bg-[#11131A] border border-neutral-200 dark:border-white/[0.08] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-sm">
+            <div className="p-6 rounded-2xl bg-white dark:bg-[#0c0c0c] border border-neutral-200 dark:border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-sm">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-neutral-100 dark:bg-white/5 border border-neutral-200 dark:border-white/10 flex items-center justify-center text-[#326BFF] dark:text-[#24D9FF]">
+                <div className="w-10 h-10 rounded-xl bg-neutral-100 dark:bg-white/5 border border-neutral-200 dark:border-white/10 flex items-center justify-center text-black dark:text-white">
                   <FiMail className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="text-[11px] font-modernist uppercase tracking-wider text-neutral-500 dark:text-[#A5ADBD]">Direct Inquiry</div>
-                  <div className="text-sm font-modernist font-semibold text-neutral-900 dark:text-[#F7F8FC]">
+                  <div className="text-[11px] font-modernist uppercase tracking-wider text-neutral-500 dark:text-neutral-400">Direct Inquiry</div>
+                  <div className="text-sm font-modernist font-semibold text-neutral-900 dark:text-white">
                     {socialsData.email}
                   </div>
                 </div>
               </div>
 
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-neutral-100 dark:bg-white/5 border border-neutral-200 dark:border-white/10 flex items-center justify-center text-[#326BFF] dark:text-[#24D9FF]">
+                <div className="w-10 h-10 rounded-xl bg-neutral-100 dark:bg-white/5 border border-neutral-200 dark:border-white/10 flex items-center justify-center text-black dark:text-white">
                   <FiMapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="text-[11px] font-modernist uppercase tracking-wider text-neutral-500 dark:text-[#A5ADBD]">Institution</div>
-                  <div className="text-sm font-modernist font-semibold text-neutral-900 dark:text-[#F7F8FC]">
+                  <div className="text-[11px] font-modernist uppercase tracking-wider text-neutral-500 dark:text-neutral-400">Institution</div>
+                  <div className="text-sm font-modernist font-semibold text-neutral-900 dark:text-white">
                     Sri Shanmugha College
                   </div>
                 </div>
@@ -107,13 +107,13 @@ export const NovaAbout: React.FC = () => {
             {highlights.map((h, i) => (
               <div
                 key={h.title}
-                className="p-6 rounded-2xl bg-white dark:bg-[#151821] border border-neutral-200 dark:border-white/[0.08] hover:border-[#326BFF]/40 dark:hover:border-[#326BFF]/40 transition-all duration-300 shadow-sm group flex flex-col justify-between"
+                className="p-6 rounded-2xl bg-white dark:bg-[#121212] border border-neutral-200 dark:border-white/10 hover:border-black/40 dark:hover:border-white/40 transition-all duration-300 shadow-sm group flex flex-col justify-between"
               >
                 <div className="flex items-center justify-between mb-3">
                   <div className="w-10 h-10 rounded-xl bg-neutral-100 dark:bg-white/5 border border-neutral-200 dark:border-white/10 flex items-center justify-center group-hover:scale-105 transition-transform">
                     {h.icon}
                   </div>
-                  <span className="text-xs font-modernist font-semibold text-[#326BFF] dark:text-[#24D9FF]">
+                  <span className="text-xs font-mono font-semibold text-neutral-600 dark:text-neutral-400">
                     0{i + 1}
                   </span>
                 </div>

@@ -58,7 +58,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
       : null;
 
   return (
-    <div className="min-h-screen bg-white text-neutral-900 dark:bg-[#090A0F] dark:text-[#F7F8FC] font-modernist selection:bg-[#326BFF] selection:text-white dark:selection:bg-[#326BFF] dark:selection:text-white transition-colors">
+    <div className="min-h-screen bg-white text-black dark:bg-black dark:text-white font-modernist selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black transition-colors">
       <NovaNavbar />
 
       <main className="pt-32 pb-24 max-w-[1320px] mx-auto px-5 sm:px-8">
@@ -66,7 +66,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
         <div className="mb-8">
           <Link
             href="/works"
-            className="inline-flex items-center gap-2 text-xs font-modernist text-neutral-600 hover:text-[#326BFF] dark:text-[#A5ADBD] dark:hover:text-white transition-colors"
+            className="inline-flex items-center gap-2 text-xs font-modernist text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white transition-colors"
           >
             <FiArrowLeft className="w-3.5 h-3.5" />
             <span>Back to All Projects</span>
@@ -76,25 +76,25 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
         {/* Case Study Header: Debata Headline */}
         <div className="mb-14">
           <div className="flex flex-wrap items-center gap-3 mb-4">
-            <span className="px-3.5 py-1 rounded-full text-[11px] font-modernist font-semibold uppercase tracking-[0.14em] bg-neutral-100 dark:bg-[#151821] text-[#326BFF] dark:text-[#24D9FF] border border-neutral-200 dark:border-white/10">
+            <span className="px-3.5 py-1 rounded-full text-[11px] font-modernist font-semibold uppercase tracking-[0.14em] bg-neutral-100 dark:bg-[#121212] text-neutral-900 dark:text-white border border-neutral-200 dark:border-white/10">
               {project.filterCategory}
             </span>
-            <span className="text-xs font-modernist text-neutral-500 dark:text-[#A5ADBD]">
+            <span className="text-xs font-modernist text-neutral-500 dark:text-neutral-400">
               {project.year} · Role: {project.role}
             </span>
           </div>
 
-          <h1 className="font-debata text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-neutral-950 dark:text-[#F7F8FC] mb-6 leading-tight max-w-4xl">
+          <h1 className="font-debata text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-neutral-950 dark:text-white mb-6 leading-tight max-w-4xl">
             {project.title}
           </h1>
 
-          <p className="font-modernist text-lg sm:text-xl text-neutral-600 dark:text-[#A5ADBD] leading-relaxed max-w-3xl font-normal">
+          <p className="font-modernist text-lg sm:text-xl text-neutral-600 dark:text-neutral-400 leading-relaxed max-w-3xl font-normal">
             {project.longDescription || project.description}
           </p>
         </div>
 
         {/* Hero Artwork Frame */}
-        <div className="relative aspect-[16/9] w-full rounded-3xl overflow-hidden bg-neutral-100 dark:bg-[#151821] border border-neutral-200 dark:border-white/[0.1] shadow-xl mb-16">
+        <div className="relative aspect-[16/9] w-full rounded-3xl overflow-hidden bg-neutral-100 dark:bg-[#121212] border border-neutral-200 dark:border-white/10 shadow-xl mb-16">
           <Image
             src={project.image}
             alt={project.title}
@@ -106,9 +106,9 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
         </div>
 
         {/* Project Metadata Strip: Modernist */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-6 sm:p-8 rounded-3xl bg-neutral-50 dark:bg-[#151821] border border-neutral-200 dark:border-white/[0.08] mb-16 shadow-sm">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-6 sm:p-8 rounded-3xl bg-neutral-50 dark:bg-[#121212] border border-neutral-200 dark:border-white/10 mb-16 shadow-sm">
           <div>
-            <div className="text-[11px] font-modernist text-neutral-500 dark:text-[#A5ADBD] uppercase tracking-wider mb-1 font-semibold">
+            <div className="text-[11px] font-modernist text-neutral-500 dark:text-neutral-400 uppercase tracking-wider mb-1 font-semibold">
               Category
             </div>
             <div className="text-sm font-modernist font-semibold text-neutral-950 dark:text-white">
@@ -116,7 +116,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
             </div>
           </div>
           <div>
-            <div className="text-[11px] font-modernist text-neutral-500 dark:text-[#A5ADBD] uppercase tracking-wider mb-1 font-semibold">
+            <div className="text-[11px] font-modernist text-neutral-500 dark:text-neutral-400 uppercase tracking-wider mb-1 font-semibold">
               Role
             </div>
             <div className="text-sm font-modernist font-semibold text-neutral-950 dark:text-white">
@@ -124,7 +124,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
             </div>
           </div>
           <div>
-            <div className="text-[11px] font-modernist text-neutral-500 dark:text-[#A5ADBD] uppercase tracking-wider mb-1 font-semibold">
+            <div className="text-[11px] font-modernist text-neutral-500 dark:text-neutral-400 uppercase tracking-wider mb-1 font-semibold">
               Timeline
             </div>
             <div className="text-sm font-modernist font-semibold text-neutral-950 dark:text-white">
@@ -132,7 +132,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
             </div>
           </div>
           <div>
-            <div className="text-[11px] font-modernist text-neutral-500 dark:text-[#A5ADBD] uppercase tracking-wider mb-1 font-semibold">
+            <div className="text-[11px] font-modernist text-neutral-500 dark:text-neutral-400 uppercase tracking-wider mb-1 font-semibold">
               Status
             </div>
             <div className="text-sm font-modernist font-semibold text-neutral-900 dark:text-white">
@@ -144,14 +144,14 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
         {/* Problem & Objectives Section */}
         {project.problem && (
           <section className="mb-16">
-            <div className="p-8 sm:p-10 rounded-3xl bg-neutral-50 dark:bg-[#151821] border border-neutral-200 dark:border-white/[0.08] shadow-sm">
-              <div className="flex items-center gap-2 mb-4 text-[#326BFF] dark:text-[#24D9FF]">
+            <div className="p-8 sm:p-10 rounded-3xl bg-neutral-50 dark:bg-[#121212] border border-neutral-200 dark:border-white/10 shadow-sm">
+              <div className="flex items-center gap-2 mb-4 text-black dark:text-white">
                 <FiAlertCircle className="w-5 h-5" />
-                <h2 className="font-modernist text-xs uppercase tracking-widest font-semibold text-neutral-900 dark:text-[#F7F8FC]">
+                <h2 className="font-modernist text-xs uppercase tracking-widest font-semibold text-neutral-900 dark:text-white">
                   01. PROBLEM STATEMENT
                 </h2>
               </div>
-              <p className="font-modernist text-base sm:text-lg text-neutral-950 dark:text-[#F7F8FC] leading-relaxed font-normal">
+              <p className="font-modernist text-base sm:text-lg text-neutral-950 dark:text-neutral-200 leading-relaxed font-normal">
                 {project.problem}
               </p>
             </div>
@@ -168,12 +168,12 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
               {project.process.map((step, i) => (
                 <div
                   key={i}
-                  className="p-6 rounded-2xl bg-white dark:bg-[#151821] border border-neutral-200 dark:border-white/[0.08] shadow-sm"
+                  className="p-6 rounded-2xl bg-white dark:bg-[#0a0a0a] border border-neutral-200 dark:border-white/10 shadow-sm"
                 >
-                  <span className="text-xs font-modernist font-semibold text-[#326BFF] dark:text-[#24D9FF] block mb-2">
+                  <span className="text-xs font-modernist font-semibold text-neutral-900 dark:text-neutral-300 block mb-2">
                     Phase 0{i + 1}
                   </span>
-                  <p className="font-modernist text-sm sm:text-base text-neutral-600 dark:text-[#A5ADBD] leading-relaxed">
+                  <p className="font-modernist text-sm sm:text-base text-neutral-600 dark:text-neutral-400 leading-relaxed">
                     {step}
                   </p>
                 </div>
@@ -185,18 +185,18 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
         {/* Deliverables / Features */}
         {project.features && project.features.length > 0 && (
           <section className="mb-16">
-            <div className="p-8 sm:p-10 rounded-3xl bg-neutral-50 dark:bg-[#151821] border border-neutral-200 dark:border-white/[0.08] shadow-sm">
-              <div className="flex items-center gap-2 mb-6 text-[#326BFF] dark:text-[#24D9FF]">
+            <div className="p-8 sm:p-10 rounded-3xl bg-neutral-50 dark:bg-[#121212] border border-neutral-200 dark:border-white/10 shadow-sm">
+              <div className="flex items-center gap-2 mb-6 text-black dark:text-white">
                 <FiCheckCircle className="w-5 h-5" />
-                <h2 className="font-modernist text-xs uppercase tracking-widest font-semibold text-neutral-900 dark:text-[#F7F8FC]">
+                <h2 className="font-modernist text-xs uppercase tracking-widest font-semibold text-neutral-900 dark:text-white">
                   KEY DELIVERABLES &amp; SOLUTIONS
                 </h2>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {project.features.map((feat, i) => (
                   <div key={i} className="flex items-start gap-3">
-                    <FiCheckCircle className="text-[#326BFF] dark:text-[#24D9FF] w-4 h-4 mt-1 flex-shrink-0" />
-                    <span className="font-modernist text-sm sm:text-base text-neutral-600 dark:text-[#A5ADBD]">
+                    <FiCheckCircle className="text-black dark:text-white w-4 h-4 mt-1 flex-shrink-0" />
+                    <span className="font-modernist text-sm sm:text-base text-neutral-600 dark:text-neutral-400">
                       {feat}
                     </span>
                   </div>
@@ -210,21 +210,21 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
         {(project.solution || project.result) && (
           <section className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
             {project.solution && (
-              <div className="p-8 rounded-3xl bg-neutral-50 dark:bg-[#151821] border border-neutral-200 dark:border-white/[0.08] shadow-sm">
-                <div className="text-[11px] font-modernist font-semibold text-[#326BFF] dark:text-[#24D9FF] uppercase tracking-wider mb-2">
+              <div className="p-8 rounded-3xl bg-neutral-50 dark:bg-[#121212] border border-neutral-200 dark:border-white/10 shadow-sm">
+                <div className="text-[11px] font-modernist font-semibold text-neutral-900 dark:text-neutral-300 uppercase tracking-wider mb-2">
                   Solution
                 </div>
-                <p className="font-modernist text-sm sm:text-base text-neutral-600 dark:text-[#A5ADBD] leading-relaxed">
+                <p className="font-modernist text-sm sm:text-base text-neutral-600 dark:text-neutral-400 leading-relaxed">
                   {project.solution}
                 </p>
               </div>
             )}
             {project.result && (
-              <div className="p-8 rounded-3xl bg-neutral-50 dark:bg-[#151821] border border-neutral-200 dark:border-white/[0.08] shadow-sm">
-                <div className="text-[11px] font-modernist font-semibold text-[#326BFF] dark:text-[#24D9FF] uppercase tracking-wider mb-2">
+              <div className="p-8 rounded-3xl bg-neutral-50 dark:bg-[#121212] border border-neutral-200 dark:border-white/10 shadow-sm">
+                <div className="text-[11px] font-modernist font-semibold text-neutral-900 dark:text-neutral-300 uppercase tracking-wider mb-2">
                   Outcome &amp; Deliverables
                 </div>
-                <p className="font-modernist text-sm sm:text-base text-neutral-600 dark:text-[#A5ADBD] leading-relaxed">
+                <p className="font-modernist text-sm sm:text-base text-neutral-600 dark:text-neutral-400 leading-relaxed">
                   {project.result}
                 </p>
               </div>
@@ -234,15 +234,15 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
 
         {/* Technologies Used */}
         <section className="mb-20">
-          <div className="p-6 rounded-2xl bg-neutral-50 dark:bg-[#151821] border border-neutral-200 dark:border-white/[0.08] flex flex-wrap items-center justify-between gap-4 shadow-sm">
-            <div className="text-[11px] font-modernist font-semibold text-neutral-500 dark:text-[#A5ADBD] uppercase tracking-wider">
+          <div className="p-6 rounded-2xl bg-neutral-50 dark:bg-[#121212] border border-neutral-200 dark:border-white/10 flex flex-wrap items-center justify-between gap-4 shadow-sm">
+            <div className="text-[11px] font-modernist font-semibold text-neutral-500 dark:text-neutral-400 uppercase tracking-wider">
               Tools &amp; Technologies:
             </div>
             <div className="flex flex-wrap gap-2">
               {project.technologies.map((t) => (
                 <span
                   key={t}
-                  className="px-3 py-1 rounded-md bg-white dark:bg-[#11131A] text-xs font-modernist text-neutral-900 dark:text-white border border-neutral-200 dark:border-white/10"
+                  className="px-3 py-1 rounded-md bg-white dark:bg-[#0a0a0a] text-xs font-modernist text-neutral-900 dark:text-white border border-neutral-200 dark:border-white/10"
                 >
                   {t}
                 </span>
@@ -252,11 +252,11 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
         </section>
 
         {/* Prev / Next Navigation */}
-        <section className="pt-8 border-t border-neutral-200 dark:border-white/[0.08] flex items-center justify-between gap-4 mb-20">
+        <section className="pt-8 border-t border-neutral-200 dark:border-white/10 flex items-center justify-between gap-4 mb-20">
           {prevProject ? (
             <Link
               href={`/projects/${prevProject.slug}`}
-              className="inline-flex items-center gap-2 text-sm font-modernist text-neutral-600 hover:text-[#326BFF] dark:text-[#A5ADBD] dark:hover:text-white transition-colors"
+              className="inline-flex items-center gap-2 text-sm font-modernist text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white transition-colors"
             >
               <FiArrowLeft className="w-4 h-4" />
               <span>{prevProject.title}</span>
@@ -268,7 +268,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
           {nextProject ? (
             <Link
               href={`/projects/${nextProject.slug}`}
-              className="inline-flex items-center gap-2 text-sm font-modernist text-neutral-600 hover:text-[#326BFF] dark:text-[#A5ADBD] dark:hover:text-white transition-colors"
+              className="inline-flex items-center gap-2 text-sm font-modernist text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white transition-colors"
             >
               <span>{nextProject.title}</span>
               <FiArrowRight className="w-4 h-4" />
@@ -279,12 +279,12 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
         </section>
 
         {/* Bottom CTA */}
-        <section className="p-10 sm:p-14 rounded-3xl bg-neutral-100 dark:bg-[#151821] border border-neutral-200 dark:border-white/[0.08] flex flex-col md:flex-row items-center justify-between gap-8 shadow-sm">
+        <section className="p-10 sm:p-14 rounded-3xl bg-neutral-100 dark:bg-[#121212] border border-neutral-200 dark:border-white/10 flex flex-col md:flex-row items-center justify-between gap-8 shadow-sm">
           <div>
             <h2 className="font-debata text-2xl sm:text-4xl font-bold text-neutral-950 dark:text-white mb-2 tracking-tight">
               Need similar design or development support?
             </h2>
-            <p className="font-modernist text-sm sm:text-base text-neutral-600 dark:text-[#A5ADBD]">
+            <p className="font-modernist text-sm sm:text-base text-neutral-600 dark:text-neutral-400">
               Let&apos;s discuss your creative goals and build something thoughtful together.
             </p>
           </div>
