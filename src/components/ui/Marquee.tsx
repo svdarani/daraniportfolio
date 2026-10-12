@@ -30,7 +30,7 @@ export const Marquee: React.FC<MarqueeProps> = ({
             className="flex items-center space-x-8 text-xs md:text-sm uppercase font-mono tracking-widest text-neutral-600 dark:text-neutral-400 hover:text-neutral-950 dark:hover:text-white transition-colors"
           >
             <span>{item}</span>
-            <span className="w-1.5 h-1.5 rounded-full bg-indigo-600 dark:bg-indigo-500/80" />
+            <span className="w-1.5 h-1.5 rounded-full bg-black dark:bg-white" />
           </div>
         ))}
       </div>
