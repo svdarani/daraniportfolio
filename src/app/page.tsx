@@ -3,6 +3,11 @@
 import React from "react";
 import { NovaNavbar } from "@/components/layout/NovaNavbar";
 import { NovaHero } from "@/components/sections/NovaHero";
+import { HomeStatement } from "@/components/Home/HomeStatement";
+import { ImpressiveWorks } from "@/components/Home/ImpressiveWorks";
+import { CreativeDeveloperPillars } from "@/components/Home/CreativeDeveloperPillars";
+import { TalkContactSection } from "@/components/Home/TalkContactSection";
+import { OversizedFooter } from "@/components/Home/OversizedFooter";
 
 export default function Home() {
   return (
@@ -24,6 +29,22 @@ export default function Home() {
 
       {/* Hero Section */}
       <NovaHero />
+
+      {/* 01. Statement / Intro Section */}
+      <HomeStatement />
+
+      {/* 02. Impressive Work (4-project showcase matching reference) */}
+      <ImpressiveWorks />
+
+      {/* 03. The Creative Developer You Wish You Hired Sooner! */}
+      <CreativeDeveloperPillars />
+
+      {/* 04. That's all for now. Got a project in mind? Let's Talk */}
+      <TalkContactSection />
+
+      {/* 05. Chaos Creator Oversized Typographic Footer */}
+      <OversizedFooter />
     </main>
   );
 }
+
