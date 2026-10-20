@@ -7,6 +7,7 @@ import { Inter_Tight } from "next/font/google";
 import { IoArrowBack } from "react-icons/io5";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { OversizedFooter } from "@/components/Home/OversizedFooter";
 
 const interTight = Inter_Tight({
   subsets: ["latin"],
@@ -96,6 +97,8 @@ const CaseStudyPage = ({ params }: CaseStudyPageProps) => {
           )}
         </motion.div>
       </div>
+
+      <OversizedFooter />
     </div>
   );
 };

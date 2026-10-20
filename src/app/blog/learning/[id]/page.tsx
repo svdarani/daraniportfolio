@@ -3,6 +3,7 @@ import Link from "next/link";
 import { learningPaths } from "../../data/learningData";
 import { ArrowLeft } from "lucide-react";
 import Cooking from "@/components/CookingCourse";
+import { OversizedFooter } from "@/components/Home/OversizedFooter";
 
 interface PageProps {
   params: Promise<{
@@ -33,6 +34,8 @@ export default async function LearningPathPage({ params }: PageProps) {
         {/* Cooking Component */}
         <Cooking />
       </div>
+
+      <OversizedFooter />
     </div>
   );
 }

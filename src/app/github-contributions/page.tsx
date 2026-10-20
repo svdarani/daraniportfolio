@@ -6,6 +6,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { FiArrowLeft, FiGithub } from "react-icons/fi";
 import { socialsData } from "@/data/socials";
+import { OversizedFooter } from "@/components/Home/OversizedFooter";
 
 export const metadata: Metadata = {
   title: "GitHub Contributions & Activity | Darani Viswanathan",
@@ -68,6 +69,8 @@ export default function GitHubContributionsPage() {
           <span className="text-emerald-600 dark:text-emerald-400">● Live Connection Ready</span>
         </div>
       </div>
+
+      <OversizedFooter />
     </div>
   );
 }

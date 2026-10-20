@@ -1,5 +1,6 @@
 import React from "react";
 import { Metadata } from "next";
+import { OversizedFooter } from "@/components/Home/OversizedFooter";
 
 export const metadata: Metadata = {
   title: "Courses & Learning - Darani Viswanathan Creative Developer & Designer",
@@ -152,6 +153,8 @@ const CoursePage = () => {
           </div>
         </div>
       </div>
+
+      <OversizedFooter />
     </div>
   );
 };

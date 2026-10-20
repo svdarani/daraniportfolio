@@ -7,6 +7,7 @@ import {
 } from "../components/sidebar";
 import FloatingDock from "@/components/dock/dock";
 import { ResourcesContent } from "../components/resourses-tabs";
+import { OversizedFooter } from "@/components/Home/OversizedFooter";
 
 function MainContent() {
   const { isOpen } = useSidebar();
@@ -20,6 +21,7 @@ function MainContent() {
       <div className="max-w-7xl mx-auto px-6 py-12 lg:px-12 pt-20">
         <ResourcesContent />
       </div>
+      <OversizedFooter />
     </main>
   );
 }
