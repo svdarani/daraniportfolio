@@ -18,6 +18,7 @@ const config: Config = {
         ui: ["var(--font-primary)", '"General Sans"', "Arial", "Helvetica", "sans-serif"],
         debata: ["var(--font-primary)", '"General Sans"', "Arial", "Helvetica", "sans-serif"],
         modernist: ["var(--font-primary)", '"General Sans"', "Arial", "Helvetica", "sans-serif"],
+        outfit: ['"Outfit"', '"General Sans"', "Arial", "Helvetica", "sans-serif"],
         mono: ["var(--font-mono)", '"JetBrains Mono"', "monospace"],
       },
       colors: {
