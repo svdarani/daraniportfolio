@@ -3,7 +3,7 @@
 [![Portfolio](https://img.shields.io/badge/Portfolio-Darani%20Viswanathan-00dc82?style=for-the-badge&logo=vercel)](https://darani-portfolio.vercel.app)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Darani%20S%20V-0a66c2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/darani-s-v-79659b28b/)
 [![Instagram](https://img.shields.io/badge/Instagram-@artza_designs-e4405f?style=for-the-badge&logo=instagram)](https://www.instagram.com/artza_designs/)
-[![Email](https://img.shields.io/badge/Email-darani0906@gmail.com-ea4335?style=for-the-badge&logo=gmail)](mailto:darani0906@gmail.com)
+[![Email](https://img.shields.io/badge/Email-svdarani21@gmail.com-ea4335?style=for-the-badge&logo=gmail)](mailto:svdarani21@gmail.com)
 
 > **"Bridging human-centered aesthetic design with data intelligence and creative engineering."**  
 > AI & Data Science Scholar · Creative Frontend Developer · UI/UX Designer · Graphic Designer
