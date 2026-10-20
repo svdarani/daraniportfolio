@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { FiArrowUpRight, FiArrowUp } from "react-icons/fi";
+import { FiArrowUpRight } from "react-icons/fi";
 import { socialsData } from "@/data/socials";
 
 const navLinks = [

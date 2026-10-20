@@ -4,7 +4,6 @@ import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { socialsData } from "@/data/socials";
-import { FiMail, FiPhone, FiMapPin } from "react-icons/fi";
 
 export const TalkContactSection: React.FC = () => {
   return (
