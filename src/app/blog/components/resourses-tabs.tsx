@@ -12,7 +12,7 @@ export function ResourcesContent() {
       <div className="mb-16">
         <div ref={inViewRef}>
           <SlideUpWord
-            title={["Ashhh’s go-to resources for ", "Developing and Designing"]}
+            title={["Darani’s go-to resources for ", "Developing and Designing"]}
             isInView={titleInView}
           />
         </div>

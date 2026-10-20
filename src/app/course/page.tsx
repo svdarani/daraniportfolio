@@ -2,12 +2,12 @@ import React from "react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Courses & Learning - Ashwin Chandrasekar (Ashhhh) Creative Developer",
+  title: "Courses & Learning - Darani Viswanathan Creative Developer & Designer",
   description:
-    "Explore Ashwin Chandrasekar's courses and learning resources for web development, React, Next.js, and creative design. Learn modern web technologies and development techniques.",
+    "Explore Darani Viswanathan's courses and learning resources for web development, React, Next.js, and creative design.",
   keywords: [
-    "Ashwin Chandrasekar courses",
-    "Ashhhh courses",
+    "Darani Viswanathan courses",
+    "Darani courses",
     "Web development courses",
     "React courses",
     "Next.js courses",
@@ -15,16 +15,13 @@ export const metadata: Metadata = {
     "Frontend development courses",
     "UI/UX design courses",
     "Programming courses",
-    "Web development tutorials",
-    "Coding courses",
-    "Design courses",
   ],
   openGraph: {
     title:
-      "Courses & Learning - Ashwin Chandrasekar (Ashhhh) Creative Developer",
+      "Courses & Learning - Darani Viswanathan Creative Developer & Designer",
     description:
-      "Explore Ashwin Chandrasekar's courses and learning resources for web development, React, Next.js, and creative design.",
-    url: "https://ashhhh-portfolio.vercel.app/course",
+      "Explore Darani Viswanathan's courses and learning resources for web development, React, Next.js, and creative design.",
+    url: "https://darani-portfolio.vercel.app/course",
   },
 };
 
@@ -34,24 +31,19 @@ const CoursePage = () => {
       {/* SEO Content - Hidden but accessible to search engines */}
       <div className="sr-only">
         <h1>
-          Courses & Learning - Ashwin Chandrasekar (Ashhhh) Creative Developer
+          Courses & Learning - Darani Viswanathan Creative Developer & Designer
         </h1>
         <p>
-          Discover comprehensive courses and learning resources by Ashwin
-          Chandrasekar (Ashhhh) covering web development, React, Next.js, and
+          Discover comprehensive courses and learning resources by Darani
+          Viswanathan covering web development, React, Next.js, and
           creative design. Learn modern web technologies and development
           techniques from an experienced creative developer.
         </p>
         <p>
-          Ashhhh courses provide practical, hands-on learning experiences for
+          Darani courses provide practical, hands-on learning experiences for
           developers and designers. Master frontend development, UI/UX design,
           and modern web technologies through structured learning paths and
           tutorials.
-        </p>
-        <p>
-          Explore programming courses, design tutorials, and web development
-          resources designed to help you build exceptional digital experiences
-          and advance your career in creative development.
         </p>
       </div>
 
@@ -149,7 +141,7 @@ const CoursePage = () => {
             </h2>
             <p className="text-gray-700 mb-8">
               Join the community of developers and designers learning from
-              Ashwin Chandrasekar.
+              Darani Viswanathan.
             </p>
             <a
               href="/contact"

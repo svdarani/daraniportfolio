@@ -13,7 +13,7 @@ export function LearningPathsContent() {
       <div className="mb-16">
         <div ref={inViewRef}>
           <SlideUpWord
-            title={["Ashhh's Recommended - Docs,", "Videos & Tools"]}
+            title={["Darani's Recommended - Docs,", "Videos & Tools"]}
             isInView={titleInView}
           />
         </div>

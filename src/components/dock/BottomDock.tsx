@@ -91,7 +91,7 @@ const dockItems: DockNavItem[] = [
     title: "About",
     href: "/about",
     isAvatar: true,
-    avatarSrc: "/images/ashh.jpeg",
+    avatarSrc: "/images/darani-avatar.png",
   },
   {
     id: "resume",
@@ -267,11 +267,11 @@ function DockIconItem({
             }`}
           >
             <Image
-              src={item.avatarSrc || "/images/ashh.jpeg"}
+              src={item.avatarSrc || "/images/darani-avatar.png"}
               alt="Darani Avatar"
               fill
               sizes="80px"
-              className="object-cover"
+              className="object-cover object-top"
               priority
             />
           </motion.div>

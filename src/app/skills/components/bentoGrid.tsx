@@ -703,8 +703,8 @@ const BentoGrid = () => {
             className="col-span-2 row-span-4 rounded-[20px] text-white flex flex-col justify-between relative overflow-hidden"
           >
             <Image
-              src="/images/ashh.jpeg"
-              alt="Graphic Design"
+              src="/images/darani.png"
+              alt="Darani Design"
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               className="object-cover -z-10"

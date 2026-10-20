@@ -50,6 +50,18 @@ export const metadata = {
     canonical: "/",
   },
   manifest: "/manifest.json",
+  icons: {
+    icon: [
+      { url: "/images/darani-avatar.png", sizes: "any" },
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-icon.png" },
+      { url: "/images/darani-avatar.png" },
+    ],
+    shortcut: ["/images/darani-avatar.png"],
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -130,6 +142,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
       suppressHydrationWarning
     >
       <head>
+        <link rel="icon" href="/images/darani-avatar.png" type="image/png" sizes="any" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="apple-touch-icon" href="/apple-icon.png" />
+        <link rel="shortcut icon" href="/images/darani-avatar.png" />
         <link rel="preconnect" href="https://cdn.fontshare.com" crossOrigin="anonymous" />
         <link
           rel="stylesheet"
