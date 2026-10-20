@@ -6,6 +6,7 @@ import Script from "next/script";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ThemeProvider } from "../components/theme/ThemeProvider";
+import { CustomCursor } from "../components/ui/CustomCursor";
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -150,6 +151,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       </head>
       <body className="font-sans bg-white text-black dark:bg-black dark:text-white antialiased selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black transition-colors duration-200">
         <ThemeProvider defaultTheme="dark">
+          <CustomCursor />
           <SmoothScroll>{children}</SmoothScroll>
         </ThemeProvider>
         <Analytics />

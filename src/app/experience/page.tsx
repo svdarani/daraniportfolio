@@ -30,7 +30,7 @@ export default function ExperiencePage() {
             <span>JOURNEY &amp; CREDENTIALS</span>
           </div>
 
-          <h1 className="font-debata text-4xl sm:text-6xl lg:text-7xl font-bold tracking-[-0.035em] text-neutral-950 dark:text-white leading-[1.08] mb-6 max-w-4xl">
+          <h1 className="font-debata text-4xl sm:text-6xl lg:text-7xl font-semibold tracking-[-0.035em] text-neutral-950 dark:text-white leading-[1.08] mb-6 max-w-4xl">
             Experience &amp;{" "}
             <span className="nova-gradient-text">Achievements.</span>
           </h1>
@@ -54,13 +54,13 @@ export default function ExperiencePage() {
               <div key={item.id} className="relative group">
                 <div className="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-white dark:bg-[#121212] border-2 border-black dark:border-white group-hover:scale-125 group-hover:bg-black dark:group-hover:bg-white transition-all" />
 
-                <div className="p-8 sm:p-10 rounded-3xl bg-neutral-50 dark:bg-[#121212] border border-neutral-200 dark:border-white/10 hover:border-black/40 dark:hover:border-white/40 transition-all duration-300 shadow-sm">
+                <div className="p-8 sm:p-10 rounded-3xl bg-neutral-50 dark:bg-[#121212] border border-neutral-200 dark:border-white/10 hover:border-black/50 dark:hover:border-white/50 hover:-translate-y-1.5 hover:shadow-lg transition-all duration-300 shadow-sm group">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 mb-4 border-b border-neutral-200 dark:border-white/10 gap-2">
                     <div>
                       <span className="text-[11px] font-modernist font-semibold uppercase tracking-wider text-neutral-900 dark:text-neutral-300 block mb-1">
                         {item.organization}
                       </span>
-                      <h2 className="font-debata text-2xl sm:text-3xl font-bold text-neutral-950 dark:text-white tracking-tight">
+                      <h2 className="font-debata text-2xl sm:text-3xl font-semibold text-neutral-950 dark:text-white tracking-tight">
                         {item.role}
                       </h2>
                     </div>
@@ -81,7 +81,7 @@ export default function ExperiencePage() {
                     </div>
                     <ul className="space-y-2 text-sm font-modernist text-neutral-600 dark:text-neutral-400">
                       {item.responsibilities.map((resp, i) => (
-                        <li key={i} className="flex items-start gap-2">
+                        <li key={i} className="flex items-start gap-2 hover:translate-x-1 transition-transform">
                           <FiCheckCircle className="text-black dark:text-white w-4 h-4 mt-0.5 flex-shrink-0" />
                           <span>{resp}</span>
                         </li>
@@ -93,7 +93,7 @@ export default function ExperiencePage() {
                     {item.skills.map((skill) => (
                       <span
                         key={skill}
-                        className="px-3 py-1 rounded-md bg-white dark:bg-[#0a0a0a] text-xs font-modernist text-neutral-600 dark:text-neutral-400 border border-neutral-200 dark:border-white/10"
+                        className="px-3 py-1 rounded-md bg-white dark:bg-[#0a0a0a] text-xs font-modernist text-neutral-600 dark:text-neutral-400 border border-neutral-200 dark:border-white/10 hover:border-black/30 dark:hover:border-white/30 transition-colors"
                       >
                         {skill}
                       </span>
@@ -114,7 +114,7 @@ export default function ExperiencePage() {
             description="Engineering degree in Artificial Intelligence & Data Science."
           />
 
-          <div className="p-8 sm:p-10 rounded-3xl bg-neutral-50 dark:bg-[#121212] border border-neutral-200 dark:border-white/10 max-w-4xl shadow-sm">
+          <div className="p-8 sm:p-10 rounded-3xl bg-neutral-50 dark:bg-[#121212] border border-neutral-200 dark:border-white/10 max-w-4xl shadow-sm hover:border-black/40 dark:hover:border-white/40 hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
             {educationItems.map((edu) => (
               <div key={edu.id}>
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 mb-6 border-b border-neutral-200 dark:border-white/10 gap-2">
@@ -122,7 +122,7 @@ export default function ExperiencePage() {
                     <span className="text-[11px] font-modernist font-semibold uppercase tracking-wider text-neutral-900 dark:text-neutral-300 block mb-1">
                       {edu.organization}
                     </span>
-                    <h2 className="font-debata text-2xl sm:text-3xl font-bold text-neutral-950 dark:text-white tracking-tight">
+                    <h2 className="font-debata text-2xl sm:text-3xl font-semibold text-neutral-950 dark:text-white tracking-tight">
                       {edu.role}
                     </h2>
                   </div>
@@ -137,7 +137,7 @@ export default function ExperiencePage() {
 
                 <div className="space-y-2 text-sm font-modernist text-neutral-600 dark:text-neutral-400 mb-6">
                   {edu.responsibilities.map((r, i) => (
-                    <div key={i} className="flex items-start gap-2">
+                    <div key={i} className="flex items-start gap-2 hover:translate-x-1 transition-transform">
                       <FiCheckCircle className="text-black dark:text-white w-4 h-4 mt-0.5 flex-shrink-0" />
                       <span>{r}</span>
                     </div>
@@ -161,7 +161,7 @@ export default function ExperiencePage() {
             {achievementsData.map((item) => (
               <div
                 key={item.id}
-                className="p-7 rounded-3xl bg-neutral-50 dark:bg-[#121212] border border-neutral-200 dark:border-white/10 hover:border-black/40 dark:hover:border-white/40 transition-all duration-300 shadow-sm flex flex-col justify-between"
+                className="p-7 rounded-3xl bg-neutral-50 dark:bg-[#121212] border border-neutral-200 dark:border-white/10 hover:border-black/50 dark:hover:border-white/50 hover:-translate-y-1.5 hover:shadow-lg transition-all duration-300 shadow-sm flex flex-col justify-between group"
               >
                 <div>
                   <div className="flex items-center justify-between pb-3 mb-3 border-b border-neutral-200 dark:border-white/10">
@@ -175,7 +175,7 @@ export default function ExperiencePage() {
                     )}
                   </div>
 
-                  <h3 className="font-debata text-lg font-bold text-neutral-950 dark:text-white mb-1">
+                  <h3 className="font-debata text-lg font-semibold text-neutral-950 dark:text-white mb-1">
                     {item.title}
                   </h3>
 
@@ -195,7 +195,7 @@ export default function ExperiencePage() {
         {/* Bottom CTA */}
         <section className="p-10 sm:p-14 rounded-3xl bg-neutral-100 dark:bg-[#121212] border border-neutral-200 dark:border-white/10 flex flex-col md:flex-row items-center justify-between gap-8 shadow-sm">
           <div>
-            <h2 className="font-debata text-2xl sm:text-4xl font-bold text-neutral-950 dark:text-white mb-2 tracking-tight">
+            <h2 className="font-debata text-2xl sm:text-4xl font-semibold text-neutral-950 dark:text-white mb-2 tracking-tight">
               Have an opportunity or project?
             </h2>
             <p className="font-modernist text-sm sm:text-base text-neutral-600 dark:text-neutral-400">

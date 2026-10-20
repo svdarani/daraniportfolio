@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { motion } from "framer-motion";
 import { NovaSectionHeader } from "../ui/NovaSectionHeader";
 import { FiUsers, FiCompass, FiCpu, FiTrendingUp } from "react-icons/fi";
 
@@ -45,21 +46,23 @@ export const NovaWhyChoose: React.FC = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {reasons.map((r, i) => (
-            <div
+            <motion.div
               key={r.title}
-              className="p-8 rounded-3xl bg-neutral-50 dark:bg-[#121212] border border-neutral-200 dark:border-white/10 hover:border-black/40 dark:hover:border-white/40 transition-all duration-300 shadow-sm flex flex-col justify-between group"
+              whileHover={{ y: -5 }}
+              transition={{ type: "spring", stiffness: 350, damping: 25 }}
+              className="p-8 rounded-3xl bg-neutral-50 dark:bg-[#121212] border border-neutral-200 dark:border-white/10 hover:border-black/50 dark:hover:border-white/50 transition-colors duration-300 shadow-sm flex flex-col justify-between group"
             >
               <div>
                 <div className="flex items-center justify-between mb-6">
-                  <div className="w-12 h-12 rounded-2xl bg-white dark:bg-white/5 border border-neutral-200 dark:border-white/10 flex items-center justify-center group-hover:scale-105 transition-transform">
+                  <div className="w-12 h-12 rounded-2xl bg-white dark:bg-white/5 border border-neutral-200 dark:border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform">
                     {r.icon}
                   </div>
-                  <span className="text-xs font-mono font-semibold text-neutral-600 dark:text-neutral-400">
+                  <span className="text-xs font-mono font-semibold text-neutral-400 group-hover:text-black dark:group-hover:text-white transition-colors">
                     0{i + 1}
                   </span>
                 </div>
 
-                <h3 className="font-debata text-xl font-bold text-neutral-950 dark:text-[#F7F8FC] mb-3 tracking-tight transition-colors">
+                <h3 className="font-debata text-xl font-semibold text-neutral-950 dark:text-[#F7F8FC] mb-3 tracking-tight group-hover:text-black dark:group-hover:text-white transition-colors">
                   {r.title}
                 </h3>
 
@@ -67,10 +70,11 @@ export const NovaWhyChoose: React.FC = () => {
                   {r.description}
                 </p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
     </section>
   );
 };
+

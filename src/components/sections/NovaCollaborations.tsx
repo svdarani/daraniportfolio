@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { motion } from "framer-motion";
 import { NovaSectionHeader } from "../ui/NovaSectionHeader";
 
 const collaborations = [
@@ -73,9 +74,11 @@ export const NovaCollaborations: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {collaborations.map((collab) => (
-            <div
+            <motion.div
               key={collab.organization}
-              className="p-8 rounded-3xl bg-neutral-50 dark:bg-[#121212] border border-neutral-200 dark:border-white/10 hover:border-black/40 dark:hover:border-white/40 transition-all duration-300 shadow-sm flex flex-col justify-between group"
+              whileHover={{ y: -5 }}
+              transition={{ type: "spring", stiffness: 350, damping: 25 }}
+              className="p-8 rounded-3xl bg-neutral-50 dark:bg-[#121212] border border-neutral-200 dark:border-white/10 hover:border-black/50 dark:hover:border-white/50 transition-colors duration-300 shadow-sm flex flex-col justify-between group"
             >
               <div>
                 <div className="flex items-center justify-between pb-4 mb-4 border-b border-neutral-200 dark:border-white/10">
@@ -87,7 +90,7 @@ export const NovaCollaborations: React.FC = () => {
                   </span>
                 </div>
 
-                <h3 className="font-modernist text-lg font-bold text-neutral-950 dark:text-white mb-1 transition-colors">
+                <h3 className="font-modernist text-lg font-bold text-neutral-950 dark:text-white mb-1 group-hover:text-black dark:group-hover:text-white transition-colors">
                   {collab.organization}
                 </h3>
 
@@ -104,16 +107,17 @@ export const NovaCollaborations: React.FC = () => {
                 {collab.focus.map((f) => (
                   <span
                     key={f}
-                    className="px-2.5 py-0.5 rounded-md bg-neutral-100 dark:bg-[#0a0a0a] text-[10px] font-modernist text-neutral-600 dark:text-neutral-400 border border-neutral-200 dark:border-white/10"
+                    className="px-2.5 py-0.5 rounded-md bg-neutral-100 dark:bg-[#0a0a0a] text-[10px] font-modernist text-neutral-600 dark:text-neutral-400 border border-neutral-200 dark:border-white/10 hover:border-black/30 dark:hover:border-white/30 transition-colors"
                   >
                     {f}
                   </span>
                 ))}
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
     </section>
   );
 };
+

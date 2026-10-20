@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
 import { NovaNavbar } from "@/components/layout/NovaNavbar";
 import { NovaFooter } from "@/components/layout/NovaFooter";
 import { NovaButton } from "@/components/ui/NovaButton";
@@ -51,7 +52,7 @@ export default function ProjectsPage() {
             <span>PORTFOLIO &amp; ARCHIVE</span>
           </div>
 
-          <h1 className="font-debata text-4xl sm:text-6xl lg:text-7xl font-bold tracking-[-0.035em] text-neutral-950 dark:text-white leading-[1.08] mb-6 max-w-4xl">
+          <h1 className="font-debata text-4xl sm:text-6xl lg:text-7xl font-semibold tracking-[-0.035em] text-neutral-950 dark:text-white leading-[1.08] mb-6 max-w-4xl">
             Recent Client &amp; Creative{" "}
             <span className="nova-gradient-text">Case Studies.</span>
           </h1>
@@ -72,13 +73,21 @@ export default function ProjectsPage() {
                   key={cat}
                   type="button"
                   onClick={() => setActiveCategory(cat)}
-                  className={`px-4 py-2 rounded-full text-xs sm:text-sm font-modernist font-medium transition-all duration-200 cursor-pointer ${
+                  data-cursor="LINK"
+                  className={`relative px-4 py-2 rounded-full text-xs sm:text-sm font-modernist transition-colors duration-200 cursor-pointer ${
                     isActive
-                      ? "bg-black text-white dark:bg-white dark:text-black shadow-sm font-semibold"
-                      : "bg-neutral-100 text-neutral-600 dark:bg-[#121212] dark:text-[#A3A3A3] hover:text-black dark:hover:text-white border border-neutral-200 dark:border-white/10"
+                      ? "text-white dark:text-black font-semibold"
+                      : "text-neutral-600 dark:text-[#A3A3A3] hover:text-black dark:hover:text-white"
                   }`}
                 >
-                  {cat}
+                  {isActive && (
+                    <motion.div
+                      layoutId="archive-filter-pill"
+                      className="absolute inset-0 rounded-full bg-black dark:bg-white shadow-sm z-0"
+                      transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                    />
+                  )}
+                  <span className="relative z-10">{cat}</span>
                 </button>
               );
             })}
@@ -112,79 +121,89 @@ export default function ProjectsPage() {
             </button>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-20">
-            {filteredProjects.map((project) => (
-              <div
-                key={project.id}
-                className="group rounded-3xl bg-neutral-50 dark:bg-[#121212] border border-neutral-200 dark:border-white/10 hover:border-black/40 dark:hover:border-white/40 overflow-hidden flex flex-col justify-between transition-all duration-300 shadow-sm hover:shadow-lg"
-              >
-                <div>
-                  <div className="relative aspect-[16/10] w-full overflow-hidden bg-neutral-100 dark:bg-[#0a0a0a]">
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      fill
-                      className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-70" />
+          <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-20">
+            <AnimatePresence mode="popLayout">
+              {filteredProjects.map((project, idx) => (
+                <motion.div
+                  key={project.id}
+                  layout
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.96 }}
+                  transition={{ duration: 0.35, delay: idx * 0.04 }}
+                  whileHover={{ y: -6 }}
+                  data-cursor="PROJECT"
+                  data-cursor-text="Explore"
+                  className="group rounded-3xl bg-neutral-50 dark:bg-[#121212] border border-neutral-200 dark:border-white/10 hover:border-black/50 dark:hover:border-white/50 overflow-hidden flex flex-col justify-between transition-colors duration-300 shadow-sm hover:shadow-xl"
+                >
+                  <div>
+                    <div className="relative aspect-[16/10] w-full overflow-hidden bg-neutral-100 dark:bg-[#0a0a0a]">
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-108"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
 
-                    <div className="absolute top-4 left-4 z-10">
-                      <span className="px-3 py-1 rounded-full text-[11px] font-modernist tracking-wider uppercase bg-white/90 dark:bg-black/85 backdrop-blur-md text-neutral-900 dark:text-white font-semibold border border-neutral-200 dark:border-white/10 shadow-sm">
-                        {project.filterCategory}
-                      </span>
-                    </div>
-                  </div>
-
-                  <div className="p-6 sm:p-7">
-                    <div className="text-xs font-modernist text-neutral-400 dark:text-neutral-500 mb-1">
-                      {project.year} · {project.role}
-                    </div>
-
-                    {/* Project Title: Debata Display */}
-                    <h3 className="font-debata text-xl sm:text-2xl font-bold text-neutral-950 dark:text-white mb-3 tracking-tight transition-colors">
-                      {project.title}
-                    </h3>
-
-                    <p className="font-modernist text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed mb-6 line-clamp-3">
-                      {project.description}
-                    </p>
-
-                    <div className="flex flex-wrap gap-1.5 mb-2">
-                      {project.technologies.slice(0, 3).map((tech) => (
-                        <span
-                          key={tech}
-                          className="px-2.5 py-0.5 rounded-md bg-white dark:bg-[#0a0a0a] text-[10px] font-modernist text-neutral-600 dark:text-neutral-400 border border-neutral-200 dark:border-white/10"
-                        >
-                          {tech}
+                      <div className="absolute top-4 left-4 z-10">
+                        <span className="px-3 py-1 rounded-full text-[11px] font-modernist tracking-wider uppercase bg-white/90 dark:bg-black/85 backdrop-blur-md text-neutral-900 dark:text-white font-semibold border border-neutral-200 dark:border-white/10 shadow-sm">
+                          {project.filterCategory}
                         </span>
-                      ))}
+                      </div>
+                    </div>
+
+                    <div className="p-6 sm:p-7">
+                      <div className="text-xs font-modernist text-neutral-400 dark:text-neutral-500 mb-1">
+                        {project.year} · {project.role}
+                      </div>
+
+                      <h3 className="font-debata text-xl sm:text-2xl font-semibold text-neutral-950 dark:text-white mb-3 tracking-tight group-hover:text-black dark:group-hover:text-white transition-colors">
+                        {project.title}
+                      </h3>
+
+                      <p className="font-modernist text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed mb-6 line-clamp-3">
+                        {project.description}
+                      </p>
+
+                      <div className="flex flex-wrap gap-1.5 mb-2">
+                        {project.technologies.slice(0, 3).map((tech) => (
+                          <span
+                            key={tech}
+                            className="px-2.5 py-0.5 rounded-md bg-white dark:bg-[#0a0a0a] text-[10px] font-modernist text-neutral-600 dark:text-neutral-400 border border-neutral-200 dark:border-white/10"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                <div className="p-6 sm:p-7 pt-0 border-t border-neutral-200 dark:border-white/10 mt-4 flex items-center justify-between">
-                  <span className="text-xs font-modernist text-neutral-400 dark:text-neutral-500">
-                    {project.status || "Completed"}
-                  </span>
+                  <div className="p-6 sm:p-7 pt-0 border-t border-neutral-200 dark:border-white/10 mt-4 flex items-center justify-between">
+                    <span className="text-xs font-modernist text-neutral-400 dark:text-neutral-500">
+                      {project.status || "Completed"}
+                    </span>
 
-                  <Link
-                    href={`/projects/${project.slug}`}
-                    className="inline-flex items-center gap-1.5 text-xs font-modernist font-semibold text-neutral-900 hover:text-black dark:text-neutral-200 dark:hover:text-white transition-colors group/link"
-                  >
-                    <span>View Case Study</span>
-                    <FiArrowUpRight className="w-4 h-4 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
+                    <Link
+                      href={`/projects/${project.slug}`}
+                      data-cursor="LINK"
+                      className="inline-flex items-center gap-1.5 text-xs font-modernist font-semibold text-neutral-900 hover:text-black dark:text-neutral-200 dark:hover:text-white transition-colors group/link py-1"
+                    >
+                      <span className="group-hover/link:underline">View Case Study</span>
+                      <FiArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover/link:translate-x-1 group-hover/link:-translate-y-1" />
+                    </Link>
+                  </div>
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </motion.div>
         )}
 
         {/* Bottom CTA */}
         <section className="p-10 sm:p-14 rounded-3xl bg-neutral-100 dark:bg-[#121212] border border-neutral-200 dark:border-white/10 flex flex-col md:flex-row items-center justify-between gap-8 shadow-sm">
           <div>
-            <h2 className="font-debata text-2xl sm:text-4xl font-bold text-neutral-950 dark:text-white mb-2 tracking-tight">
+            <h2 className="font-debata text-2xl sm:text-4xl font-semibold text-neutral-950 dark:text-white mb-2 tracking-tight">
               Have a concept in mind?
             </h2>
             <p className="font-modernist text-sm sm:text-base text-neutral-600 dark:text-neutral-400">

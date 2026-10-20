@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { motion } from "framer-motion";
 import { NovaSectionHeader } from "../ui/NovaSectionHeader";
 import { FiLayout, FiImage, FiCode, FiCpu } from "react-icons/fi";
 
@@ -81,7 +82,7 @@ const primaryTools = [
 
 export const NovaSkills: React.FC = () => {
   return (
-    <section className="section-contain py-24 sm:py-32 bg-neutral-50 dark:bg-black relative transition-colors">
+    <section id="skills" className="section-contain py-24 sm:py-32 bg-neutral-50 dark:bg-black relative transition-colors">
       <div className="max-w-[1320px] mx-auto px-5 sm:px-8">
         <NovaSectionHeader
           eyebrow="CREATIVE EXPERTISE"
@@ -93,16 +94,18 @@ export const NovaSkills: React.FC = () => {
         {/* 4 Skill Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-16">
           {skillGroups.map((group) => (
-            <div
+            <motion.div
               key={group.title}
-              className="p-8 rounded-3xl bg-white dark:bg-[#121212] border border-neutral-200 dark:border-white/10 hover:border-black/40 dark:hover:border-white/40 transition-all duration-300 shadow-sm"
+              whileHover={{ y: -5 }}
+              transition={{ type: "spring", stiffness: 350, damping: 25 }}
+              className="p-8 rounded-3xl bg-white dark:bg-[#121212] border border-neutral-200 dark:border-white/10 hover:border-black/50 dark:hover:border-white/50 transition-colors duration-300 shadow-sm"
             >
               <div className="flex items-center justify-between pb-6 mb-6 border-b border-neutral-200 dark:border-white/10">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-neutral-100 dark:bg-white/5 border border-neutral-200 dark:border-white/10 flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-xl bg-neutral-100 dark:bg-white/5 border border-neutral-200 dark:border-white/10 flex items-center justify-center group-hover:scale-110 transition-transform">
                     {group.icon}
                   </div>
-                  <h3 className="font-debata text-xl font-bold text-neutral-950 dark:text-white tracking-tight">
+                  <h3 className="font-debata text-xl font-semibold text-neutral-950 dark:text-white tracking-tight">
                     {group.title}
                   </h3>
                 </div>
@@ -113,9 +116,11 @@ export const NovaSkills: React.FC = () => {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {group.skills.map((skill) => (
-                  <div
+                  <motion.div
                     key={skill.name}
-                    className="p-3 rounded-xl bg-neutral-50 dark:bg-[#0a0a0a] border border-neutral-200 dark:border-white/5 flex flex-col justify-between"
+                    whileHover={{ scale: 1.02, y: -2 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 25 }}
+                    className="p-3.5 rounded-xl bg-neutral-50 dark:bg-[#0a0a0a] border border-neutral-200 dark:border-white/5 hover:border-neutral-400 dark:hover:border-white/30 flex flex-col justify-between transition-colors cursor-default"
                   >
                     <span className="text-sm font-modernist font-medium text-neutral-900 dark:text-white mb-1">
                       {skill.name}
@@ -123,10 +128,10 @@ export const NovaSkills: React.FC = () => {
                     <span className="text-[11px] font-modernist text-neutral-500 dark:text-neutral-400">
                       {skill.status}
                     </span>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 
@@ -136,19 +141,21 @@ export const NovaSkills: React.FC = () => {
             <div className="text-[11px] font-modernist uppercase tracking-[0.14em] text-neutral-900 dark:text-neutral-300 font-semibold mb-1">
               Active Software &amp; Environments
             </div>
-            <div className="font-debata text-lg sm:text-xl font-bold text-neutral-950 dark:text-white">
+            <div className="font-debata text-lg sm:text-xl font-semibold text-neutral-950 dark:text-white">
               Tools I actively use in creative &amp; coding workflows
             </div>
           </div>
 
           <div className="flex flex-wrap gap-2">
             {primaryTools.map((tool) => (
-              <span
+              <motion.span
                 key={tool}
-                className="px-4 py-2 rounded-xl bg-neutral-100 dark:bg-[#0a0a0a] border border-neutral-200 dark:border-white/10 text-xs sm:text-sm font-modernist text-neutral-700 dark:text-neutral-300 hover:text-black dark:hover:text-white transition-colors"
+                whileHover={{ scale: 1.06, y: -2 }}
+                transition={{ type: "spring", stiffness: 400, damping: 25 }}
+                className="px-4 py-2 rounded-xl bg-neutral-100 dark:bg-[#0a0a0a] border border-neutral-200 dark:border-white/10 text-xs sm:text-sm font-modernist text-neutral-700 dark:text-neutral-300 hover:text-black dark:hover:text-white hover:border-black/30 dark:hover:border-white/30 transition-colors cursor-default shadow-xs"
               >
                 {tool}
-              </span>
+              </motion.span>
             ))}
           </div>
         </div>
@@ -156,3 +163,4 @@ export const NovaSkills: React.FC = () => {
     </section>
   );
 };
+

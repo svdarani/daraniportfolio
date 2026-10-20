@@ -5,7 +5,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import Hero from "./components/hero";
 import Grid from "./components/bentoGrid";
-import FloatingDock from "@/components/dock/dock";
+import { NovaNavbar } from "@/components/layout/NovaNavbar";
 import Hire from "./components/Hire";
 import SlidingImages from "../../components/Projects";
 import Footer from "../../components/Footer";
@@ -30,7 +30,7 @@ const Skills = () => {
       </div>
 
       <div className="bg-white dark:bg-black text-neutral-900 dark:text-white overflow-hidden transition-colors duration-300">
-        <FloatingDock />
+        <NovaNavbar />
         <Hero />
         <div className="flex items-center justify-center ">
           <Grid />

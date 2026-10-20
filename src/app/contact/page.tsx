@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import { NovaNavbar } from "@/components/layout/NovaNavbar";
 import { NovaFooter } from "@/components/layout/NovaFooter";
 import { NovaButton } from "@/components/ui/NovaButton";
@@ -86,7 +87,7 @@ export default function ContactPage() {
             <span>CONNECT WITH DARANI</span>
           </div>
 
-          <h1 className="font-debata text-4xl sm:text-6xl lg:text-7xl font-bold tracking-[-0.035em] text-neutral-950 dark:text-white leading-[1.08] mb-6 max-w-4xl">
+          <h1 className="font-debata text-4xl sm:text-6xl lg:text-7xl font-semibold tracking-[-0.035em] text-neutral-950 dark:text-white leading-[1.08] mb-6 max-w-4xl">
             Reach me anytime,{" "}
             <span className="nova-gradient-text">anywhere.</span>
           </h1>
@@ -101,7 +102,7 @@ export default function ContactPage() {
           {/* Left Column: Direct Inquiries */}
           <div className="lg:col-span-5 flex flex-col gap-6">
             <div className="p-8 sm:p-10 rounded-3xl bg-neutral-50 dark:bg-[#121212] border border-neutral-200 dark:border-white/10 shadow-sm">
-              <h2 className="font-debata text-xl sm:text-2xl font-bold text-neutral-950 dark:text-white mb-2 tracking-tight">
+              <h2 className="font-debata text-xl sm:text-2xl font-semibold text-neutral-950 dark:text-white mb-2 tracking-tight">
                 I&apos;d love to hear from you
               </h2>
               <p className="font-modernist text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed mb-8">
@@ -157,33 +158,42 @@ export default function ContactPage() {
                   Social Channels:
                 </div>
                 <div className="flex items-center gap-3">
-                  <a
+                  <motion.a
                     href={socialsData.links.find((l) => l.platform === "GitHub")?.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-xl bg-white dark:bg-[#0a0a0a] border border-neutral-200 dark:border-white/10 flex items-center justify-center text-neutral-600 hover:text-black hover:border-black/40 dark:text-neutral-400 dark:hover:text-white dark:hover:border-white/40 transition-all hover:scale-105"
+                    whileHover={{ scale: 1.1, y: -2 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                    data-cursor="LINK"
+                    className="w-10 h-10 rounded-xl bg-white dark:bg-[#0a0a0a] border border-neutral-200 dark:border-white/10 flex items-center justify-center text-neutral-600 hover:text-black hover:border-black/40 dark:text-neutral-400 dark:hover:text-white dark:hover:border-white/40 transition-colors shadow-xs"
                     aria-label="GitHub profile"
                   >
                     <FiGithub className="w-5 h-5" />
-                  </a>
-                  <a
+                  </motion.a>
+                  <motion.a
                     href={socialsData.links.find((l) => l.platform === "LinkedIn")?.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-xl bg-white dark:bg-[#0a0a0a] border border-neutral-200 dark:border-white/10 flex items-center justify-center text-neutral-600 hover:text-black hover:border-black/40 dark:text-neutral-400 dark:hover:text-white dark:hover:border-white/40 transition-all hover:scale-105"
+                    whileHover={{ scale: 1.1, y: -2 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                    data-cursor="LINK"
+                    className="w-10 h-10 rounded-xl bg-white dark:bg-[#0a0a0a] border border-neutral-200 dark:border-white/10 flex items-center justify-center text-neutral-600 hover:text-black hover:border-black/40 dark:text-neutral-400 dark:hover:text-white dark:hover:border-white/40 transition-colors shadow-xs"
                     aria-label="LinkedIn profile"
                   >
                     <FiLinkedin className="w-5 h-5" />
-                  </a>
-                  <a
+                  </motion.a>
+                  <motion.a
                     href={socialsData.links.find((l) => l.platform === "Instagram")?.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-xl bg-white dark:bg-[#0a0a0a] border border-neutral-200 dark:border-white/10 flex items-center justify-center text-neutral-600 hover:text-black hover:border-black/40 dark:text-neutral-400 dark:hover:text-white dark:hover:border-white/40 transition-all hover:scale-105"
+                    whileHover={{ scale: 1.1, y: -2 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                    data-cursor="LINK"
+                    className="w-10 h-10 rounded-xl bg-white dark:bg-[#0a0a0a] border border-neutral-200 dark:border-white/10 flex items-center justify-center text-neutral-600 hover:text-black hover:border-black/40 dark:text-neutral-400 dark:hover:text-white dark:hover:border-white/40 transition-colors shadow-xs"
                     aria-label="Instagram profile"
                   >
                     <FiInstagram className="w-5 h-5" />
-                  </a>
+                  </motion.a>
                 </div>
               </div>
             </div>
@@ -197,7 +207,7 @@ export default function ContactPage() {
                   <div className="w-16 h-16 rounded-2xl bg-neutral-100 dark:bg-[#0a0a0a] border border-neutral-300 dark:border-white/10 flex items-center justify-center text-black dark:text-white mb-6 shadow-sm">
                     <FiCheckCircle className="w-8 h-8" />
                   </div>
-                  <h3 className="font-debata text-2xl font-bold text-neutral-950 dark:text-white mb-2">
+                  <h3 className="font-debata text-2xl font-semibold text-neutral-950 dark:text-white mb-2">
                     Message Sent Successfully!
                   </h3>
                   <p className="font-modernist text-base text-neutral-600 dark:text-neutral-400 max-w-md mb-8">

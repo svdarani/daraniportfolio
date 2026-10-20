@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { motion } from "framer-motion";
 import { NovaSectionHeader } from "../ui/NovaSectionHeader";
 import { NovaButton } from "../ui/NovaButton";
 import { FiLayout, FiImage, FiCode, FiCompass, FiCheck } from "react-icons/fi";
@@ -97,46 +98,48 @@ export const NovaServices: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           {services.map((service) => (
-            <div
+            <motion.div
               key={service.title}
-              className="p-8 sm:p-10 rounded-3xl bg-white dark:bg-[#121212] border border-neutral-200 dark:border-white/10 hover:border-black/40 dark:hover:border-white/40 transition-all duration-300 shadow-sm flex flex-col justify-between group relative overflow-hidden"
+              whileHover={{ y: -6 }}
+              transition={{ type: "spring", stiffness: 350, damping: 25 }}
+              className="p-8 sm:p-10 rounded-3xl bg-white dark:bg-[#121212] border border-neutral-200 dark:border-white/10 hover:border-black/50 dark:hover:border-white/50 transition-colors duration-300 shadow-sm hover:shadow-lg flex flex-col justify-between group relative overflow-hidden"
             >
               <div>
                 {/* Header row: category + number */}
                 <div className="flex items-center justify-between pb-6 mb-6 border-b border-neutral-200 dark:border-white/10">
                   <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-2xl bg-neutral-100 dark:bg-white/5 border border-neutral-200 dark:border-white/10 flex items-center justify-center group-hover:scale-105 transition-transform">
+                    <div className="w-12 h-12 rounded-2xl bg-neutral-100 dark:bg-white/5 border border-neutral-200 dark:border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform">
                       {service.icon}
                     </div>
                     <span className="text-[11px] font-modernist font-semibold tracking-[0.14em] uppercase text-neutral-500 dark:text-neutral-400">
                       {service.category}
                     </span>
                   </div>
-                  <span className="text-sm font-mono font-semibold text-black dark:text-white">
+                  <span className="text-sm font-mono font-semibold text-black dark:text-white group-hover:scale-110 transition-transform">
                     {service.number}
                   </span>
                 </div>
 
-                {/* Service Card Title: Debata Display */}
-                <h3 className="font-debata text-2xl sm:text-3xl font-bold text-neutral-950 dark:text-[#F7F8FC] mb-4 tracking-[-0.02em] transition-colors">
+                {/* Service Card Title */}
+                <h3 className="font-debata text-2xl sm:text-3xl font-semibold text-neutral-950 dark:text-[#F7F8FC] mb-4 tracking-[-0.02em] group-hover:text-black dark:group-hover:text-white transition-colors">
                   {service.title}
                 </h3>
 
-                {/* Modernist Description */}
+                {/* Description */}
                 <p className="font-modernist text-sm sm:text-base text-neutral-600 dark:text-[#A5ADBD] leading-relaxed mb-8 font-normal">
                   {service.description}
                 </p>
 
-                {/* Deliverables List: Modernist */}
+                {/* Deliverables List */}
                 <div className="mb-8">
                   <div className="text-[11px] font-modernist font-semibold text-neutral-500 dark:text-[#A5ADBD] uppercase tracking-[0.12em] mb-3">
                     Deliverables &amp; Focus:
                   </div>
                   <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm font-modernist text-neutral-600 dark:text-[#A5ADBD]">
                     {service.deliverables.map((item) => (
-                      <li key={item} className="flex items-center gap-2">
-                        <FiCheck className="text-black dark:text-white w-3.5 h-3.5 flex-shrink-0" />
-                        <span>{item}</span>
+                      <li key={item} className="flex items-center gap-2 group/item hover:translate-x-1 transition-transform">
+                        <FiCheck className="text-black dark:text-white w-3.5 h-3.5 flex-shrink-0 group-hover/item:scale-125 transition-transform" />
+                        <span className="group-hover/item:text-black dark:group-hover/item:text-white transition-colors">{item}</span>
                       </li>
                     ))}
                   </ul>
@@ -149,7 +152,7 @@ export const NovaServices: React.FC = () => {
                   {service.tools.map((t) => (
                     <span
                       key={t}
-                      className="px-2.5 py-1 rounded-md bg-neutral-100 dark:bg-[#11131A] text-[11px] font-modernist text-neutral-600 dark:text-[#A5ADBD] border border-neutral-200 dark:border-white/[0.06]"
+                      className="px-2.5 py-1 rounded-md bg-neutral-100 dark:bg-[#11131A] text-[11px] font-modernist text-neutral-600 dark:text-[#A5ADBD] border border-neutral-200 dark:border-white/[0.06] hover:border-black/30 dark:hover:border-white/30 hover:text-black dark:hover:text-white transition-colors"
                     >
                       {t}
                     </span>
@@ -160,10 +163,11 @@ export const NovaServices: React.FC = () => {
                   {service.ctaText}
                 </NovaButton>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
     </section>
   );
 };
+

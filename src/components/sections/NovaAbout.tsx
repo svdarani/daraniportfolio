@@ -1,8 +1,10 @@
 "use client";
 
 import React from "react";
+import { motion } from "framer-motion";
 import { NovaSectionHeader } from "../ui/NovaSectionHeader";
 import { NovaButton } from "../ui/NovaButton";
+import { AnimatedCounter } from "../ui/AnimatedCounter";
 import { FiLayout, FiFeather, FiCode, FiCpu, FiMail, FiMapPin, FiCompass } from "react-icons/fi";
 import { socialsData } from "@/data/socials";
 
@@ -29,6 +31,13 @@ const highlights = [
   },
 ];
 
+const verifiedStats = [
+  { value: 2, suffix: "+", label: "Years Experience", sublabel: "UI/UX & Design" },
+  { value: 10, suffix: "+", label: "Curated Projects", sublabel: "Startups & Concepts" },
+  { value: 800, suffix: "+", label: "Creative Assets", sublabel: "Posters & Collaterals" },
+  { value: 100, suffix: "%", label: "Commitment", sublabel: "Craft & Detail" },
+];
+
 export const NovaAbout: React.FC = () => {
   return (
     <section id="about" className="section-contain py-24 sm:py-32 bg-white dark:bg-black relative transition-colors">
@@ -40,16 +49,16 @@ export const NovaAbout: React.FC = () => {
           description="A look into my background, creative interests, and how I bridge design with technology."
         />
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start mb-12">
           {/* Left Column: Editorial Narrative & Contact Mini-Card (lg:col-span-7) */}
           <div className="lg:col-span-7 flex flex-col gap-6">
             <div className="p-8 sm:p-10 rounded-3xl bg-neutral-50 dark:bg-[#121212] border border-neutral-200 dark:border-white/10 shadow-sm relative overflow-hidden">
               {/* About Section Display Statement in Debata */}
-              <h3 className="font-debata text-xl sm:text-2xl lg:text-3xl text-neutral-900 dark:text-white leading-snug font-bold mb-6 tracking-[-0.02em]">
+              <h3 className="font-debata text-xl sm:text-2xl lg:text-3xl text-neutral-900 dark:text-white leading-snug font-semibold mb-6 tracking-[-0.02em]">
                 I&apos;m <span className="nova-gradient-text">Darani Viswanathan</span>, an Artificial Intelligence &amp; Data Science student bridging creative design, user experience, and frontend architecture.
               </h3>
 
-              {/* Modernist Long-form Body Text (16-19px desktop) */}
+              {/* Modernist Long-form Body Text */}
               <div className="space-y-4 font-modernist text-base sm:text-[17px] text-neutral-600 dark:text-[#A5ADBD] leading-relaxed font-normal">
                 <p>
                   My journey into digital creativity has grown through hands-on projects, freelance design work, internships, and opportunities to collaborate with startups and innovation-focused teams like StartNet Ventures and Aakam Shine Incubation Centre.
@@ -74,19 +83,23 @@ export const NovaAbout: React.FC = () => {
               </div>
             </div>
 
-            {/* Quick Contact Box matching NovaPersona about section */}
-            <div className="p-6 rounded-2xl bg-white dark:bg-[#0c0c0c] border border-neutral-200 dark:border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-sm">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-neutral-100 dark:bg-white/5 border border-neutral-200 dark:border-white/10 flex items-center justify-center text-black dark:text-white">
+            {/* Quick Contact Box */}
+            <div className="p-6 rounded-2xl bg-white dark:bg-[#0c0c0c] border border-neutral-200 dark:border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-sm hover:border-black/30 dark:hover:border-white/20 transition-colors">
+              <a
+                href={`mailto:${socialsData.email}`}
+                data-cursor="LINK"
+                className="flex items-center gap-3 group"
+              >
+                <div className="w-10 h-10 rounded-xl bg-neutral-100 dark:bg-white/5 border border-neutral-200 dark:border-white/10 flex items-center justify-center text-black dark:text-white group-hover:scale-105 transition-transform">
                   <FiMail className="w-5 h-5" />
                 </div>
                 <div>
                   <div className="text-[11px] font-modernist uppercase tracking-wider text-neutral-500 dark:text-neutral-400">Direct Inquiry</div>
-                  <div className="text-sm font-modernist font-semibold text-neutral-900 dark:text-white">
+                  <div className="text-sm font-modernist font-semibold text-neutral-900 dark:text-white group-hover:underline">
                     {socialsData.email}
                   </div>
                 </div>
-              </div>
+              </a>
 
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-xl bg-neutral-100 dark:bg-white/5 border border-neutral-200 dark:border-white/10 flex items-center justify-center text-black dark:text-white">
@@ -105,32 +118,52 @@ export const NovaAbout: React.FC = () => {
           {/* Right Column: 4 Supporting Discipline Cards (lg:col-span-5) */}
           <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
             {highlights.map((h, i) => (
-              <div
+              <motion.div
                 key={h.title}
-                className="p-6 rounded-2xl bg-white dark:bg-[#121212] border border-neutral-200 dark:border-white/10 hover:border-black/40 dark:hover:border-white/40 transition-all duration-300 shadow-sm group flex flex-col justify-between"
+                whileHover={{ y: -4 }}
+                transition={{ type: "spring", stiffness: 350, damping: 25 }}
+                className="p-6 rounded-2xl bg-white dark:bg-[#121212] border border-neutral-200 dark:border-white/10 hover:border-black/40 dark:hover:border-white/40 transition-colors shadow-sm group flex flex-col justify-between"
               >
                 <div className="flex items-center justify-between mb-3">
-                  <div className="w-10 h-10 rounded-xl bg-neutral-100 dark:bg-white/5 border border-neutral-200 dark:border-white/10 flex items-center justify-center group-hover:scale-105 transition-transform">
+                  <div className="w-10 h-10 rounded-xl bg-neutral-100 dark:bg-white/5 border border-neutral-200 dark:border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform">
                     {h.icon}
                   </div>
-                  <span className="text-xs font-mono font-semibold text-neutral-600 dark:text-neutral-400">
+                  <span className="text-xs font-mono font-semibold text-neutral-400 group-hover:text-black dark:group-hover:text-white transition-colors">
                     0{i + 1}
                   </span>
                 </div>
 
                 <div>
-                  <h4 className="font-debata text-lg font-bold text-neutral-950 dark:text-[#F7F8FC] mb-2 tracking-tight transition-colors">
+                  <h4 className="font-debata text-lg font-semibold text-neutral-950 dark:text-[#F7F8FC] mb-2 tracking-tight group-hover:text-black dark:group-hover:text-white transition-colors">
                     {h.title}
                   </h4>
                   <p className="font-modernist text-xs sm:text-sm text-neutral-600 dark:text-[#A5ADBD] leading-relaxed">
                     {h.desc}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
+        </div>
+
+        {/* Animated Verified Achievement Stats Row */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-6 sm:p-8 rounded-3xl bg-neutral-50 dark:bg-[#121212] border border-neutral-200 dark:border-white/10 shadow-sm">
+          {verifiedStats.map((stat) => (
+            <div key={stat.label} className="flex flex-col items-center sm:items-start text-center sm:text-left p-3">
+              <div className="font-debata text-3xl sm:text-4xl font-semibold text-neutral-950 dark:text-white tracking-tight mb-1">
+                <AnimatedCounter to={stat.value} suffix={stat.suffix} duration={1.6} />
+              </div>
+              <div className="text-xs sm:text-sm font-modernist font-semibold text-neutral-900 dark:text-neutral-200">
+                {stat.label}
+              </div>
+              <div className="text-[11px] font-modernist text-neutral-500 dark:text-neutral-400">
+                {stat.sublabel}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
   );
 };
+

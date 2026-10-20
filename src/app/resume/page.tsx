@@ -36,7 +36,7 @@ export default function ResumePage() {
             <div className="text-[11px] font-modernist text-neutral-900 dark:text-neutral-300 uppercase tracking-wider mb-1 font-semibold">
               Curriculum Vitae
             </div>
-            <h1 className="font-debata text-2xl sm:text-3xl font-bold text-neutral-950 dark:text-white">
+            <h1 className="font-debata text-2xl sm:text-3xl font-semibold text-neutral-950 dark:text-white">
               Darani Viswanathan
             </h1>
           </div>
@@ -63,7 +63,7 @@ export default function ResumePage() {
         <div className="p-8 sm:p-12 rounded-3xl bg-neutral-50 dark:bg-[#121212] border border-neutral-200 dark:border-white/10 shadow-sm space-y-12">
           {/* Header */}
           <div className="pb-8 border-b border-neutral-200 dark:border-white/10">
-            <h2 className="font-debata text-3xl font-bold text-neutral-950 dark:text-white mb-2">
+            <h2 className="font-debata text-3xl font-semibold text-neutral-950 dark:text-white mb-2">
               Darani Viswanathan
             </h2>
             <div className="font-modernist text-base text-neutral-700 dark:text-neutral-300 font-medium mb-4">
@@ -103,7 +103,7 @@ export default function ResumePage() {
             {educationItems.map((edu) => (
               <div key={edu.id} className="p-5 rounded-2xl bg-white dark:bg-[#0a0a0a] border border-neutral-200 dark:border-white/10 shadow-sm">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
-                  <div className="font-debata font-bold text-neutral-950 dark:text-white text-base">
+                  <div className="font-debata font-semibold text-neutral-950 dark:text-white text-base">
                     {edu.role}
                   </div>
                   <div className="text-xs font-modernist text-neutral-500 dark:text-neutral-400">
@@ -132,7 +132,7 @@ export default function ResumePage() {
                   className="p-5 rounded-2xl bg-white dark:bg-[#0a0a0a] border border-neutral-200 dark:border-white/10 shadow-sm"
                 >
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-1">
-                    <div className="font-debata font-bold text-neutral-950 dark:text-white text-base">
+                    <div className="font-debata font-semibold text-neutral-950 dark:text-white text-base">
                       {item.role}
                     </div>
                     <div className="text-xs font-modernist text-neutral-500 dark:text-neutral-400">

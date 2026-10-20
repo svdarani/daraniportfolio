@@ -57,7 +57,7 @@ export default function AboutPage() {
             <span>ABOUT DARANI VISWANATHAN</span>
           </div>
 
-          <h1 className="font-debata text-4xl sm:text-6xl lg:text-7xl font-bold tracking-[-0.035em] text-neutral-950 dark:text-white leading-[1.08] mb-6 max-w-4xl">
+          <h1 className="font-debata text-4xl sm:text-6xl lg:text-7xl font-semibold tracking-[-0.035em] text-neutral-950 dark:text-white leading-[1.08] mb-6 max-w-4xl">
             Designing digital experiences that{" "}
             <span className="text-neutral-500 dark:text-neutral-400">matter.</span>
           </h1>
@@ -71,7 +71,7 @@ export default function AboutPage() {
         <section className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start mb-28">
           <div className="lg:col-span-7 space-y-6">
             <div className="p-8 sm:p-10 rounded-3xl bg-neutral-50 dark:bg-[#121212] border border-neutral-200 dark:border-white/10 shadow-sm">
-              <h2 className="font-debata text-2xl sm:text-3xl font-bold text-neutral-950 dark:text-white mb-6 tracking-tight">
+              <h2 className="font-debata text-2xl sm:text-3xl font-semibold text-neutral-950 dark:text-white mb-6 tracking-tight">
                 Personal Story &amp; Creative Journey
               </h2>
 
@@ -104,26 +104,29 @@ export default function AboutPage() {
           </div>
 
           <div className="lg:col-span-5 flex flex-col gap-6">
-            <div className="relative aspect-[3/4] w-full max-w-[400px] mx-auto rounded-3xl overflow-hidden bg-neutral-100 dark:bg-[#121212] border border-neutral-200 dark:border-white/10 shadow-md">
+            <div 
+              data-cursor="IMAGE"
+              className="relative aspect-[3/4] w-full max-w-[400px] mx-auto rounded-3xl overflow-hidden bg-neutral-100 dark:bg-[#121212] border border-neutral-200 dark:border-white/10 shadow-md group hover:border-black/40 dark:hover:border-white/40 transition-all duration-300"
+            >
               <Image
                 src="/images/darani.png"
                 alt="Darani Viswanathan portrait"
                 fill
                 priority
-                className="object-cover object-top grayscale hover:grayscale-0 transition-all duration-500"
+                className="object-cover object-top grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
                 sizes="400px"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-75" />
               <div className="absolute bottom-6 left-6 right-6">
-                <div className="p-4 rounded-2xl bg-white/90 dark:bg-black/85 backdrop-blur-md border border-neutral-200 dark:border-white/10 text-center shadow-sm">
-                  <div className="font-debata text-sm font-bold text-neutral-950 dark:text-white">Darani Viswanathan</div>
+                <div className="p-4 rounded-2xl bg-white/90 dark:bg-black/85 backdrop-blur-md border border-neutral-200 dark:border-white/10 text-center shadow-sm group-hover:border-black/40 dark:group-hover:border-white/40 transition-colors">
+                  <div className="font-debata text-sm font-semibold text-neutral-950 dark:text-white">Darani Viswanathan</div>
                   <div className="text-[11px] font-modernist text-neutral-500 dark:text-neutral-400">Creative Designer &amp; Developer</div>
                 </div>
               </div>
             </div>
 
             {/* Quick Facts Card */}
-            <div className="p-6 rounded-2xl bg-neutral-50 dark:bg-[#121212] border border-neutral-200 dark:border-white/10 space-y-3 shadow-sm">
+            <div className="p-6 rounded-2xl bg-neutral-50 dark:bg-[#121212] border border-neutral-200 dark:border-white/10 space-y-3 shadow-sm hover:border-black/30 dark:hover:border-white/30 transition-colors">
               <div className="text-[11px] font-modernist uppercase tracking-[0.14em] text-black dark:text-white font-semibold">
                 Core Positioning
               </div>
@@ -156,13 +159,13 @@ export default function AboutPage() {
             {processSteps.map((p) => (
               <div
                 key={p.step}
-                className="p-8 rounded-3xl bg-neutral-50 dark:bg-[#121212] border border-neutral-200 dark:border-white/10 hover:border-black/40 dark:hover:border-white/40 transition-all duration-300 shadow-sm flex flex-col justify-between"
+                className="p-8 rounded-3xl bg-neutral-50 dark:bg-[#121212] border border-neutral-200 dark:border-white/10 hover:border-black/50 dark:hover:border-white/50 hover:-translate-y-1.5 hover:shadow-lg transition-all duration-300 shadow-sm flex flex-col justify-between group cursor-default"
               >
                 <div>
-                  <span className="font-debata text-3xl font-bold text-black dark:text-white mb-4 block">
+                  <span className="font-debata text-3xl font-semibold text-black dark:text-white mb-4 block group-hover:scale-110 origin-left transition-transform duration-300">
                     {p.step}
                   </span>
-                  <h3 className="font-debata text-xl font-bold text-neutral-950 dark:text-white mb-3 tracking-tight">
+                  <h3 className="font-debata text-xl font-semibold text-neutral-950 dark:text-white mb-3 tracking-tight">
                     {p.title}
                   </h3>
                   <p className="font-modernist text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed font-normal">
@@ -190,7 +193,7 @@ export default function AboutPage() {
                   <span className="text-[11px] font-modernist uppercase tracking-wider text-black dark:text-white font-semibold block mb-1">
                     {education.organization}
                   </span>
-                  <h3 className="font-debata text-2xl font-bold text-neutral-950 dark:text-white tracking-tight">
+                  <h3 className="font-debata text-2xl font-semibold text-neutral-950 dark:text-white tracking-tight">
                     {education.role}
                   </h3>
                 </div>
@@ -218,7 +221,7 @@ export default function AboutPage() {
         {/* Bottom CTA */}
         <section className="p-10 sm:p-14 rounded-3xl bg-neutral-100 dark:bg-[#121212] border border-neutral-200 dark:border-white/10 flex flex-col md:flex-row items-center justify-between gap-8 shadow-sm">
           <div>
-            <h2 className="font-debata text-2xl sm:text-4xl font-bold text-neutral-950 dark:text-white mb-2 tracking-tight">
+            <h2 className="font-debata text-2xl sm:text-4xl font-semibold text-neutral-950 dark:text-white mb-2 tracking-tight">
               Interested in collaborating?
             </h2>
             <p className="font-modernist text-sm sm:text-base text-neutral-600 dark:text-neutral-400">

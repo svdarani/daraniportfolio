@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
 import { NovaSectionHeader } from "../ui/NovaSectionHeader";
 import { NovaButton } from "../ui/NovaButton";
 import { FiAlertCircle, FiActivity, FiCheckCircle, FiAward } from "react-icons/fi";
@@ -91,122 +92,167 @@ export const NovaCaseStudy: React.FC = () => {
           description="In-depth breakdowns showing the Problem, Process, Solution, and Deliverable for selected projects."
         />
 
-        {/* Case Study Switcher Pills: Modernist */}
+        {/* Case Study Switcher Pills with sliding indicator */}
         <div className="flex flex-wrap gap-2.5 mb-10 pb-4 border-b border-neutral-200 dark:border-white/10">
-          {caseStudies.map((cs, idx) => (
-            <button
-              key={cs.id}
-              type="button"
-              onClick={() => setSelectedIndex(idx)}
-              className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-modernist font-medium transition-all duration-200 cursor-pointer flex items-center gap-2 ${
-                selectedIndex === idx
-                  ? "bg-black text-white dark:bg-white dark:text-black shadow-sm font-semibold"
-                  : "bg-neutral-100 text-neutral-600 dark:bg-[#121212] dark:text-[#A3A3A3] border border-neutral-200 dark:border-white/10 hover:text-black dark:hover:text-white"
-              }`}
-            >
-              <span
-                className={`w-1.5 h-1.5 rounded-full ${
-                  selectedIndex === idx ? "bg-white dark:bg-black" : "bg-neutral-400 dark:bg-neutral-600"
+          {caseStudies.map((cs, idx) => {
+            const isSelected = selectedIndex === idx;
+            return (
+              <button
+                key={cs.id}
+                type="button"
+                onClick={() => setSelectedIndex(idx)}
+                data-cursor="LINK"
+                className={`relative px-4 py-2 rounded-xl text-xs sm:text-sm font-modernist transition-colors duration-200 cursor-pointer flex items-center gap-2 ${
+                  isSelected
+                    ? "text-white dark:text-black font-semibold"
+                    : "text-neutral-600 dark:text-[#A3A3A3] hover:text-black dark:hover:text-white"
                 }`}
-              />
-              <span>{cs.badge}</span>
-            </button>
-          ))}
+              >
+                {isSelected && (
+                  <motion.div
+                    layoutId="casestudy-active-pill"
+                    className="absolute inset-0 rounded-xl bg-black dark:bg-white shadow-sm z-0"
+                    transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                  />
+                )}
+                <span
+                  className={`relative z-10 w-1.5 h-1.5 rounded-full ${
+                    isSelected ? "bg-white dark:bg-black" : "bg-neutral-400 dark:bg-neutral-600"
+                  }`}
+                />
+                <span className="relative z-10">{cs.badge}</span>
+              </button>
+            );
+          })}
         </div>
 
-        {/* Main Case Study Card */}
+        {/* Main Case Study Card with AnimatePresence */}
         <div className="p-8 sm:p-12 rounded-3xl bg-neutral-50 dark:bg-[#121212] border border-neutral-200 dark:border-white/10 shadow-sm relative overflow-hidden">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-10 pb-10 border-b border-neutral-200 dark:border-white/10">
-            <div className="lg:col-span-7">
-              <span className="text-[11px] font-modernist font-semibold uppercase tracking-[0.14em] text-neutral-900 dark:text-neutral-300 mb-2 inline-block">
-                {current.badge}
-              </span>
-              <h3 className="font-debata text-2xl sm:text-3xl lg:text-4xl font-bold text-neutral-950 dark:text-white mb-4 leading-tight tracking-[-0.02em]">
-                {current.title}
-              </h3>
-              <p className="font-modernist text-sm sm:text-base text-neutral-600 dark:text-neutral-400 leading-relaxed">
-                {current.summary}
-              </p>
-            </div>
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={current.id}
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -16 }}
+              transition={{ duration: 0.35, ease: "easeOut" }}
+            >
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-10 pb-10 border-b border-neutral-200 dark:border-white/10">
+                <div className="lg:col-span-7">
+                  <span className="text-[11px] font-modernist font-semibold uppercase tracking-[0.14em] text-neutral-900 dark:text-neutral-300 mb-2 inline-block">
+                    {current.badge}
+                  </span>
+                  <h3 className="font-debata text-2xl sm:text-3xl lg:text-4xl font-semibold text-neutral-950 dark:text-white mb-4 leading-tight tracking-[-0.02em]">
+                    {current.title}
+                  </h3>
+                  <p className="font-modernist text-sm sm:text-base text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                    {current.summary}
+                  </p>
+                </div>
 
-            <div className="lg:col-span-5 flex flex-col items-start lg:items-end justify-center">
-              <div className="relative aspect-[16/9] w-full max-w-[420px] rounded-2xl overflow-hidden border border-neutral-200 dark:border-white/10 shadow-sm mb-4">
-                <Image
-                  src={current.image}
-                  alt={current.title}
-                  fill
-                  loading="lazy"
-                  className="object-cover object-center transform-gpu"
-                  sizes="420px"
-                />
+                <div className="lg:col-span-5 flex flex-col items-start lg:items-end justify-center">
+                  <motion.div
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.3 }}
+                    data-cursor="PROJECT"
+                    data-cursor-text="View"
+                    className="relative aspect-[16/9] w-full max-w-[420px] rounded-2xl overflow-hidden border border-neutral-200 dark:border-white/10 shadow-sm mb-4 group cursor-pointer"
+                  >
+                    <Image
+                      src={current.image}
+                      alt={current.title}
+                      fill
+                      loading="lazy"
+                      className="object-cover object-center transition-transform duration-500 group-hover:scale-105 transform-gpu"
+                      sizes="420px"
+                    />
+                    <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors" />
+                  </motion.div>
+
+                  <NovaButton
+                    href={`/projects/${current.slug}`}
+                    variant="primary"
+                    size="sm"
+                  >
+                    View Full Case Study
+                  </NovaButton>
+                </div>
               </div>
 
-              <NovaButton
-                href={`/projects/${current.slug}`}
-                variant="primary"
-                size="sm"
-              >
-                View Full Case Study
-              </NovaButton>
-            </div>
-          </div>
+              {/* 4-Stage Grid: Problem, Process, Solution, Result */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                {/* 01. Problem */}
+                <motion.div
+                  whileHover={{ y: -4 }}
+                  transition={{ type: "spring", stiffness: 350, damping: 25 }}
+                  className="p-6 rounded-2xl bg-white dark:bg-[#0a0a0a] border border-neutral-200 dark:border-white/10 hover:border-black/40 dark:hover:border-white/40 transition-colors shadow-sm group"
+                >
+                  <div className="flex items-center gap-2 mb-3 text-black dark:text-white">
+                    <FiAlertCircle className="w-4 h-4 transition-transform group-hover:rotate-12" />
+                    <h4 className="font-modernist text-xs uppercase tracking-wider font-semibold text-neutral-900 dark:text-white">
+                      01. Problem
+                    </h4>
+                  </div>
+                  <p className="font-modernist text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                    {current.problem}
+                  </p>
+                </motion.div>
 
-          {/* 4-Stage Grid: Problem, Process, Solution, Result */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* 01. Problem */}
-            <div className="p-6 rounded-2xl bg-white dark:bg-[#0a0a0a] border border-neutral-200 dark:border-white/10 hover:border-black/30 dark:hover:border-white/30 transition-colors shadow-sm">
-              <div className="flex items-center gap-2 mb-3 text-black dark:text-white">
-                <FiAlertCircle className="w-4 h-4" />
-                <h4 className="font-modernist text-xs uppercase tracking-wider font-semibold text-neutral-900 dark:text-white">
-                  01. Problem
-                </h4>
-              </div>
-              <p className="font-modernist text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
-                {current.problem}
-              </p>
-            </div>
+                {/* 02. Process */}
+                <motion.div
+                  whileHover={{ y: -4 }}
+                  transition={{ type: "spring", stiffness: 350, damping: 25 }}
+                  className="p-6 rounded-2xl bg-white dark:bg-[#0a0a0a] border border-neutral-200 dark:border-white/10 hover:border-black/40 dark:hover:border-white/40 transition-colors shadow-sm group"
+                >
+                  <div className="flex items-center gap-2 mb-3 text-black dark:text-white">
+                    <FiActivity className="w-4 h-4 transition-transform group-hover:scale-110" />
+                    <h4 className="font-modernist text-xs uppercase tracking-wider font-semibold text-neutral-900 dark:text-white">
+                      02. Process
+                    </h4>
+                  </div>
+                  <p className="font-modernist text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                    {current.process}
+                  </p>
+                </motion.div>
 
-            {/* 02. Process */}
-            <div className="p-6 rounded-2xl bg-white dark:bg-[#0a0a0a] border border-neutral-200 dark:border-white/10 hover:border-black/30 dark:hover:border-white/30 transition-colors shadow-sm">
-              <div className="flex items-center gap-2 mb-3 text-black dark:text-white">
-                <FiActivity className="w-4 h-4" />
-                <h4 className="font-modernist text-xs uppercase tracking-wider font-semibold text-neutral-900 dark:text-white">
-                  02. Process
-                </h4>
-              </div>
-              <p className="font-modernist text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
-                {current.process}
-              </p>
-            </div>
+                {/* 03. Solution */}
+                <motion.div
+                  whileHover={{ y: -4 }}
+                  transition={{ type: "spring", stiffness: 350, damping: 25 }}
+                  className="p-6 rounded-2xl bg-white dark:bg-[#0a0a0a] border border-neutral-200 dark:border-white/10 hover:border-black/40 dark:hover:border-white/40 transition-colors shadow-sm group"
+                >
+                  <div className="flex items-center gap-2 mb-3 text-black dark:text-white">
+                    <FiCheckCircle className="w-4 h-4 transition-transform group-hover:scale-110" />
+                    <h4 className="font-modernist text-xs uppercase tracking-wider font-semibold text-neutral-900 dark:text-white">
+                      03. Solution
+                    </h4>
+                  </div>
+                  <p className="font-modernist text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                    {current.solution}
+                  </p>
+                </motion.div>
 
-            {/* 03. Solution */}
-            <div className="p-6 rounded-2xl bg-white dark:bg-[#0a0a0a] border border-neutral-200 dark:border-white/10 hover:border-black/30 dark:hover:border-white/30 transition-colors shadow-sm">
-              <div className="flex items-center gap-2 mb-3 text-black dark:text-white">
-                <FiCheckCircle className="w-4 h-4" />
-                <h4 className="font-modernist text-xs uppercase tracking-wider font-semibold text-neutral-900 dark:text-white">
-                  03. Solution
-                </h4>
+                {/* 04. Result */}
+                <motion.div
+                  whileHover={{ y: -4 }}
+                  transition={{ type: "spring", stiffness: 350, damping: 25 }}
+                  className="p-6 rounded-2xl bg-white dark:bg-[#0a0a0a] border border-neutral-200 dark:border-white/10 hover:border-black/40 dark:hover:border-white/40 transition-colors shadow-sm group"
+                >
+                  <div className="flex items-center gap-2 mb-3 text-black dark:text-white">
+                    <FiAward className="w-4 h-4 transition-transform group-hover:rotate-12" />
+                    <h4 className="font-modernist text-xs uppercase tracking-wider font-semibold text-neutral-900 dark:text-white">
+                      04. Result / Output
+                    </h4>
+                  </div>
+                  <p className="font-modernist text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                    {current.result}
+                  </p>
+                </motion.div>
               </div>
-              <p className="font-modernist text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
-                {current.solution}
-              </p>
-            </div>
-
-            {/* 04. Result */}
-            <div className="p-6 rounded-2xl bg-white dark:bg-[#0a0a0a] border border-neutral-200 dark:border-white/10 hover:border-black/30 dark:hover:border-white/30 transition-colors shadow-sm">
-              <div className="flex items-center gap-2 mb-3 text-black dark:text-white">
-                <FiAward className="w-4 h-4" />
-                <h4 className="font-modernist text-xs uppercase tracking-wider font-semibold text-neutral-900 dark:text-white">
-                  04. Result / Output
-                </h4>
-              </div>
-              <p className="font-modernist text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
-                {current.result}
-              </p>
-            </div>
-          </div>
+            </motion.div>
+          </AnimatePresence>
         </div>
       </div>
     </section>
   );
 };
+

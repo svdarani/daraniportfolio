@@ -3,18 +3,6 @@
 import React from "react";
 import { NovaNavbar } from "@/components/layout/NovaNavbar";
 import { NovaHero } from "@/components/sections/NovaHero";
-import { NovaMarquee } from "@/components/sections/NovaMarquee";
-import { NovaAbout } from "@/components/sections/NovaAbout";
-import { NovaServices } from "@/components/sections/NovaServices";
-import { NovaWhyChoose } from "@/components/sections/NovaWhyChoose";
-import { NovaProjects } from "@/components/sections/NovaProjects";
-import { NovaCaseStudy } from "@/components/sections/NovaCaseStudy";
-import { NovaSkills } from "@/components/sections/NovaSkills";
-import { NovaCollaborations } from "@/components/sections/NovaCollaborations";
-import { NovaExperience } from "@/components/sections/NovaExperience";
-import { NovaBlog } from "@/components/sections/NovaBlog";
-import { NovaContact } from "@/components/sections/NovaContact";
-import { NovaFooter } from "@/components/layout/NovaFooter";
 
 export default function Home() {
   return (
@@ -31,47 +19,11 @@ export default function Home() {
         </p>
       </div>
 
-      {/* 01. Global Navigation */}
+      {/* Global Navigation (Top Bar + Bottom Dock) */}
       <NovaNavbar />
 
-      {/* 02. Hero Section */}
+      {/* Hero Section */}
       <NovaHero />
-
-      {/* 03. Collaborations & Ecosystem Marquee */}
-      <NovaMarquee />
-
-      {/* 04. About Me Section */}
-      <NovaAbout />
-
-      {/* 05. Services Section */}
-      <NovaServices />
-
-      {/* 06. Why Work With Me */}
-      <NovaWhyChoose />
-
-      {/* 07. Selected Works (Filterable Portfolio) */}
-      <NovaProjects />
-
-      {/* 08. In-Depth Case Studies (4-Stage Showcase) */}
-      <NovaCaseStudy />
-
-      {/* 09. Creative & Technical Toolkit */}
-      <NovaSkills />
-
-      {/* 10. Collaborations & Ecosystem Contributions */}
-      <NovaCollaborations />
-
-      {/* 11. Experience & Achievements Timeline */}
-      <NovaExperience />
-
-      {/* 12. Resources & Guides (Notes on Design) */}
-      <NovaBlog />
-
-      {/* 13. Contact & Conversion Section */}
-      <NovaContact />
-
-      {/* 14. Global Footer */}
-      <NovaFooter />
     </main>
   );
 }

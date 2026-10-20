@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import { NovaNavbar } from "@/components/layout/NovaNavbar";
 import { NovaFooter } from "@/components/layout/NovaFooter";
 import { NovaSectionHeader } from "@/components/ui/NovaSectionHeader";
@@ -112,7 +113,7 @@ export default function ServicesPage() {
             <span>SERVICES &amp; CAPABILITIES</span>
           </div>
 
-          <h1 className="font-debata text-4xl sm:text-6xl lg:text-7xl font-bold tracking-[-0.035em] text-neutral-950 dark:text-white leading-[1.08] mb-6 max-w-4xl">
+          <h1 className="font-debata text-4xl sm:text-6xl lg:text-7xl font-semibold tracking-[-0.035em] text-neutral-950 dark:text-white leading-[1.08] mb-6 max-w-4xl">
             Building brands that{" "}
             <span className="nova-gradient-text">inspire &amp; lead.</span>
           </h1>
@@ -125,26 +126,28 @@ export default function ServicesPage() {
         {/* 4 Detailed Service Cards */}
         <section className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-28">
           {servicesList.map((service) => (
-            <div
+            <motion.div
               key={service.title}
-              className="p-8 sm:p-10 rounded-3xl bg-neutral-50 dark:bg-[#121212] border border-neutral-200 dark:border-white/10 hover:border-black/40 dark:hover:border-white/40 transition-all duration-300 shadow-sm flex flex-col justify-between"
+              whileHover={{ y: -6 }}
+              transition={{ type: "spring", stiffness: 350, damping: 25 }}
+              className="p-8 sm:p-10 rounded-3xl bg-neutral-50 dark:bg-[#121212] border border-neutral-200 dark:border-white/10 hover:border-black/50 dark:hover:border-white/50 transition-colors duration-300 shadow-sm hover:shadow-lg flex flex-col justify-between group"
             >
               <div>
                 <div className="flex items-center justify-between pb-6 mb-6 border-b border-neutral-200 dark:border-white/10">
                   <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-2xl bg-white dark:bg-white/5 border border-neutral-200 dark:border-white/10 flex items-center justify-center">
+                    <div className="w-12 h-12 rounded-2xl bg-white dark:bg-white/5 border border-neutral-200 dark:border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform">
                       {service.icon}
                     </div>
                     <span className="text-[11px] font-modernist font-semibold uppercase tracking-[0.14em] text-neutral-900 dark:text-neutral-300">
                       {service.category}
                     </span>
                   </div>
-                  <span className="text-sm font-modernist font-semibold text-neutral-900 dark:text-neutral-300">
+                  <span className="text-sm font-mono font-semibold text-neutral-900 dark:text-neutral-300">
                     {service.number}
                   </span>
                 </div>
 
-                <h2 className="font-debata text-2xl sm:text-3xl font-bold text-neutral-950 dark:text-white mb-4 tracking-tight">
+                <h2 className="font-debata text-2xl sm:text-3xl font-semibold text-neutral-950 dark:text-white mb-4 tracking-tight group-hover:text-black dark:group-hover:text-white transition-colors">
                   {service.title}
                 </h2>
 
@@ -158,7 +161,7 @@ export default function ServicesPage() {
                   </div>
                   <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-sm font-modernist text-neutral-600 dark:text-neutral-400">
                     {service.deliverables.map((d) => (
-                      <li key={d} className="flex items-start gap-2">
+                      <li key={d} className="flex items-start gap-2 hover:translate-x-1 transition-transform">
                         <FiCheck className="text-black dark:text-white w-4 h-4 mt-0.5 flex-shrink-0" />
                         <span>{d}</span>
                       </li>
@@ -172,7 +175,7 @@ export default function ServicesPage() {
                   {service.tools.map((t) => (
                     <span
                       key={t}
-                      className="px-2.5 py-1 rounded-md bg-white dark:bg-[#0a0a0a] text-xs font-modernist text-neutral-600 dark:text-neutral-400 border border-neutral-200 dark:border-white/10"
+                      className="px-2.5 py-1 rounded-md bg-white dark:bg-[#0a0a0a] text-xs font-modernist text-neutral-600 dark:text-neutral-400 border border-neutral-200 dark:border-white/10 hover:border-black/30 dark:hover:border-white/30 transition-colors"
                     >
                       {t}
                     </span>
@@ -183,7 +186,7 @@ export default function ServicesPage() {
                   Inquire Now
                 </NovaButton>
               </div>
-            </div>
+            </motion.div>
           ))}
         </section>
 
@@ -209,7 +212,7 @@ export default function ServicesPage() {
                     onClick={() => setOpenFaq(isOpen ? null : idx)}
                     className="w-full p-6 text-left flex items-center justify-between gap-4 cursor-pointer"
                   >
-                    <span className="font-debata text-base sm:text-lg font-bold text-neutral-950 dark:text-white">
+                    <span className="font-debata text-base sm:text-lg font-semibold text-neutral-950 dark:text-white">
                       {faq.q}
                     </span>
                     <FiChevronDown
@@ -233,7 +236,7 @@ export default function ServicesPage() {
         {/* Bottom CTA Banner */}
         <section className="p-10 sm:p-14 rounded-3xl bg-neutral-100 dark:bg-[#121212] border border-neutral-200 dark:border-white/10 flex flex-col md:flex-row items-center justify-between gap-8 shadow-sm">
           <div>
-            <h2 className="font-debata text-2xl sm:text-4xl font-bold text-neutral-950 dark:text-white mb-2 tracking-tight">
+            <h2 className="font-debata text-2xl sm:text-4xl font-semibold text-neutral-950 dark:text-white mb-2 tracking-tight">
               Ready to start your design project?
             </h2>
             <p className="font-modernist text-sm sm:text-base text-neutral-600 dark:text-neutral-400">

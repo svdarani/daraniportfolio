@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { NovaSectionHeader } from "../ui/NovaSectionHeader";
 import { NovaButton } from "../ui/NovaButton";
 import { blogPostsData } from "@/data/blog";
@@ -29,9 +30,11 @@ export const NovaBlog: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
           {featuredPosts.map((post) => (
-            <div
+            <motion.div
               key={post.id}
-              className="p-8 rounded-3xl bg-neutral-50 dark:bg-[#121212] border border-neutral-200 dark:border-white/10 hover:border-black/40 dark:hover:border-white/40 transition-all duration-300 shadow-sm flex flex-col justify-between group"
+              whileHover={{ y: -6 }}
+              transition={{ type: "spring", stiffness: 350, damping: 25 }}
+              className="p-8 rounded-3xl bg-neutral-50 dark:bg-[#121212] border border-neutral-200 dark:border-white/10 hover:border-black/50 dark:hover:border-white/50 transition-colors duration-300 shadow-sm hover:shadow-lg flex flex-col justify-between group"
             >
               <div>
                 <div className="flex items-center justify-between pb-4 mb-4 border-b border-neutral-200 dark:border-white/10">
@@ -44,7 +47,7 @@ export const NovaBlog: React.FC = () => {
                   </div>
                 </div>
 
-                <h3 className="font-debata text-xl font-bold text-neutral-950 dark:text-white mb-3 transition-colors leading-snug tracking-tight">
+                <h3 className="font-debata text-xl font-semibold text-neutral-950 dark:text-white mb-3 group-hover:text-black dark:group-hover:text-white transition-colors leading-snug tracking-tight">
                   {post.title}
                 </h3>
 
@@ -60,16 +63,18 @@ export const NovaBlog: React.FC = () => {
 
                 <Link
                   href="/blog"
-                  className="inline-flex items-center gap-1 text-xs font-modernist font-semibold text-neutral-900 hover:text-black dark:text-neutral-200 dark:hover:text-white transition-colors group/btn"
+                  data-cursor="LINK"
+                  className="inline-flex items-center gap-1.5 text-xs font-modernist font-semibold text-neutral-900 hover:text-black dark:text-neutral-200 dark:hover:text-white transition-colors group/btn py-1"
                 >
-                  <span>Read Note</span>
-                  <FiArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+                  <span className="group-hover/btn:underline">Read Note</span>
+                  <FiArrowUpRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1" />
                 </Link>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
     </section>
   );
 };
+

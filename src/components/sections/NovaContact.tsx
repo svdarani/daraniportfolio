@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import { NovaSectionHeader } from "../ui/NovaSectionHeader";
 import { NovaButton } from "../ui/NovaButton";
 import { socialsData } from "@/data/socials";
@@ -79,7 +80,7 @@ export const NovaContact: React.FC = () => {
           {/* Left Column: Direct Contact Info & Socials (lg:col-span-5) */}
           <div className="lg:col-span-5 flex flex-col gap-6">
             <div className="p-8 sm:p-10 rounded-3xl bg-white dark:bg-[#121212] border border-neutral-200 dark:border-white/10 shadow-sm">
-              <h3 className="font-debata text-xl sm:text-2xl font-bold text-neutral-950 dark:text-white mb-2">
+              <h3 className="font-debata text-xl sm:text-2xl font-semibold text-neutral-950 dark:text-white mb-2">
                 Let&apos;s Work Together
               </h3>
               <p className="font-modernist text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed mb-8 font-normal">
@@ -139,33 +140,42 @@ export const NovaContact: React.FC = () => {
                   Connect on Socials:
                 </div>
                 <div className="flex items-center gap-3">
-                  <a
+                  <motion.a
                     href={socialsData.links.find((l) => l.platform === "GitHub")?.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-xl bg-neutral-100 dark:bg-[#0a0a0a] border border-neutral-200 dark:border-white/10 flex items-center justify-center text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white transition-all hover:scale-105"
+                    whileHover={{ scale: 1.1, y: -2 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                    data-cursor="LINK"
+                    className="w-10 h-10 rounded-xl bg-neutral-100 dark:bg-[#0a0a0a] border border-neutral-200 dark:border-white/10 flex items-center justify-center text-neutral-600 hover:text-black hover:border-black/40 dark:text-neutral-400 dark:hover:text-white dark:hover:border-white/40 transition-colors shadow-xs"
                     aria-label="GitHub profile"
                   >
                     <FiGithub className="w-5 h-5" />
-                  </a>
-                  <a
+                  </motion.a>
+                  <motion.a
                     href={socialsData.links.find((l) => l.platform === "LinkedIn")?.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-xl bg-neutral-100 dark:bg-[#0a0a0a] border border-neutral-200 dark:border-white/10 flex items-center justify-center text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white transition-all hover:scale-105"
+                    whileHover={{ scale: 1.1, y: -2 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                    data-cursor="LINK"
+                    className="w-10 h-10 rounded-xl bg-neutral-100 dark:bg-[#0a0a0a] border border-neutral-200 dark:border-white/10 flex items-center justify-center text-neutral-600 hover:text-black hover:border-black/40 dark:text-neutral-400 dark:hover:text-white dark:hover:border-white/40 transition-colors shadow-xs"
                     aria-label="LinkedIn profile"
                   >
                     <FiLinkedin className="w-5 h-5" />
-                  </a>
-                  <a
+                  </motion.a>
+                  <motion.a
                     href={socialsData.links.find((l) => l.platform === "Instagram")?.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-xl bg-neutral-100 dark:bg-[#0a0a0a] border border-neutral-200 dark:border-white/10 flex items-center justify-center text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white transition-all hover:scale-105"
+                    whileHover={{ scale: 1.1, y: -2 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                    data-cursor="LINK"
+                    className="w-10 h-10 rounded-xl bg-neutral-100 dark:bg-[#0a0a0a] border border-neutral-200 dark:border-white/10 flex items-center justify-center text-neutral-600 hover:text-black hover:border-black/40 dark:text-neutral-400 dark:hover:text-white dark:hover:border-white/40 transition-colors shadow-xs"
                     aria-label="Instagram profile"
                   >
                     <FiInstagram className="w-5 h-5" />
-                  </a>
+                  </motion.a>
                 </div>
               </div>
             </div>
@@ -179,7 +189,7 @@ export const NovaContact: React.FC = () => {
                   <div className="w-16 h-16 rounded-2xl bg-neutral-100 dark:bg-[#0a0a0a] border border-neutral-300 dark:border-white/10 flex items-center justify-center text-black dark:text-white mb-6 shadow-sm">
                     <FiCheckCircle className="w-8 h-8" />
                   </div>
-                  <h4 className="font-debata text-2xl font-bold text-neutral-950 dark:text-white mb-2">
+                  <h4 className="font-debata text-2xl font-semibold text-neutral-950 dark:text-white mb-2">
                     Message Received!
                   </h4>
                   <p className="font-modernist text-sm sm:text-base text-neutral-600 dark:text-neutral-400 max-w-md mb-8">

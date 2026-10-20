@@ -1,11 +1,9 @@
 import React from "react";
-import Header from "../../../components/Header";
 import BlurText from "@/components/ui/blurtext";
 
 const Hero = () => {
   return (
     <div className="h-screen">
-      <Header />
       <div className="flex h-screen w-full flex-col justify-center items-center">
         {/* First line */}
         <BlurText

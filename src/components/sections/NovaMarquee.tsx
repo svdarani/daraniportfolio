@@ -26,12 +26,13 @@ export const NovaMarquee: React.FC = () => {
         </div>
       </div>
 
-      <div className="relative w-full overflow-hidden flex [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]">
-        <div className="flex shrink-0 animate-marquee gap-8 sm:gap-12 items-center py-2 transform-gpu will-change-transform">
+      <div className="relative w-full overflow-hidden flex [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)] group/track">
+        <div className="flex shrink-0 animate-marquee group-hover/track:[animation-play-state:paused] gap-8 sm:gap-12 items-center py-2 transform-gpu will-change-transform">
           {ecosystems.concat(ecosystems).map((item, index) => (
             <div
               key={`${item.name}-${index}`}
-              className="flex items-center gap-3 px-5 py-2.5 rounded-xl bg-white dark:bg-[#121212] border border-neutral-200 dark:border-white/10 hover:border-black/40 dark:hover:border-white/40 transition-colors shrink-0 group shadow-sm"
+              data-cursor="LINK"
+              className="flex items-center gap-3 px-5 py-2.5 rounded-xl bg-white dark:bg-[#121212] border border-neutral-200 dark:border-white/10 hover:border-black/50 dark:hover:border-white/50 hover:scale-105 transition-all duration-200 shrink-0 group shadow-sm cursor-default"
             >
               <div className="w-2 h-2 rounded-full bg-neutral-400 dark:bg-neutral-600 group-hover:bg-black dark:group-hover:bg-white transition-colors" />
               <span className="text-sm sm:text-base font-modernist font-semibold text-neutral-900 dark:text-white tracking-tight transition-colors">

@@ -66,17 +66,18 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
         <div className="mb-8">
           <Link
             href="/works"
-            className="inline-flex items-center gap-2 text-xs font-modernist text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white transition-colors"
+            data-cursor="LINK"
+            className="group inline-flex items-center gap-2 text-xs font-modernist text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white transition-colors py-1"
           >
-            <FiArrowLeft className="w-3.5 h-3.5" />
-            <span>Back to All Projects</span>
+            <FiArrowLeft className="w-3.5 h-3.5 transition-transform duration-200 group-hover:-translate-x-1" />
+            <span className="group-hover:underline">Back to All Projects</span>
           </Link>
         </div>
 
         {/* Case Study Header: Debata Headline */}
         <div className="mb-14">
           <div className="flex flex-wrap items-center gap-3 mb-4">
-            <span className="px-3.5 py-1 rounded-full text-[11px] font-modernist font-semibold uppercase tracking-[0.14em] bg-neutral-100 dark:bg-[#121212] text-neutral-900 dark:text-white border border-neutral-200 dark:border-white/10">
+            <span className="px-3.5 py-1 rounded-full text-[11px] font-modernist font-semibold uppercase tracking-[0.14em] bg-neutral-100 dark:bg-[#121212] text-neutral-900 dark:text-white border border-neutral-200 dark:border-white/10 shadow-xs">
               {project.filterCategory}
             </span>
             <span className="text-xs font-modernist text-neutral-500 dark:text-neutral-400">
@@ -84,7 +85,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
             </span>
           </div>
 
-          <h1 className="font-debata text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-neutral-950 dark:text-white mb-6 leading-tight max-w-4xl">
+          <h1 className="font-debata text-3xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-neutral-950 dark:text-white mb-6 leading-tight max-w-4xl">
             {project.title}
           </h1>
 
@@ -93,14 +94,18 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
           </p>
         </div>
 
-        {/* Hero Artwork Frame */}
-        <div className="relative aspect-[16/9] w-full rounded-3xl overflow-hidden bg-neutral-100 dark:bg-[#121212] border border-neutral-200 dark:border-white/10 shadow-xl mb-16">
+        {/* Hero Artwork Frame with hover zoom & custom cursor */}
+        <div
+          data-cursor="IMAGE"
+          data-cursor-text="View"
+          className="relative aspect-[16/9] w-full rounded-3xl overflow-hidden bg-neutral-100 dark:bg-[#121212] border border-neutral-200 dark:border-white/10 shadow-xl mb-16 group"
+        >
           <Image
             src={project.image}
             alt={project.title}
             fill
             priority
-            className="object-cover object-center"
+            className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105 transform-gpu"
             sizes="(max-width: 1280px) 100vw, 1280px"
           />
         </div>
@@ -161,14 +166,14 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
         {/* Process Steps */}
         {project.process && project.process.length > 0 && (
           <section className="mb-16">
-            <h2 className="font-debata text-2xl sm:text-3xl font-bold text-neutral-950 dark:text-white mb-8 tracking-tight">
+            <h2 className="font-debata text-2xl sm:text-3xl font-semibold text-neutral-950 dark:text-white mb-8 tracking-tight">
               Process &amp; Methodology
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {project.process.map((step, i) => (
                 <div
                   key={i}
-                  className="p-6 rounded-2xl bg-white dark:bg-[#0a0a0a] border border-neutral-200 dark:border-white/10 shadow-sm"
+                  className="p-6 rounded-2xl bg-white dark:bg-[#0a0a0a] border border-neutral-200 dark:border-white/10 hover:border-black/40 dark:hover:border-white/40 transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-1"
                 >
                   <span className="text-xs font-modernist font-semibold text-neutral-900 dark:text-neutral-300 block mb-2">
                     Phase 0{i + 1}
@@ -194,7 +199,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {project.features.map((feat, i) => (
-                  <div key={i} className="flex items-start gap-3">
+                  <div key={i} className="flex items-start gap-3 hover:translate-x-1 transition-transform">
                     <FiCheckCircle className="text-black dark:text-white w-4 h-4 mt-1 flex-shrink-0" />
                     <span className="font-modernist text-sm sm:text-base text-neutral-600 dark:text-neutral-400">
                       {feat}
@@ -210,7 +215,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
         {(project.solution || project.result) && (
           <section className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
             {project.solution && (
-              <div className="p-8 rounded-3xl bg-neutral-50 dark:bg-[#121212] border border-neutral-200 dark:border-white/10 shadow-sm">
+              <div className="p-8 rounded-3xl bg-neutral-50 dark:bg-[#121212] border border-neutral-200 dark:border-white/10 shadow-sm hover:border-black/30 dark:hover:border-white/20 transition-colors">
                 <div className="text-[11px] font-modernist font-semibold text-neutral-900 dark:text-neutral-300 uppercase tracking-wider mb-2">
                   Solution
                 </div>
@@ -220,7 +225,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
               </div>
             )}
             {project.result && (
-              <div className="p-8 rounded-3xl bg-neutral-50 dark:bg-[#121212] border border-neutral-200 dark:border-white/10 shadow-sm">
+              <div className="p-8 rounded-3xl bg-neutral-50 dark:bg-[#121212] border border-neutral-200 dark:border-white/10 shadow-sm hover:border-black/30 dark:hover:border-white/20 transition-colors">
                 <div className="text-[11px] font-modernist font-semibold text-neutral-900 dark:text-neutral-300 uppercase tracking-wider mb-2">
                   Outcome &amp; Deliverables
                 </div>
@@ -242,7 +247,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
               {project.technologies.map((t) => (
                 <span
                   key={t}
-                  className="px-3 py-1 rounded-md bg-white dark:bg-[#0a0a0a] text-xs font-modernist text-neutral-900 dark:text-white border border-neutral-200 dark:border-white/10"
+                  className="px-3 py-1 rounded-md bg-white dark:bg-[#0a0a0a] text-xs font-modernist text-neutral-900 dark:text-white border border-neutral-200 dark:border-white/10 hover:border-black/40 dark:hover:border-white/30 transition-colors cursor-default"
                 >
                   {t}
                 </span>
@@ -251,15 +256,16 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
           </div>
         </section>
 
-        {/* Prev / Next Navigation */}
+        {/* Prev / Next Navigation with animated arrows */}
         <section className="pt-8 border-t border-neutral-200 dark:border-white/10 flex items-center justify-between gap-4 mb-20">
           {prevProject ? (
             <Link
               href={`/projects/${prevProject.slug}`}
-              className="inline-flex items-center gap-2 text-sm font-modernist text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white transition-colors"
+              data-cursor="LINK"
+              className="group/prev inline-flex items-center gap-2 text-sm font-modernist text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white transition-colors py-2"
             >
-              <FiArrowLeft className="w-4 h-4" />
-              <span>{prevProject.title}</span>
+              <FiArrowLeft className="w-4 h-4 transition-transform group-hover/prev:-translate-x-1" />
+              <span className="group-hover/prev:underline">{prevProject.title}</span>
             </Link>
           ) : (
             <div />
@@ -268,10 +274,11 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
           {nextProject ? (
             <Link
               href={`/projects/${nextProject.slug}`}
-              className="inline-flex items-center gap-2 text-sm font-modernist text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white transition-colors"
+              data-cursor="LINK"
+              className="group/next inline-flex items-center gap-2 text-sm font-modernist text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white transition-colors py-2"
             >
-              <span>{nextProject.title}</span>
-              <FiArrowRight className="w-4 h-4" />
+              <span className="group-hover/next:underline">{nextProject.title}</span>
+              <FiArrowRight className="w-4 h-4 transition-transform group-hover/next:translate-x-1" />
             </Link>
           ) : (
             <div />
@@ -281,7 +288,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
         {/* Bottom CTA */}
         <section className="p-10 sm:p-14 rounded-3xl bg-neutral-100 dark:bg-[#121212] border border-neutral-200 dark:border-white/10 flex flex-col md:flex-row items-center justify-between gap-8 shadow-sm">
           <div>
-            <h2 className="font-debata text-2xl sm:text-4xl font-bold text-neutral-950 dark:text-white mb-2 tracking-tight">
+            <h2 className="font-debata text-2xl sm:text-4xl font-semibold text-neutral-950 dark:text-white mb-2 tracking-tight">
               Need similar design or development support?
             </h2>
             <p className="font-modernist text-sm sm:text-base text-neutral-600 dark:text-neutral-400">

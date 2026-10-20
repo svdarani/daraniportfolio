@@ -405,3 +405,14 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* Custom Cursor: hide native cursor on supported desktop pointer devices */
+@media (pointer: fine) {
+  html.custom-cursor-active,
+  html.custom-cursor-active body,
+  html.custom-cursor-active a,
+  html.custom-cursor-active button,
+  html.custom-cursor-active [role="button"] {
+    cursor: none !important;
+  }
+}
