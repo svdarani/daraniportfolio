@@ -12,11 +12,12 @@ import { BottomDock } from "../dock/BottomDock";
 
 const navLinks = [
   { name: "Home", href: "/", sectionId: "hero" },
-  { name: "About", href: "/about", sectionId: "about" },
-  { name: "Services", href: "/services", sectionId: "services" },
-  { name: "Works", href: "/works", sectionId: "projects" },
+  { name: "Skills", href: "/skills", sectionId: "skills" },
   { name: "Experience", href: "/experience", sectionId: "experience" },
-  { name: "Blog", href: "/blog", sectionId: "blog" },
+  { name: "About", href: "/about", sectionId: "about" },
+  { name: "Projects", href: "/projects", sectionId: "projects" },
+  { name: "Resume", href: "/resume", sectionId: "resume" },
+  { name: "Contact", href: "/contact", sectionId: "contact" },
 ];
 
 export const NovaNavbar: React.FC = () => {
@@ -105,6 +106,37 @@ export const NovaNavbar: React.FC = () => {
           </div>
         </Link>
 
+        {/* Center Desktop Navigation */}
+        <nav
+          role="navigation"
+          aria-label="Primary Navigation"
+          className="hidden md:flex items-center gap-1 lg:gap-1.5 px-3 py-1.5 rounded-full bg-neutral-100/90 dark:bg-[#12141A]/90 border border-neutral-200 dark:border-white/[0.08] backdrop-blur-md shadow-xs"
+        >
+          {navLinks.map((link) => {
+            const isActive =
+              link.href === "/"
+                ? pathname === "/"
+                : pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href + "/"));
+
+            return (
+              <Link
+                key={link.name}
+                href={link.href}
+                className={`relative px-3 py-1 rounded-full text-xs lg:text-sm font-modernist font-medium transition-all duration-200 ${
+                  isActive
+                    ? "text-black dark:text-white bg-white dark:bg-white/[0.12] shadow-xs font-semibold"
+                    : "text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white hover:bg-neutral-200/50 dark:hover:bg-white/[0.04]"
+                }`}
+              >
+                {link.name}
+                {isActive && (
+                  <span className="absolute bottom-0.5 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-black dark:bg-white shadow-[0_0_6px_rgba(255,255,255,0.8)]" />
+                )}
+              </Link>
+            );
+          })}
+        </nav>
+
         {/* Right Desktop Actions (Theme Switcher + Contact CTA) */}
         <div className="hidden md:flex items-center gap-3">
           <ThemeToggle size="sm" />
@@ -144,8 +176,8 @@ export const NovaNavbar: React.FC = () => {
               </span>
               {navLinks.map((link) => {
                 const isActive =
-                  pathname === "/"
-                    ? link.href === "/"
+                  link.href === "/"
+                    ? pathname === "/"
                     : pathname === link.href || pathname.startsWith(link.href + "/");
 
                 return (

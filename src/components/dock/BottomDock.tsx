@@ -66,6 +66,33 @@ const dockItems: DockNavItem[] = [
     ),
   },
   {
+    id: "experience",
+    title: "Experience",
+    href: "/experience",
+    icon: (
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+      </svg>
+    ),
+  },
+  {
+    id: "about",
+    title: "About",
+    href: "/about",
+    isAvatar: true,
+    avatarSrc: "/images/darani-avatar.png",
+  },
+  {
     id: "projects",
     title: "Projects",
     href: "/projects",
@@ -87,13 +114,6 @@ const dockItems: DockNavItem[] = [
     ),
   },
   {
-    id: "about",
-    title: "About",
-    href: "/about",
-    isAvatar: true,
-    avatarSrc: "/images/darani-avatar.png",
-  },
-  {
     id: "resume",
     title: "Resume",
     href: "/resume",
@@ -112,29 +132,6 @@ const dockItems: DockNavItem[] = [
         <path d="M8 8.5H16" />
         <path d="M8 12H16" />
         <path d="M8 15.5H12" />
-      </svg>
-    ),
-  },
-  {
-    id: "works",
-    title: "Works",
-    href: "/works",
-    icon: (
-      <svg
-        width="20"
-        height="20"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M5 5.5A3.5 3.5 0 0 1 8.5 2H12v7H8.5A3.5 3.5 0 0 1 5 5.5z" />
-        <path d="M12 2h3.5a3.5 3.5 0 1 1 0 7H12V2z" />
-        <path d="M12 12.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 1 1-7 0z" />
-        <path d="M5 19.5A3.5 3.5 0 0 1 8.5 16H12v3.5a3.5 3.5 0 1 1-7 0z" />
-        <path d="M5 12.5A3.5 3.5 0 0 1 8.5 9H12v7H8.5A3.5 3.5 0 0 1 5 12.5z" />
       </svg>
     ),
   },
