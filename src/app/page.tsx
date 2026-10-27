@@ -4,7 +4,8 @@ import React from "react";
 import { NovaNavbar } from "@/components/layout/NovaNavbar";
 import { NovaHero } from "@/components/sections/NovaHero";
 import { HomeStatement } from "@/components/Home/HomeStatement";
-import { ImpressiveWorks } from "@/components/Home/ImpressiveWorks";
+import { ExperienceSection } from "@/components/Home/ExperienceSection";
+import { HomeWorkSection } from "@/components/Home/HomeWorkSection";
 import { CreativeDeveloperPillars } from "@/components/Home/CreativeDeveloperPillars";
 import { TalkContactSection } from "@/components/Home/TalkContactSection";
 import { OversizedFooter } from "@/components/Home/OversizedFooter";
@@ -24,7 +25,7 @@ export default function Home() {
         </p>
       </div>
 
-      {/* Global Navigation (Top Bar + Bottom Dock) */}
+      {/* Global Navigation (Bottom Dock) */}
       <NovaNavbar />
 
       {/* Hero Section */}
@@ -33,8 +34,11 @@ export default function Home() {
       {/* 01. Statement / Intro Section */}
       <HomeStatement />
 
-      {/* 02. Impressive Work (4-project showcase matching reference) */}
-      <ImpressiveWorks />
+      {/* 02. Experience Section (matching reference model) */}
+      <ExperienceSection />
+
+      {/* 03. Work Section (matching reference model) */}
+      <HomeWorkSection />
 
       {/* 03. The Creative Developer You Wish You Hired Sooner! */}
       <CreativeDeveloperPillars />

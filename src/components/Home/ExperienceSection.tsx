@@ -1,94 +1,75 @@
 "use client";
 
 import React from "react";
-import { experiencesData } from "@/data/experience";
+import Link from "next/link";
 import { motion } from "framer-motion";
+import { experiencesData } from "@/data/experience";
+import { FiArrowUpRight } from "react-icons/fi";
 
 export const ExperienceSection: React.FC = () => {
+  // Show key professional, venture, and event roles
+  const displayExperiences = experiencesData.filter(
+    (e) => e.type !== "Education" || e.featured
+  );
+
   return (
-    <section className="w-full py-20 px-6 md:px-12 bg-neutral-50/50 dark:bg-neutral-950 text-neutral-900 dark:text-white border-t border-neutral-200 dark:border-white/5 transition-colors duration-300">
-      <div className="max-w-[1400px] mx-auto">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16">
-          <div>
-            <p className="text-xs uppercase tracking-widest text-indigo-600 dark:text-indigo-400 font-mono mb-2">
-              JOURNEY &amp; BACKGROUND
-            </p>
-            <h2 className="text-3xl md:text-5xl font-light tracking-tight text-neutral-900 dark:text-white">
-              Experience &amp; Education
-            </h2>
-          </div>
-          <p className="text-sm text-neutral-600 dark:text-gray-400 max-w-md mt-4 md:mt-0 font-light leading-relaxed">
-            Hands-on internship experience in startup incubation alongside rigorous undergraduate studies in AI &amp; Data Science.
-          </p>
+    <section className="w-full py-20 sm:py-28 bg-[#FAF8F5] dark:bg-[#0B0C10] text-neutral-900 dark:text-white transition-colors duration-300">
+      <div className="max-w-[1320px] mx-auto px-5 sm:px-8">
+        {/* Section Header: Minimalist Display Title matching Reference Image */}
+        <div className="mb-12 sm:mb-16">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="font-debata text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight text-neutral-950 dark:text-white"
+          >
+            Experience.
+          </motion.h2>
         </div>
 
-        {/* Editorial Timeline */}
-        <div className="space-y-12 relative before:absolute before:inset-0 before:left-3 md:before:left-1/2 before:w-[1px] before:bg-neutral-200 dark:before:bg-white/10">
-          {experiencesData.map((item, index) => {
-            const isEven = index % 2 === 0;
-            return (
-              <motion.div
-                key={item.id}
-                initial={{ opacity: 0, y: 25 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={`relative flex flex-col md:flex-row items-start ${
-                  isEven ? "md:flex-row-reverse" : ""
-                } gap-8 md:gap-16`}
-              >
-                {/* Timeline Dot */}
-                <div className="absolute left-3 md:left-1/2 -translate-x-1/2 top-3 w-3 h-3 rounded-full bg-indigo-600 dark:bg-indigo-500 ring-4 ring-neutral-100 dark:ring-black" />
+        {/* Minimalist Experience Rows with horizontal dividers matching Reference Image */}
+        <div className="border-t border-neutral-300/80 dark:border-white/10">
+          {displayExperiences.map((item, idx) => (
+            <motion.div
+              key={item.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: idx * 0.06 }}
+              className="group py-8 sm:py-10 border-b border-neutral-300/80 dark:border-white/10 flex flex-col md:flex-row md:items-start justify-between gap-4 md:gap-12 transition-colors hover:bg-black/[0.02] dark:hover:bg-white/[0.02] px-2 sm:px-4 rounded-xl"
+            >
+              {/* Left Column: Role at Organization + Description */}
+              <div className="max-w-2xl">
+                <h3 className="font-debata text-xl sm:text-2xl font-bold text-neutral-950 dark:text-white mb-2.5 group-hover:text-neutral-600 dark:group-hover:text-neutral-300 transition-colors">
+                  {item.role} at {item.organization}
+                </h3>
+                <p className="font-modernist text-sm sm:text-base text-neutral-600 dark:text-neutral-400 leading-relaxed font-normal">
+                  {item.description}
+                </p>
+              </div>
 
-                {/* Content Card */}
-                <div className="ml-8 md:ml-0 md:w-1/2 p-6 md:p-8 rounded-2xl bg-white dark:bg-neutral-900/40 border border-neutral-200/80 dark:border-white/10 hover:border-neutral-300 dark:hover:border-white/20 shadow-sm transition-all">
-                  <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
-                    <span className="text-xs font-mono text-indigo-600 dark:text-indigo-400 uppercase tracking-wider">
-                      {item.type}
-                    </span>
-                    <span className="text-xs font-mono px-3 py-1 rounded-full bg-neutral-100 text-neutral-700 dark:bg-white/5 dark:text-gray-300">
-                      {item.period}
-                    </span>
-                  </div>
+              {/* Right Column: Bold Period Year Range */}
+              <div className="font-debata text-lg sm:text-2xl font-bold text-neutral-900 dark:text-neutral-200 md:text-right whitespace-nowrap self-start md:pt-1">
+                {item.period}
+              </div>
+            </motion.div>
+          ))}
+        </div>
 
-                  <h3 className="text-2xl font-medium text-neutral-900 dark:text-white mb-1">
-                    {item.role}
-                  </h3>
-                  <p className="text-sm text-indigo-700 dark:text-indigo-300 font-mono mb-4">
-                    {item.organization} • {item.location}
-                  </p>
-
-                  <p className="text-sm text-neutral-700 dark:text-gray-300 leading-relaxed font-light mb-6">
-                    {item.description}
-                  </p>
-
-                  {item.responsibilities && (
-                    <ul className="space-y-2 mb-6">
-                      {item.responsibilities.map((resp, i) => (
-                        <li key={i} className="text-xs text-neutral-600 dark:text-gray-400 flex items-start gap-2">
-                          <span className="text-indigo-600 dark:text-indigo-400 mt-0.5">•</span>
-                          <span>{resp}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-
-                  <div className="flex flex-wrap gap-2 pt-4 border-t border-neutral-100 dark:border-white/5">
-                    {item.skills.map((skill) => (
-                      <span
-                        key={skill}
-                        className="text-xs font-mono px-2.5 py-1 rounded-md bg-neutral-100 dark:bg-white/5 text-neutral-700 dark:text-gray-400"
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </motion.div>
-            );
-          })}
+        {/* View All Experience Link */}
+        <div className="mt-10 sm:mt-12 flex justify-start sm:justify-end">
+          <Link
+            href="/experience"
+            className="group inline-flex items-center gap-2 text-sm sm:text-base font-modernist font-semibold text-neutral-900 dark:text-white hover:text-neutral-500 dark:hover:text-neutral-300 transition-colors"
+          >
+            <span>View Full Journey &amp; Credentials</span>
+            <FiArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </Link>
         </div>
       </div>
     </section>
   );
 };
+
+export default ExperienceSection;
