@@ -57,7 +57,7 @@ export const NovaHero: React.FC = () => {
         initial={{ opacity: 0, scale: 0.98, y: 20 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        className="relative w-full max-w-[1360px] h-full lg:h-[calc(100vh-3.5rem)] lg:max-h-[820px] lg:min-h-[620px] rounded-[32px] sm:rounded-[44px] lg:rounded-[50px] border-[3px] sm:border-4 border-[#DE5D14] shadow-[0_24px_80px_rgba(222,93,20,0.22)] overflow-hidden bg-[#D8520D] flex flex-col"
+        className="relative w-full max-w-[1360px] h-full lg:h-[calc(100vh-3.5rem)] lg:max-h-[820px] lg:min-h-[620px] rounded-[32px] sm:rounded-[44px] lg:rounded-[48px] border-[3px] sm:border-4 border-[#DE5D14] shadow-[0_24px_80px_rgba(222,93,20,0.22)] overflow-hidden bg-[#D8520D] flex flex-col"
       >
         {/* Subtle Ambient Radial Glows */}
         <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-gradient-to-br from-amber-300/25 to-transparent rounded-full blur-3xl pointer-events-none" />
@@ -70,9 +70,10 @@ export const NovaHero: React.FC = () => {
           {/* LEFT ZONE: Warm Amber Glowing Section (~58% Desktop Width)       */}
           {/* ================================================================ */}
           <div className="lg:col-span-7 relative z-10 p-6 sm:p-8 lg:p-10 xl:p-12 flex flex-col justify-between h-full bg-gradient-to-br from-[#BA3C02] via-[#DE5D14] to-[#F5871F] overflow-hidden">
-            {/* Concentric Ambient Ring Watermarks in Background */}
-            <div className="absolute -top-16 -left-16 w-80 h-80 rounded-full border border-white/[0.12] pointer-events-none" />
-            <div className="absolute -top-24 -left-24 w-[420px] h-[420px] rounded-full border border-white/[0.06] pointer-events-none" />
+            {/* Concentric Ambient Ring Watermarks matching reference contours */}
+            <div className="absolute -top-16 -left-16 w-80 h-80 rounded-full border border-white/[0.14] pointer-events-none" />
+            <div className="absolute -top-28 -left-28 w-[460px] h-[460px] rounded-full border border-white/[0.08] pointer-events-none" />
+            <div className="absolute -top-40 -left-40 w-[620px] h-[620px] rounded-full border border-white/[0.05] pointer-events-none" />
 
             {/* Top Bar: Abstract Emblem + Identity Pill Badge */}
             <div className="relative z-10 flex flex-col sm:flex-row sm:items-center gap-3.5 sm:gap-4 mb-4 lg:mb-6">
@@ -85,14 +86,14 @@ export const NovaHero: React.FC = () => {
                 </svg>
               </div>
 
-              {/* Identity Pill Badge: matching "Omar Solski - The Coach" */}
+              {/* Identity Pill Badge: matching reference */}
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/30 bg-white/10 backdrop-blur-md text-white text-xs font-modernist tracking-wide select-none w-fit">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-300 animate-pulse" />
                 <span>Darani Viswanathan — Creative Technologist</span>
               </div>
             </div>
 
-            {/* Center Content: Scaled Display Headline & Glowing Pill CTA */}
+            {/* Center Content: Scaled Display Headline & Action Buttons */}
             <div className="relative z-10 my-auto py-2 sm:py-4 max-w-xl">
               {/* Main 3-line Headline matching Reference Image layout */}
               <h1 className="font-debata text-3xl sm:text-5xl lg:text-[46px] xl:text-[54px] font-bold text-white leading-[1.04] tracking-[-0.035em] drop-shadow-[0_2px_12px_rgba(0,0,0,0.18)] select-none">
@@ -101,7 +102,7 @@ export const NovaHero: React.FC = () => {
                 Developer
               </h1>
 
-              {/* Glowing Pill Action Buttons */}
+              {/* Action Buttons: Explore My Work & View Resume */}
               <div className="mt-5 sm:mt-7 flex flex-wrap items-center gap-3 sm:gap-4">
                 <Link
                   href="/projects"
@@ -113,7 +114,7 @@ export const NovaHero: React.FC = () => {
 
                 <Link
                   href="/resume"
-                  className="inline-flex items-center gap-2 px-5 py-3 sm:py-3.5 rounded-full border border-white/35 bg-white/5 backdrop-blur-xs text-white font-modernist font-medium text-xs sm:text-sm hover:bg-white/20 transition-all duration-300 select-none"
+                  className="inline-flex items-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-full border border-white/30 bg-white/10 backdrop-blur-sm text-white font-modernist font-medium text-xs sm:text-sm hover:bg-white/20 hover:scale-105 active:scale-95 transition-all duration-300 select-none shadow-[0_4px_16px_rgba(0,0,0,0.1)]"
                 >
                   <span>View Resume</span>
                 </Link>
@@ -122,22 +123,17 @@ export const NovaHero: React.FC = () => {
 
             {/* Bottom Row on Left: Two Stat Metric Cards matching Reference Image */}
             <div className="relative z-10 pt-4 sm:pt-6 flex items-center gap-3 sm:gap-4 select-none">
-              {/* Card 1: Experience Level */}
+              {/* Card 1: Experience */}
               <motion.div
                 whileHover={{ y: -3 }}
                 transition={{ type: "spring", stiffness: 350, damping: 25 }}
-                className="bg-white rounded-2xl p-3 sm:p-3.5 shadow-lg border border-white/80 min-w-[105px] sm:min-w-[120px]"
+                className="bg-white rounded-2xl py-3 px-4 sm:py-3.5 sm:px-5 shadow-lg border border-white/80 min-w-[110px] sm:min-w-[125px]"
               >
-                <div className="flex items-center justify-between gap-1.5 mb-1">
-                  <span className="text-[10px] font-modernist font-medium text-neutral-500">
-                    Experience
-                  </span>
-                  <span className="px-1.5 py-0.2 rounded-full bg-amber-100 text-amber-900 text-[9px] font-bold">
-                    2+ Yrs
-                  </span>
+                <div className="text-2xl sm:text-3xl font-extrabold text-[#DE5D14] leading-tight font-debata">
+                  2+ Yrs
                 </div>
-                <div className="text-lg sm:text-xl font-debata font-bold text-neutral-950">
-                  100%
+                <div className="text-xs sm:text-sm font-medium text-neutral-900 mt-0.5 font-modernist">
+                  Experience
                 </div>
               </motion.div>
 
@@ -145,18 +141,13 @@ export const NovaHero: React.FC = () => {
               <motion.div
                 whileHover={{ y: -3 }}
                 transition={{ type: "spring", stiffness: 350, damping: 25 }}
-                className="bg-white rounded-2xl p-3 sm:p-3.5 shadow-lg border border-white/80 min-w-[105px] sm:min-w-[120px]"
+                className="bg-white rounded-2xl py-3 px-4 sm:py-3.5 sm:px-5 shadow-lg border border-white/80 min-w-[130px] sm:min-w-[150px]"
               >
-                <div className="flex items-center justify-between gap-1.5 mb-1">
-                  <span className="text-[10px] font-modernist font-medium text-neutral-500">
-                    Creative Output
-                  </span>
-                  <span className="px-1.5 py-0.2 rounded-full bg-amber-100 text-amber-900 text-[9px] font-bold">
-                    Active
-                  </span>
+                <div className="text-2xl sm:text-3xl font-extrabold text-[#DE5D14] leading-tight font-debata">
+                  100%
                 </div>
-                <div className="text-lg sm:text-xl font-debata font-bold text-neutral-950">
-                  200%
+                <div className="text-xs sm:text-sm font-medium text-neutral-900 mt-0.5 font-modernist">
+                  Creative Output
                 </div>
               </motion.div>
             </div>
@@ -166,13 +157,14 @@ export const NovaHero: React.FC = () => {
           {/* DESKTOP CENTER-FOREGROUND PORTRAIT CUTOUT                        */}
           {/* Overlapping the transition boundary between Left & Right          */}
           {/* ================================================================ */}
-          <div className="hidden lg:block absolute left-[42%] xl:left-[43%] bottom-0 -translate-x-1/2 w-[310px] xl:w-[370px] h-[86%] lg:h-[91%] xl:h-[95%] max-h-[620px] z-20 pointer-events-none select-none">
+          <div className="hidden lg:block absolute left-[44%] xl:left-[45%] bottom-0 -translate-x-1/2 w-[340px] xl:w-[410px] h-[88%] lg:h-[93%] xl:h-[97%] max-h-[640px] z-20 pointer-events-none select-none">
             <motion.div
               style={{ rotateX, rotateY, transformPerspective: 1000 }}
               className="relative w-full h-full transform-gpu"
             >
-              {/* Warm Amber Studio Rim-Light Glow behind portrait */}
-              <div className="absolute -left-10 bottom-12 w-[280px] h-[360px] bg-gradient-to-r from-amber-400/40 via-orange-500/25 to-transparent rounded-full blur-3xl pointer-events-none" />
+              {/* Intense Golden Rim-Light Sun Burst behind head and shoulders */}
+              <div className="absolute -left-12 top-4 w-[360px] h-[360px] rounded-full bg-[radial-gradient(circle,_rgba(255,235,100,0.95)_0%,_rgba(255,160,20,0.85)_32%,_rgba(222,93,20,0.4)_58%,_transparent_75%)] blur-2xl pointer-events-none" />
+              <div className="absolute left-2 top-12 w-[220px] h-[220px] rounded-full bg-[radial-gradient(circle,_#FFF9C4_0%,_#FFD54F_45%,_transparent_70%)] blur-lg pointer-events-none opacity-90" />
 
               {/* Darani Cutout Portrait */}
               <Image
@@ -180,12 +172,12 @@ export const NovaHero: React.FC = () => {
                 alt="Portrait of Darani Viswanathan"
                 fill
                 priority
-                className="object-contain object-bottom filter contrast-[1.04] brightness-[1.01] drop-shadow-[0_20px_35px_rgba(0,0,0,0.35)]"
-                sizes="(max-width: 1280px) 340px, 400px"
+                className="object-contain object-bottom filter contrast-[1.05] brightness-[1.02] drop-shadow-[0_20px_35px_rgba(0,0,0,0.32)]"
+                sizes="(max-width: 1280px) 380px, 440px"
               />
 
-              {/* Floating Social Icons Bar matching Reference Image (ig, in, f) */}
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2 bg-black/55 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/25 shadow-xl pointer-events-auto">
+              {/* Floating Social Icons Bar matching Reference Image (GitHub, LinkedIn, Instagram, Email) */}
+              <div className="absolute bottom-20 xl:bottom-22 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2 bg-[#202226]/85 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/20 shadow-xl pointer-events-auto">
                 {githubUrl && (
                   <motion.a
                     href={githubUrl}
@@ -193,10 +185,10 @@ export const NovaHero: React.FC = () => {
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.15, y: -1 }}
                     whileTap={{ scale: 0.92 }}
-                    className="w-6 h-6 rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all"
+                    className="w-7 h-7 rounded-full border border-white/25 bg-white/5 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all"
                     aria-label="GitHub profile"
                   >
-                    <FiGithub className="w-3 h-3" />
+                    <FiGithub className="w-3.5 h-3.5" />
                   </motion.a>
                 )}
                 {linkedinUrl && (
@@ -206,10 +198,10 @@ export const NovaHero: React.FC = () => {
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.15, y: -1 }}
                     whileTap={{ scale: 0.92 }}
-                    className="w-6 h-6 rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all"
+                    className="w-7 h-7 rounded-full border border-white/25 bg-white/5 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all"
                     aria-label="LinkedIn profile"
                   >
-                    <FiLinkedin className="w-3 h-3" />
+                    <FiLinkedin className="w-3.5 h-3.5" />
                   </motion.a>
                 )}
                 {instagramUrl && (
@@ -219,20 +211,20 @@ export const NovaHero: React.FC = () => {
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.15, y: -1 }}
                     whileTap={{ scale: 0.92 }}
-                    className="w-6 h-6 rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all"
+                    className="w-7 h-7 rounded-full border border-white/25 bg-white/5 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all"
                     aria-label="Instagram profile"
                   >
-                    <FiInstagram className="w-3 h-3" />
+                    <FiInstagram className="w-3.5 h-3.5" />
                   </motion.a>
                 )}
                 <motion.a
                   href={`mailto:${socialsData.email}`}
                   whileHover={{ scale: 1.15, y: -1 }}
                   whileTap={{ scale: 0.92 }}
-                  className="w-6 h-6 rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all"
+                  className="w-7 h-7 rounded-full border border-white/25 bg-white/5 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all"
                   aria-label="Send email"
                 >
-                  <FiMail className="w-3 h-3" />
+                  <FiMail className="w-3.5 h-3.5" />
                 </motion.a>
               </div>
             </motion.div>
@@ -301,11 +293,11 @@ export const NovaHero: React.FC = () => {
           {/* RIGHT ZONE: Crisp White Editorial Panel (~42% Desktop Width)     */}
           {/* ================================================================ */}
           <div className="lg:col-span-5 bg-white text-neutral-900 lg:rounded-tl-[36px] xl:rounded-tl-[44px] p-6 sm:p-8 lg:p-9 xl:p-11 relative z-10 flex flex-col justify-between h-full overflow-hidden">
-            {/* Top Navigation Links matching Reference Image (About, Results, Programs, Progress) */}
-            <div className="flex items-center justify-between sm:justify-start gap-3 sm:gap-6 pb-3 sm:pb-4 border-b border-neutral-100 select-none">
+            {/* Top Navigation Links matching Reference Image */}
+            <div className="flex items-center justify-between sm:justify-start gap-4 sm:gap-7 pb-2 select-none">
               <Link
                 href="/about"
-                className="text-xs sm:text-sm font-modernist font-semibold text-neutral-600 hover:text-black transition-colors"
+                className="text-xs sm:text-sm font-modernist font-semibold text-neutral-900 hover:text-[#DE5D14] transition-colors"
               >
                 About
               </Link>
@@ -337,15 +329,15 @@ export const NovaHero: React.FC = () => {
 
             {/* Editorial Greeting & Vision Copy */}
             <div className="py-3 sm:py-5 lg:py-6 lg:pl-3 xl:pl-5 my-auto">
-              {/* Pill Tag matching "( SESSION )" in Reference Image */}
-              <div className="inline-flex items-center px-2.5 py-0.5 rounded-full border border-neutral-300 text-[10px] font-mono tracking-widest text-neutral-600 uppercase select-none w-fit mb-2.5">
+              {/* Pill Tag matching "OVERVIEW" in Reference Image */}
+              <div className="inline-flex items-center px-3 py-0.5 rounded-full border border-neutral-300 text-[10px] font-mono tracking-widest text-neutral-600 uppercase select-none w-fit mb-3">
                 OVERVIEW
               </div>
 
               {/* Bold Editorial Hook Paragraph */}
-              <h2 className="font-debata text-lg sm:text-xl lg:text-[21px] xl:text-[23px] font-semibold text-neutral-950 leading-[1.26] tracking-tight mb-2.5">
+              <h2 className="font-debata text-lg sm:text-xl lg:text-[22px] xl:text-[24px] font-bold text-neutral-950 leading-[1.28] tracking-tight mb-2.5">
                 Hey there, I&apos;m{" "}
-                <span className="text-[#DE5D14] underline decoration-[#DE5D14]/30 underline-offset-4">
+                <span className="text-[#DE5D14]">
                   Darani
                 </span>
                 . I combine{" "}
@@ -355,7 +347,7 @@ export const NovaHero: React.FC = () => {
                 into functional digital products. Ready to build something extraordinary?
               </h2>
 
-              {/* Sub-tagline matching "Clarity. Discipline. Measurable growth." */}
+              {/* Sub-tagline matching "Aesthetics. Code. Measurable Impact." */}
               <p className="text-[11px] font-mono text-neutral-400 tracking-wider">
                 Aesthetics. Code. Measurable Impact.
               </p>
@@ -366,26 +358,24 @@ export const NovaHero: React.FC = () => {
               <motion.div
                 whileHover={{ y: -2 }}
                 transition={{ type: "spring", stiffness: 350, damping: 25 }}
-                className="p-4 sm:p-5 rounded-2xl bg-[#F7F7F8] border border-neutral-200/80 shadow-xs hover:border-neutral-300 transition-colors"
+                className="p-4 sm:p-5 rounded-2xl bg-[#F8F8F9] border border-neutral-200/80 shadow-xs hover:border-neutral-300 transition-colors"
               >
                 {/* Header Row: Avatar + Verified Badges */}
                 <div className="flex items-center gap-3 mb-2.5">
-                  <div className="relative w-10 h-10 rounded-xl overflow-hidden bg-gradient-to-tr from-[#DE5D14] to-amber-400 p-[1.5px] flex-shrink-0 shadow-xs">
-                    <div className="w-full h-full rounded-[10px] overflow-hidden bg-black relative">
-                      <Image
-                        src="/images/darani-avatar.png"
-                        alt="Darani Avatar"
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
+                  <div className="relative w-10 h-10 rounded-full overflow-hidden ring-2 ring-[#DE5D14] p-0.5 flex-shrink-0 shadow-xs">
+                    <Image
+                      src="/images/darani-avatar.png"
+                      alt="Darani Avatar"
+                      fill
+                      className="object-cover rounded-full"
+                    />
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-1.5">
                       <span className="font-debata font-bold text-xs sm:text-sm text-neutral-950 truncate">
                         Darani Viswanathan
                       </span>
-                      <span className="px-1.5 py-0.2 rounded bg-black text-white text-[9px] font-bold">
+                      <span className="px-1.5 py-0.5 rounded bg-black text-white text-[9px] font-bold tracking-wider">
                         VERIFIED
                       </span>
                     </div>
@@ -401,7 +391,7 @@ export const NovaHero: React.FC = () => {
                 </p>
 
                 {/* Checkpoint Highlights */}
-                <div className="pt-2.5 border-t border-neutral-200/70 flex flex-col gap-1 text-[10px] sm:text-[11px] font-modernist text-neutral-600">
+                <div className="pt-2 border-t border-neutral-200/70 flex flex-col gap-1 text-[10px] sm:text-[11px] font-modernist text-neutral-600">
                   <div className="flex items-center gap-1.5">
                     <FiCheckCircle className="w-3.5 h-3.5 text-[#DE5D14] flex-shrink-0" />
                     <span>2+ Years Hands-on Creative Design Experience</span>
@@ -413,13 +403,13 @@ export const NovaHero: React.FC = () => {
                 </div>
 
                 {/* Let's Connect CTA Button */}
-                <div className="mt-3 pt-2.5 border-t border-neutral-200/70">
+                <div className="mt-2.5 pt-2 border-t border-neutral-200/70">
                   <Link
                     href="/contact"
-                    className="inline-flex items-center justify-between w-full px-3.5 py-2 rounded-xl bg-neutral-900 hover:bg-black text-white text-xs font-modernist font-semibold transition-colors"
+                    className="inline-flex items-center justify-between w-full px-4 py-2.5 rounded-full bg-neutral-950 hover:bg-black text-white text-xs font-modernist font-semibold transition-all group"
                   >
                     <span>Let&apos;s Connect</span>
-                    <FiArrowUpRight className="w-3.5 h-3.5 text-neutral-300" />
+                    <FiArrowUpRight className="w-3.5 h-3.5 text-neutral-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                   </Link>
                 </div>
               </motion.div>
