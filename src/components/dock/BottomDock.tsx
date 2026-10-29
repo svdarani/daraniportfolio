@@ -58,7 +58,10 @@ const dockItems: DockNavItem[] = [
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        <path d="M18.178 8c5.096 0 5.096 8 0 8-5.095 0-7.267-8-12.356-8-5.096 0-5.096 8 0 8 5.09 0 7.261-8 12.356-8z" />
+        <rect x="3" y="3" width="18" height="18" rx="5.5" />
+        <path d="M8.5 10L6.5 12L8.5 14" />
+        <path d="M11 15L13 9" />
+        <path d="M15.5 10L17.5 12L15.5 14" />
       </svg>
     ),
   },
@@ -77,9 +80,8 @@ const dockItems: DockNavItem[] = [
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        <rect x="3" y="7" width="18" height="14" rx="3" />
-        <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
-        <line x1="12" y1="12" x2="12" y2="15" />
+        <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
       </svg>
     ),
   },
@@ -126,10 +128,10 @@ const dockItems: DockNavItem[] = [
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        <rect x="4" y="3" width="16" height="18" rx="3" />
-        <line x1="8" y1="8" x2="16" y2="8" />
-        <line x1="8" y1="12" x2="16" y2="12" />
-        <line x1="8" y1="16" x2="12" y2="16" />
+        <rect x="4" y="3" width="16" height="18" rx="4.5" />
+        <path d="M8 8.5H16" />
+        <path d="M8 12H16" />
+        <path d="M8 15.5H12" />
       </svg>
     ),
   },
@@ -148,8 +150,8 @@ const dockItems: DockNavItem[] = [
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        <rect x="3" y="5" width="18" height="14" rx="3" />
-        <path d="M3 7l9 6 9-6" />
+        <rect x="3" y="5" width="18" height="14" rx="4" />
+        <path d="M4 7.5L12 13.5L20 7.5" />
       </svg>
     ),
   },
@@ -166,7 +168,7 @@ export const BottomDock: React.FC<{ className?: string }> = ({ className = "" })
         onMouseLeave={() => mouseX.set(Infinity)}
         role="navigation"
         aria-label="Bottom Dock Navigation"
-        className="flex items-end gap-2 md:gap-2.5 px-3.5 pb-2.5 pt-2.5 rounded-full bg-[#141517]/95 backdrop-blur-xl border border-white/15 shadow-[0_14px_45px_rgba(0,0,0,0.65),0_2px_8px_rgba(0,0,0,0.4)] select-none h-[60px]"
+        className="flex items-end gap-2 md:gap-2.5 px-3 pb-2.5 pt-2.5 rounded-[24px] bg-[#141517]/95 backdrop-blur-xl border border-white/10 shadow-[0_14px_45px_rgba(0,0,0,0.65),0_2px_8px_rgba(0,0,0,0.4)] select-none h-[60px]"
       >
         {dockItems.map((item) => (
           <DockIconItem
