@@ -1,5 +1,4 @@
 import "./globals.css";
-import { JetBrains_Mono } from "next/font/google";
 import { ReactNode } from "react";
 import SmoothScroll from "../components/hooks/smoothscroll";
 import Script from "next/script";
@@ -7,13 +6,6 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ThemeProvider } from "../components/theme/ThemeProvider";
 import { CustomCursor } from "../components/ui/CustomCursor";
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
-  weight: ["400", "500", "600"],
-  display: "swap",
-});
 
 export const metadata = {
   title: {
@@ -138,7 +130,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html
       lang="en"
-      className={`dark ${jetbrainsMono.variable}`}
+      className="dark"
       suppressHydrationWarning
     >
       <head>

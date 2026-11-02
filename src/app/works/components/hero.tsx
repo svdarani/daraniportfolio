@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import Header from "../../../components/Header";
 import BlurText from "@/components/ui/blurtext";
-import { Inter_Tight } from "next/font/google";
 import { LuListFilter } from "react-icons/lu";
 import RoundButton from "@/components/buttons/roundButton";
 import { motion, AnimatePresence } from "framer-motion";
@@ -10,11 +9,7 @@ import ProjectCard from "./ProjectCard";
 import { projects } from "../data/projects";
 import { caseStudies } from "../data/case-studies";
 
-// Import Inter Tight font with specific weights
-const interTight = Inter_Tight({
-  subsets: ["latin"],
-  weight: ["400"],
-});
+const interTight = { className: "font-sans" };
 
 type Category = "Frontend" | "Full Stack" | "Case Study";
 

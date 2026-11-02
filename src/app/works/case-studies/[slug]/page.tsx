@@ -3,16 +3,12 @@ import React from "react";
 import { caseStudies } from "../../data/case-studies";
 import { notFound } from "next/navigation";
 import { motion } from "framer-motion";
-import { Inter_Tight } from "next/font/google";
 import { IoArrowBack } from "react-icons/io5";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { OversizedFooter } from "@/components/Home/OversizedFooter";
 
-const interTight = Inter_Tight({
-  subsets: ["latin"],
-  weight: ["400"],
-});
+const interTight = { className: "font-sans" };
 
 interface CaseStudyPageProps {
   params: Promise<{
