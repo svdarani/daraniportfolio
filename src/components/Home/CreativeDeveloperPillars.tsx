@@ -23,7 +23,7 @@ const pillars = [
 
 export const CreativeDeveloperPillars: React.FC = () => {
   return (
-    <section className="w-full py-24 sm:py-32 bg-white dark:bg-black text-neutral-900 dark:text-white transition-colors duration-300">
+    <section id="skills" className="w-full py-24 sm:py-32 bg-white dark:bg-black text-neutral-900 dark:text-white transition-colors duration-300">
       <div className="max-w-[1320px] mx-auto px-5 sm:px-8">
         {/* Header Block */}
         <div className="max-w-4xl mb-16 sm:mb-20">

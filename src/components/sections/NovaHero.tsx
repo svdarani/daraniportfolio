@@ -48,7 +48,7 @@ export const NovaHero: React.FC = () => {
   const instagramUrl = socialsData.links.find((l) => l.platform === "Instagram")?.url;
 
   return (
-    <section className="relative w-full min-h-screen lg:h-screen lg:max-h-[920px] flex items-center justify-center p-3 sm:p-5 lg:p-6 overflow-hidden bg-[#FAFAFA] dark:bg-[#0A0A0B] transition-colors duration-200">
+    <section id="hero-section" className="relative w-full min-h-screen lg:h-screen lg:max-h-[920px] flex items-center justify-center p-3 sm:p-5 lg:p-6 overflow-hidden bg-[#FAFAFA] dark:bg-[#0A0A0B] transition-colors duration-200">
       
       {/* ========================================================================= */}
       {/* DESKTOP HERO BILLBOARD (lg breakpoint and up)                             */}

@@ -7,7 +7,7 @@ import { socialsData } from "@/data/socials";
 
 export const TalkContactSection: React.FC = () => {
   return (
-    <section className="w-full py-24 sm:py-32 bg-white dark:bg-black text-neutral-900 dark:text-white transition-colors duration-300 relative overflow-hidden">
+    <section id="contact" className="w-full py-24 sm:py-32 bg-white dark:bg-black text-neutral-900 dark:text-white transition-colors duration-300 relative overflow-hidden">
       <div className="max-w-[1320px] mx-auto px-5 sm:px-8">
         {/* Eyebrow Label */}
         <motion.p

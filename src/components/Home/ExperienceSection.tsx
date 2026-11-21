@@ -13,7 +13,7 @@ export const ExperienceSection: React.FC = () => {
   );
 
   return (
-    <section className="w-full py-20 sm:py-28 bg-[#FAF8F5] dark:bg-[#0B0C10] text-neutral-900 dark:text-white transition-colors duration-300">
+    <section id="experience" className="w-full py-20 sm:py-28 bg-[#FAF8F5] dark:bg-[#0B0C10] text-neutral-900 dark:text-white transition-colors duration-300">
       <div className="max-w-[1320px] mx-auto px-5 sm:px-8">
         {/* Section Header: Minimalist Display Title matching Reference Image */}
         <div className="mb-12 sm:mb-16">

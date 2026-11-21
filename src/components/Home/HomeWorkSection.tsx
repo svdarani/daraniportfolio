@@ -24,7 +24,7 @@ export const HomeWorkSection: React.FC = () => {
   const featuredProjects = projectsData.filter((p) => p.featured).slice(0, 6);
 
   return (
-    <section className="w-full py-20 sm:py-28 bg-[#FAF8F5] dark:bg-[#0B0C10] text-neutral-900 dark:text-white transition-colors duration-300 border-t border-neutral-200/60 dark:border-white/5">
+    <section id="works" className="w-full py-20 sm:py-28 bg-[#FAF8F5] dark:bg-[#0B0C10] text-neutral-900 dark:text-white transition-colors duration-300 border-t border-neutral-200/60 dark:border-white/5">
       <div className="max-w-[1320px] mx-auto px-5 sm:px-8">
         {/* Header Block matching Reference Image */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12 sm:mb-16">

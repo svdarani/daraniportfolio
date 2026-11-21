@@ -7,7 +7,7 @@ import { FiArrowUpRight } from "react-icons/fi";
 
 export const HomeStatement: React.FC = () => {
   return (
-    <section className="w-full py-20 sm:py-28 md:py-36 bg-white dark:bg-black text-neutral-900 dark:text-white transition-colors duration-300">
+    <section id="about" className="w-full py-20 sm:py-28 md:py-36 bg-white dark:bg-black text-neutral-900 dark:text-white transition-colors duration-300">
       <div className="max-w-[1320px] mx-auto px-5 sm:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
           {/* Left Column: Big Statement Headline (lg:col-span-7) */}
