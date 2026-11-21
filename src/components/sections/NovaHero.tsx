@@ -86,19 +86,10 @@ export const NovaHero: React.FC = () => {
         />
 
         {/* ----------------------------------------------------------------------- */}
-        {/* 1. TOP-LEFT BADGE: Abstract Emblem + Identity Pill Badge                */}
+        {/* 1. TOP-LEFT BADGE: Identity Pill Badge                                  */}
         {/* Coordinates match Image 2: left ~4.8%, top ~6.8%                        */}
         {/* ----------------------------------------------------------------------- */}
-        <div className="absolute top-[6.8%] left-[4.8%] z-30 flex items-center gap-3">
-          {/* Dual Oval Emblem matching Reference Image */}
-          <div className="w-8 h-6 sm:w-9 sm:h-7 flex items-center justify-center flex-shrink-0">
-            <svg width="34" height="26" viewBox="0 0 34 26" fill="none" className="drop-shadow-sm">
-              <ellipse cx="9" cy="13" rx="9" ry="13" fill="white" />
-              <ellipse cx="25" cy="13" rx="9" ry="13" fill="white" />
-              <ellipse cx="17" cy="13" rx="4" ry="13" fill="#FF4B0A" />
-            </svg>
-          </div>
-
+        <div className="absolute top-[6.8%] left-[4.8%] z-30 flex items-center">
           {/* Identity Pill Badge */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-white/35 bg-white/10 backdrop-blur-md text-white text-[11px] xl:text-xs font-modernist tracking-wide select-none shadow-xs">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
@@ -389,14 +380,7 @@ export const NovaHero: React.FC = () => {
           />
 
           {/* Top Bar Mobile */}
-          <div className="relative z-20 flex items-center gap-2.5">
-            <div className="w-8 h-6 flex items-center justify-center flex-shrink-0">
-              <svg width="30" height="22" viewBox="0 0 34 26" fill="none">
-                <ellipse cx="9" cy="13" rx="9" ry="13" fill="white" />
-                <ellipse cx="25" cy="13" rx="9" ry="13" fill="white" />
-                <ellipse cx="17" cy="13" rx="4" ry="13" fill="#FF4B0A" />
-              </svg>
-            </div>
+          <div className="relative z-20 flex items-center">
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-white/35 bg-white/10 backdrop-blur-md text-white text-[10px] font-modernist tracking-wide">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
               <span>Darani Viswanathan</span>
