@@ -13,6 +13,7 @@ import {
   FiCheckCircle,
 } from "react-icons/fi";
 import { socialsData } from "@/data/socials";
+import { ScrambleHeadline } from "@/components/ui/ScrambleHeadline";
 
 export const NovaHero: React.FC = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -102,11 +103,11 @@ export const NovaHero: React.FC = () => {
         {/* Coordinates match Image 2: left ~5.2%, top ~31.8%                       */}
         {/* ----------------------------------------------------------------------- */}
         <div className="absolute top-[31.8%] left-[5.2%] z-30 max-w-[34%]">
-          <h1 className="font-debata text-[38px] xl:text-[46px] 2xl:text-[54px] font-extrabold text-white leading-[1.02] tracking-[-0.035em] drop-shadow-[0_2px_14px_rgba(0,0,0,0.25)] select-none">
-            Creative<br />
-            Designer &amp;<br />
-            Developer
-          </h1>
+          <ScrambleHeadline
+            lines={["Creative", "Designer &", "Developer"]}
+            className="font-debata text-[38px] xl:text-[46px] 2xl:text-[54px] font-extrabold text-white leading-[1.02] tracking-[-0.035em] drop-shadow-[0_2px_14px_rgba(0,0,0,0.25)] select-none"
+            activeColor="text-[#FFD52A]"
+          />
         </div>
 
         {/* ----------------------------------------------------------------------- */}
@@ -114,20 +115,32 @@ export const NovaHero: React.FC = () => {
         {/* Coordinates match Image 2: left ~5.2%, top ~56.8%                       */}
         {/* ----------------------------------------------------------------------- */}
         <div className="absolute top-[56.8%] left-[5.2%] z-30 flex items-center gap-3">
-          <Link
-            href="/projects"
-            className="group inline-flex items-center gap-2 px-5 xl:px-6 py-2.5 xl:py-3 rounded-full bg-white text-neutral-950 font-modernist font-semibold text-xs xl:text-sm shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-all select-none"
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.94 }}
+            transition={{ type: "spring", stiffness: 400, damping: 20 }}
           >
-            <span>Explore My Work</span>
-            <FiArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-          </Link>
+            <Link
+              href="/projects"
+              className="group inline-flex items-center gap-2 px-5 xl:px-6 py-2.5 xl:py-3 rounded-full bg-white text-neutral-950 font-modernist font-semibold text-xs xl:text-sm shadow-md hover:shadow-lg transition-all select-none"
+            >
+              <span>Explore My Work</span>
+              <FiArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </Link>
+          </motion.div>
 
-          <Link
-            href="/resume"
-            className="inline-flex items-center gap-2 px-4 xl:px-5 py-2.5 xl:py-3 rounded-full border border-white/80 hover:border-white bg-transparent hover:bg-white/15 text-white font-modernist font-medium text-xs xl:text-sm transition-all select-none"
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.94 }}
+            transition={{ type: "spring", stiffness: 400, damping: 20 }}
           >
-            <span>View Resume</span>
-          </Link>
+            <Link
+              href="/resume"
+              className="inline-flex items-center gap-2 px-4 xl:px-5 py-2.5 xl:py-3 rounded-full border border-white/80 hover:border-white bg-transparent hover:bg-white/15 text-white font-modernist font-medium text-xs xl:text-sm transition-all select-none"
+            >
+              <span>View Resume</span>
+            </Link>
+          </motion.div>
         </div>
 
         {/* ----------------------------------------------------------------------- */}
@@ -138,9 +151,10 @@ export const NovaHero: React.FC = () => {
         <div className="absolute top-[81.8%] left-[4.8%] z-30 flex items-center gap-3 select-none">
           {/* Card 1: Experience */}
           <motion.div
-            whileHover={{ y: -3 }}
+            whileHover={{ y: -4, scale: 1.03 }}
+            whileTap={{ scale: 0.96 }}
             transition={{ type: "spring", stiffness: 350, damping: 25 }}
-            className="bg-white rounded-2xl px-4 py-2.5 xl:py-3 shadow-[0_12px_32px_rgba(0,0,0,0.12)] border border-white/80 min-w-[105px] xl:min-w-[118px]"
+            className="bg-white rounded-2xl px-4 py-2.5 xl:py-3 shadow-[0_12px_32px_rgba(0,0,0,0.12)] border border-white/80 min-w-[105px] xl:min-w-[118px] cursor-pointer"
           >
             <div className="text-xl xl:text-2xl font-debata font-extrabold text-[#FF8500] leading-none mb-1">
               2+ Yrs
@@ -152,9 +166,10 @@ export const NovaHero: React.FC = () => {
 
           {/* Card 2: Creative Output */}
           <motion.div
-            whileHover={{ y: -3 }}
+            whileHover={{ y: -4, scale: 1.03 }}
+            whileTap={{ scale: 0.96 }}
             transition={{ type: "spring", stiffness: 350, damping: 25 }}
-            className="bg-white rounded-2xl px-4 py-2.5 xl:py-3 shadow-[0_12px_32px_rgba(0,0,0,0.12)] border border-white/80 min-w-[125px] xl:min-w-[140px]"
+            className="bg-white rounded-2xl px-4 py-2.5 xl:py-3 shadow-[0_12px_32px_rgba(0,0,0,0.12)] border border-white/80 min-w-[125px] xl:min-w-[140px] cursor-pointer"
           >
             <div className="text-xl xl:text-2xl font-debata font-extrabold text-neutral-950 leading-none mb-1">
               100%
@@ -446,46 +461,67 @@ export const NovaHero: React.FC = () => {
 
         {/* Middle Headline, Buttons & Stats for Mobile */}
         <div className="p-5 bg-gradient-to-b from-[#8F1D00] to-[#550A00] text-white flex flex-col gap-4">
-          <h1 className="font-debata text-3xl font-extrabold text-white leading-[1.04] tracking-tight">
-            Creative<br />
-            Designer &amp;<br />
-            Developer
-          </h1>
+          <ScrambleHeadline
+            lines={["Creative", "Designer &", "Developer"]}
+            className="font-debata text-3xl font-extrabold text-white leading-[1.04] tracking-tight select-none"
+            activeColor="text-[#FFD52A]"
+          />
 
           <div className="flex flex-wrap items-center gap-3">
-            <Link
-              href="/projects"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-neutral-950 font-semibold text-xs shadow-md"
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.94 }}
+              transition={{ type: "spring", stiffness: 400, damping: 20 }}
             >
-              <span>Explore My Work</span>
-              <FiArrowUpRight className="w-3.5 h-3.5" />
-            </Link>
-            <Link
-              href="/resume"
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full border border-white/80 text-white font-medium text-xs"
+              <Link
+                href="/projects"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-neutral-950 font-semibold text-xs shadow-md"
+              >
+                <span>Explore My Work</span>
+                <FiArrowUpRight className="w-3.5 h-3.5" />
+              </Link>
+            </motion.div>
+
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.94 }}
+              transition={{ type: "spring", stiffness: 400, damping: 20 }}
             >
-              <span>View Resume</span>
-            </Link>
+              <Link
+                href="/resume"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full border border-white/80 text-white font-medium text-xs"
+              >
+                <span>View Resume</span>
+              </Link>
+            </motion.div>
           </div>
 
           <div className="flex items-center gap-3 pt-2">
-            <div className="bg-white rounded-xl p-3 min-w-[100px] text-neutral-950 shadow-sm">
+            <motion.div
+              whileHover={{ y: -3, scale: 1.02 }}
+              whileTap={{ scale: 0.96 }}
+              className="bg-white rounded-xl p-3 min-w-[100px] text-neutral-950 shadow-sm cursor-pointer"
+            >
               <div className="text-xl font-debata font-extrabold text-[#FF8500] leading-none mb-0.5">
                 2+ Yrs
               </div>
               <div className="text-[11px] font-medium text-neutral-700">
                 Experience
               </div>
-            </div>
+            </motion.div>
 
-            <div className="bg-white rounded-xl p-3 min-w-[110px] text-neutral-950 shadow-sm">
+            <motion.div
+              whileHover={{ y: -3, scale: 1.02 }}
+              whileTap={{ scale: 0.96 }}
+              className="bg-white rounded-xl p-3 min-w-[110px] text-neutral-950 shadow-sm cursor-pointer"
+            >
               <div className="text-xl font-debata font-extrabold text-neutral-950 leading-none mb-0.5">
                 100%
               </div>
               <div className="text-[11px] font-medium text-neutral-700">
                 Creative Output
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
 
